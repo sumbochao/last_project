@@ -15,10 +15,12 @@ class HoaDonChiTiet extends Migration
     {
         Schema::create('hoa_don_chi_tiet', function (Blueprint $table) {
             $table->id('ma_hoa_don_chi_tiet');
-            $table->string('ma_hoa_don',100);
-            $table->string('ma_san_pham',100);
-            $table->integer('so_luong');
+            $table->bigInteger('ma_hoa_don')->unsigned();
+            $table->bigInteger('ma_san_pham')->unsigned();
+            $table->bigInteger('so_luong');
             $table->float('gia');
+            $table->foreign('ma_hoa_don')->references('ma_hoa_don')->on('hoa_don');
+            $table->foreign('ma_san_pham')->references('ma_san_pham')->on('san_pham');
         });
     }
 
@@ -29,6 +31,6 @@ class HoaDonChiTiet extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('hoa_don_chi_tiet');
     }
 }

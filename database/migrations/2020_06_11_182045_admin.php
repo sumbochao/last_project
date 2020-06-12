@@ -19,7 +19,7 @@ class Admin extends Migration
             $table->string('mat_khau',100);
             $table->text('anh_admin');
             $table->string('ho_ten_admin',100);
-            $table->string('email',100);
+            $table->string('email',100)->unique();
             $table->date('ngay_sinh');
             $table->boolean('gioi_tinh');
             $table->string('sdt',12);
@@ -35,6 +35,6 @@ class Admin extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('admin');
     }
 }

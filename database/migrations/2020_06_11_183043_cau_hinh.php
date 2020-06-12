@@ -15,7 +15,7 @@ class CauHinh extends Migration
     {
         Schema::create('cau_hinh', function (Blueprint $table) {
             $table->id('ma_cau_hinh');
-            $table->string('ten_cau_hinh',50);
+            $table->string('ten_cau_hinh',50)->unique();
         });
     }
 
@@ -26,6 +26,6 @@ class CauHinh extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('cau_hinh');
     }
 }

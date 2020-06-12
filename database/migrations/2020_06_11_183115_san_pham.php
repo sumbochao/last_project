@@ -13,18 +13,19 @@ class SanPham extends Migration
      */
     public function up()
     {
-        Schema::create('flights', function (Blueprint $table) {
+        Schema::create('san_pham', function (Blueprint $table) {
             $table->id('ma_san_pham');
             $table->string('anh_san_pham');
             $table->string('ten_san_pham');
             $table->text('mo_ta');
-            $table->integer('ma_thuong_hieu');
-            $table->integer('ma_cau_hinh');
+            $table->bigInteger('ma_thuong_hieu')->unsigned();
+            $table->bigInteger('ma_cau_hinh')->unsigned();
             $table->boolean('gaming');
             $table->string('so_luong');
             $table->string('thong_so_ki_thuat');
             $table->float('gia');
-            $table->timestamps();
+            $table->foreign('ma_thuong_hieu')->references('ma_thuong_hieu')->on('thuong_hieu');
+            $table->foreign('ma_cau_hinh')->references('ma_cau_hinh')->on('cau_hinh');
         });
     }
 
@@ -35,6 +36,6 @@ class SanPham extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('san_pham');
     }
 }
