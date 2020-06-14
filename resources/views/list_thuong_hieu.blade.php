@@ -8,10 +8,10 @@
         </style>
     @endpush
     <h1>
-        Danh Sách Cấu Hình
+        Danh Sách Thương Hiệu
     </h1>
-    <a href="{{route('insert_cau_hinh')}}">
-        <button class="btn btn-behance">Thêm Cấu Hình</button>
+    <a href="{{route('insert_thuong_hieu')}}">
+        <button class="btn btn-behance">Thêm Thương Hiệu</button>
     </a>
     <div class="content">
         <div class="container-fluid">
@@ -23,17 +23,17 @@
                                 <thead>
                                 <tr>
                                     <th class="text-center">#</th>
-                                    <th class="text-center">Tên Cấu Hình</th>
+                                    <th class="text-center">Tên Thương Hiệu</th>
                                     <th class="text-right">Actions</th>
                                 </tr>
                                 </thead>
-                                @foreach ($array_cau_hinh as $cau_hinh)
+                                @foreach ($array_thuong_hieu as $thuong_hieu)
                                     <tbody>
                                     <tr>
-                                        <td>{{$cau_hinh->ma_cau_hinh}}</td>
-                                        <td>{{$cau_hinh->ten_cau_hinh}}</td>
+                                        <td>{{$thuong_hieu->ma_thuong_hieu}}</td>
+                                        <td>{{$thuong_hieu->ten_thuong_hieu}}</td>
                                         <td class="td-actions text-right">
-                                            <a href="{{route('update_cau_hinh',['id'=>$cau_hinh->ma_cau_hinh])}}">
+                                            <a href="{{route('update_thuong_hieu',['id'=>$thuong_hieu->ma_thuong_hieu])}}">
                                                 <button type="button" rel="tooltip" class="btn btn-success btn-round">
                                                     <i class="material-icons">edit</i>
                                                 </button>

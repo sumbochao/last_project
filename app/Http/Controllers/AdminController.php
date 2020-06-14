@@ -22,19 +22,19 @@ class AdminController extends Controller
         return view('insert_admin');
     }
 
-    public function process_insert_admin()
+    public function process_insert_admin(Request $request)
     {
         $admin  = new Admin();
-        $admin->tai_khoan   = Request::get('tai_khoan');
-        $admin->mat_khau   = Request::get('mat_khau');
-        $admin->anh_admin   = Request::get('anh_admin');
-        $admin->ho_ten_admin   = Request::get('ho_ten_admin');
-        $admin->ngay_sinh   = Request::get('ngay_sinh');
-        $admin->gioi_tinh   = Request::get('gt');
-        $admin->email   = Request::get('email');
-        $admin->sdt   = Request::get('sdt');
-        $admin->dia_chi   = Request::get('dia_chi');
-        $admin->cap_do   = Request::get('cap_do');
+        $admin->tai_khoan   = $request->tai_khoan;
+        $admin->mat_khau   = $request->mat_khau;
+        $admin->anh_admin   = $request->anh_admin;
+        $admin->ho_ten_admin   = $request->ho_ten_admin;
+        $admin->ngay_sinh   = $request->ngay_sinh;
+        $admin->gioi_tinh   = $request->gioi_tinh;
+        $admin->email   = $request->email;
+        $admin->sdt   = $request->sdt;
+        $admin->dia_chi   = $request->dia_chi;
+        $admin->cap_do   = $request->cap_do;
         $admin->insert_admin();
 
         return redirect()->route('list_admin');
