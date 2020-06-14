@@ -60,4 +60,15 @@ class Admin
     {
         DB::table("$this->table")->where('ma_admin',$this->ma_admin)->delete();
     }
+
+    public function get_one_admin_sign_in()
+    {
+        $array  = DB::table("$this->table")
+                    ->where('tai_khoan',$this->tai_khoan)
+                    ->where('mat_khau',$this->mat_khau)
+                    ->limit(1)
+                    ->get();
+//        dd($array);
+        return $array;
+    }
 }

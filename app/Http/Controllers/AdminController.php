@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -26,7 +27,7 @@ class AdminController extends Controller
     {
         $admin  = new Admin();
         $admin->tai_khoan   = $request->tai_khoan;
-        $admin->mat_khau   = $request->mat_khau;
+        $admin->mat_khau   = Hash::make($request->mat_khau);
         $admin->anh_admin   = $request->anh_admin;
         $admin->ho_ten_admin   = $request->ho_ten_admin;
         $admin->ngay_sinh   = $request->ngay_sinh;

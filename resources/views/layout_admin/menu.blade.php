@@ -20,7 +20,7 @@ Tip 3: you can change the color of the sidebar with data-background-color="white
             <div class="info">
                 <a data-toggle="collapse" href="#collapseExample" class="collapsed">
                             <span>
-                                Tania Andrew
+                                {{\Illuminate\Support\Facades\Session::get('ho_ten_admin')}}
                                 <b class="caret"></b>
                             </span>
                 </a>
@@ -40,9 +40,9 @@ Tip 3: you can change the color of the sidebar with data-background-color="white
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <span class="sidebar-mini"> S </span>
-                                <span class="sidebar-normal"> Settings </span>
+                            <a href="{{route('admin_sign_out')}}">
+                                <span class="sidebar-mini"> LO </span>
+                                <span class="sidebar-normal"> Log Out </span>
                             </a>
                         </li>
                     </ul>
