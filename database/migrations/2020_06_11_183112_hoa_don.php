@@ -18,7 +18,7 @@ class HoaDon extends Migration
             $table->bigInteger('ma_khach_hang')->unsigned();
             $table->bigInteger('ma_van_chuyen')->unsigned();
             $table->bigInteger('ma_thanh_toan')->unsigned();
-            $table->float('tong_tien');
+            $table->string('tong_tien');
             $table->boolean('tinh_trang');
             $table->foreign('ma_khach_hang')->references('ma_khach_hang')->on('khach_hang');
             $table->foreign('ma_van_chuyen')->references('ma_van_chuyen')->on('van_chuyen');

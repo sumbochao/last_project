@@ -18,7 +18,7 @@ class HoaDonChiTiet extends Migration
             $table->bigInteger('ma_hoa_don')->unsigned();
             $table->bigInteger('ma_san_pham')->unsigned();
             $table->bigInteger('so_luong');
-            $table->float('gia');
+            $table->string('gia');
             $table->foreign('ma_hoa_don')->references('ma_hoa_don')->on('hoa_don');
             $table->foreign('ma_san_pham')->references('ma_san_pham')->on('san_pham');
         });

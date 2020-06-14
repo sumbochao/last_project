@@ -49,4 +49,50 @@ class SanPhamController extends Controller
 
         return redirect()->route('list_san_pham');
     }
+
+    public function update_san_pham($id)
+    {
+        $cau_hinh   = new CauHinh();
+        $array_cau_hinh = $cau_hinh->get_all_cau_hinh();
+
+        $thuong_hieu    = new ThuongHieu();
+        $array_thuong_hieu = $thuong_hieu->get_all_thuong_hieu();
+
+        $san_pham   = new SanPham();
+        $san_pham->ma_san_pham  = $id;
+        $san_pham   = $san_pham->get_one_san_pham();
+
+        return view('update_san_pham',[
+            'array_cau_hinh'=>$array_cau_hinh,
+            'array_thuong_hieu'=>$array_thuong_hieu,
+            'san_pham'=>$san_pham
+        ]);
+    }
+
+    public function process_update_san_pham(Request $request,$id)
+    {
+        $san_pham   = new SanPham();
+        $san_pham->ma_san_pham  = $id;
+        $san_pham->anh_san_pham = $request->anh_san_pham;
+        $san_pham->ten_san_pham = $request->ten_san_pham;
+        $san_pham->mo_ta = $request->mo_ta;
+        $san_pham->ma_thuong_hieu = $request->ma_thuong_hieu;
+        $san_pham->ma_cau_hinh = $request->ma_cau_hinh;
+        $san_pham->gaming = $request->gaming;
+        $san_pham->so_luong = $request->so_luong;
+        $san_pham->thong_so_ki_thuat = $request->thong_so_ki_thuat;
+        $san_pham->gia = $request->gia;
+        $san_pham->update_san_pham();
+
+        return redirect()->route('list_san_pham');
+    }
+
+    public function delete_san_pham($id)
+    {
+        $san_pham   = new SanPham();
+        $san_pham->ma_san_pham  = $id;
+        $san_pham->delete_san_pham();
+
+        return redirect()->route('list_san_pham');
+    }
 }
