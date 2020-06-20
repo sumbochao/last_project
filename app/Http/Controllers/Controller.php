@@ -20,9 +20,19 @@ class Controller extends BaseController
         return view('layout_admin.master');
     }
 
-    public function layout_menu()
+    public function layout_nguoi_dung()
     {
         return view('layout_website.master');
+    }
+
+    public function view_shop()
+    {
+        return view('shop');
+    }
+
+    public function home()
+    {
+        return view('menu');
     }
 
     public function admin_sign_in()

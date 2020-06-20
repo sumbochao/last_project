@@ -17,7 +17,9 @@ Route::get("admin_sign_in", "Controller@admin_sign_in")
 
 Route::post("process_admin_sign_in", "Controller@process_admin_sign_in")
     ->name("process_admin_sign_in");
-Route::get('menu', 'Controller@layout_menu');
+
+Route::get('', 'Controller@home')->name('home');
+Route::get('shop', 'Controller@view_shop')->name('view_shop');
 
 Route::group(["prefix" => "admin", "middleware"=>"CheckAdmin"], function () {
     Route::get('', 'Controller@layout_admin');
@@ -30,20 +32,28 @@ Route::group(["prefix" => "admin", "middleware"=>"CheckAdmin"], function () {
     Route::post('process_update_admin/{id}','AdminController@process_update_admin')->name('process_update_admin');
     Route::get('delete_admin/{id}','AdminController@delete_admin')->name('delete_admin');
 
-    Route::group(["prefix"=>"cau_hinh"], function () {
-        Route::get('','CauHinhController@list_cau_hinh')->name('list_cau_hinh');
-        Route::get('insert_cau_hinh','CauHinhController@insert_cau_hinh')->name('insert_cau_hinh');
-        Route::post('process_insert_cau_hinh','CauHinhController@process_insert_cau_hinh')->name('process_insert_cau_hinh');
-        Route::get('update_cau_hinh/{id}','CauHinhController@update_cau_hinh')->name('update_cau_hinh');
-        Route::post('process_update_cau_hinh/{id}','CauHinhController@process_update_cau_hinh')->name('process_update_cau_hinh');
+    Route::group(["prefix"=>"cpu"], function () {
+        Route::get('','CpuController@list_cpu')->name('list_cpu');
+        Route::get('insert_cpu','CpuController@insert_cpu')->name('insert_cpu');
+        Route::post('process_insert_cpu','CpuController@process_insert_cpu')->name('process_insert_cpu');
+        Route::get('update_cpu/{id}','CpuController@update_cpu')->name('update_cpu');
+        Route::post('process_update_cpu/{id}','CpuController@process_update_cpu')->name('process_update_cpu');
     });
 
-    Route::group(["prefix"=>"thuong_hieu"], function () {
-        Route::get('','ThuongHieuController@list_thuong_hieu')->name('list_thuong_hieu');
-        Route::get('insert_thuong_hieu','ThuongHieuController@insert_thuong_hieu')->name('insert_thuong_hieu');
-        Route::post('process_insert_thuong_hieu','ThuongHieuController@process_insert_thuong_hieu')->name('process_insert_thuong_hieu');
-        Route::get('update_thuong_hieu/{id}','ThuongHieuController@update_thuong_hieu')->name('update_thuong_hieu');
-        Route::post('process_update_thuong_hieu/{id}','ThuongHieuController@process_update_thuong_hieu')->name('process_update_thuong_hieu');
+    Route::group(["prefix"=>"hang_san_xuat"], function () {
+        Route::get('','HangSanXuatController@list_hang_san_xuat')->name('list_hang_san_xuat');
+        Route::get('insert_hang_san_xuat','HangSanXuatController@insert_hang_san_xuat')->name('insert_hang_san_xuat');
+        Route::post('process_insert_hang_san_xuat','HangSanXuatController@process_insert_hang_san_xuat')->name('process_insert_hang_san_xuat');
+        Route::get('update_hang_san_xuat/{id}','HangSanXuatController@update_hang_san_xuat')->name('update_hang_san_xuat');
+        Route::post('process_update_hang_san_xuat/{id}','HangSanXuatController@process_update_hang_san_xuat')->name('process_update_hang_san_xuat');
+    });
+
+    Route::group(["prefix"=>"loai_may"], function () {
+        Route::get('','LoaiMayController@list_loai_may')->name('list_loai_may');
+        Route::get('insert_loai_may','LoaiMayController@insert_loai_may')->name('insert_loai_may');
+        Route::post('process_insert_loai_may','LoaiMayController@process_insert_loai_may')->name('process_insert_loai_may');
+        Route::get('update_loai_may/{id}','LoaiMayController@update_loai_may')->name('update_loai_may');
+        Route::post('process_update_loai_may/{id}','LoaiMayController@process_update_loai_may')->name('process_update_loai_may');
     });
 
     Route::group(["prefix"=>"san_pham"], function () {
@@ -53,6 +63,15 @@ Route::group(["prefix" => "admin", "middleware"=>"CheckAdmin"], function () {
         Route::get('update_san_pham/{id}','SanPhamController@update_san_pham')->name('update_san_pham');
         Route::post('process_update_san_pham/{id}','SanPhamController@process_update_san_pham')->name('process_update_san_pham');
         Route::get('delete_san_pham/{id}','SanPhamController@delete_san_pham')->name('delete_san_pham');
+    });
+
+    Route::group(["prefix"=>"thanh_toan"], function () {
+        Route::get('','ThanhToanController@list_thanh_toan')->name('list_thanh_toan');
+        Route::get('insert_thanh_toan','ThanhToanController@insert_thanh_toan')->name('insert_thanh_toan');
+        Route::post('process_insert_thanh_toan','ThanhToanController@process_insert_thanh_toan')->name('process_insert_thanh_toan');
+        Route::get('update_thanh_toan/{id}','ThanhToanController@update_thanh_toan')->name('update_thanh_toan');
+        Route::post('process_update_thanh_toan/{id}','ThanhToanController@process_update_thanh_toan')->name('process_update_thanh_toan');
+        Route::get('delete_thanh_toan/{id}','ThanhToanController@delete_thanh_toan')->name('delete_thanh_toan');
     });
 });
 

@@ -65,7 +65,6 @@ class Admin
     {
         $array  = DB::table("$this->table")
                     ->where('tai_khoan',$this->tai_khoan)
-                    ->where('mat_khau',$this->mat_khau)
                     ->limit(1)
                     ->get();
 //        dd($array);

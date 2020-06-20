@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CauHinh;
+use App\Models\Cpu;
 use App\Models\SanPham;
-use App\Models\ThuongHieu;
+use App\Models\HangSanXuat;
 use Illuminate\Http\Request;
 
 class SanPhamController extends Controller
@@ -21,10 +21,10 @@ class SanPhamController extends Controller
 
     public function insert_san_pham()
     {
-        $cau_hinh   = new CauHinh();
+        $cau_hinh   = new Cpu();
         $array_cau_hinh = $cau_hinh->get_all_cau_hinh();
 
-        $thuong_hieu    = new ThuongHieu();
+        $thuong_hieu    = new HangSanXuat();
         $array_thuong_hieu = $thuong_hieu->get_all_thuong_hieu();
 
         return view('insert_san_pham',[
@@ -52,10 +52,10 @@ class SanPhamController extends Controller
 
     public function update_san_pham($id)
     {
-        $cau_hinh   = new CauHinh();
+        $cau_hinh   = new Cpu();
         $array_cau_hinh = $cau_hinh->get_all_cau_hinh();
 
-        $thuong_hieu    = new ThuongHieu();
+        $thuong_hieu    = new HangSanXuat();
         $array_thuong_hieu = $thuong_hieu->get_all_thuong_hieu();
 
         $san_pham   = new SanPham();

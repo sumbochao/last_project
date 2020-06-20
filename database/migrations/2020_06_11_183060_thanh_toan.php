@@ -15,8 +15,7 @@ class ThanhToan extends Migration
     {
         Schema::create('thanh_toan', function (Blueprint $table) {
             $table->id('ma_thanh_toan');
-            $table->integer('phuong_thuc_thanh_toan')->unsigned();
-            $table->integer('tinh_trang')->unsigned();
+            $table->string('phuong_thuc_thanh_toan');
         });
     }
 

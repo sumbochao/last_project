@@ -32,10 +32,10 @@
                             <!-- Begin Currency Area -->
                             <li>
                                 <span class="currency-selector-wrapper">Currency :</span>
-                                <div class="ht-currency-trigger"><span>USD $</span></div>
+                                <div class="ht-currency-trigger"><span>VND</span></div>
                                 <div class="currency ht-currency">
                                     <ul class="ht-setting-list">
-                                        <li><a href="#">EUR €</a></li>
+                                        <li><a href="#">USD $</a></li>
                                         <li class="active"><a href="#">USD $</a></li>
                                     </ul>
                                 </div>
@@ -47,8 +47,8 @@
                                 <div class="ht-language-trigger"><span>English</span></div>
                                 <div class="language ht-language">
                                     <ul class="ht-setting-list">
-                                        <li class="active"><a href="#"><img src="images/menu/flag-icon/1.jpg" alt="">English</a></li>
-                                        <li><a href="#"><img src="images/menu/flag-icon/2.jpg" alt="">Français</a></li>
+                                        <li class="active"><a href="#"><img src="{{asset('img/nguoi_dung/menu/flag-icon/1.jpg')}}" alt="">English</a></li>
+                                        <li><a href="#"><img src="{{asset('img/nguoi_dung/menu/flag-icon/2.jpg')}}" alt="">Français</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -69,7 +69,7 @@
                 <div class="col-lg-3">
                     <div class="logo pb-sm-30 pb-xs-30">
                         <a href="index.html">
-                            <img src="images/menu/logo/2.jpg" alt="">
+                            <img src="{{asset('img/nguoi_dung/menu/logo/2.jpg')}}" alt="">
                         </a>
                     </div>
                 </div>
@@ -222,16 +222,4 @@
         </div>
     </div>
     <!-- Header Middle Area End Here -->
-
-    <!-- Begin Mobile Menu Area -->
-    <div class="mobile-menu-area mobile-menu-area-4 d-lg-none d-xl-none col-12">
-        <div class="container">
-            <div class="row">
-                <div class="mobile-menu">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Mobile Menu Area End Here -->
 </header>
-<!-- Header Area End Here -->
