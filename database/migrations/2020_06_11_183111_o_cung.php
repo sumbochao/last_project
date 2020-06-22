@@ -16,7 +16,7 @@ class OCung extends Migration
         Schema::create('o_cung', function (Blueprint $table) {
             $table->id('ma_o_cung');
             $table->string('loai_o_cung',50);
-            $table->string('dung_luong',50);
+            $table->string('dung_luong_o_cung',50);
         });
     }
 

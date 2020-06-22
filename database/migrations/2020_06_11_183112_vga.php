@@ -17,7 +17,7 @@ class Vga extends Migration
             $table->id('ma_vga');
             $table->string('loai_vga',50);
             $table->string('ten_vga',50);
-            $table->string('dung_luong',50);
+            $table->string('dung_luong_vga',50);
         });
     }
 

@@ -56,6 +56,38 @@ Route::group(["prefix" => "admin", "middleware"=>"CheckAdmin"], function () {
         Route::post('process_update_loai_may/{id}','LoaiMayController@process_update_loai_may')->name('process_update_loai_may');
     });
 
+    Route::group(["prefix"=>"man_hinh"], function () {
+        Route::get('','ManHinhController@list_man_hinh')->name('list_man_hinh');
+        Route::get('insert_man_hinh','ManHinhController@insert_man_hinh')->name('insert_man_hinh');
+        Route::post('process_insert_man_hinh','ManHinhController@process_insert_man_hinh')->name('process_insert_man_hinh');
+        Route::get('update_man_hinh/{id}','ManHinhController@update_man_hinh')->name('update_man_hinh');
+        Route::post('process_update_man_hinh/{id}','ManHinhController@process_update_man_hinh')->name('process_update_man_hinh');
+    });
+
+    Route::group(["prefix"=>"o_cung"], function () {
+        Route::get('','OCungController@list_o_cung')->name('list_o_cung');
+        Route::get('insert_o_cung','OCungController@insert_o_cung')->name('insert_o_cung');
+        Route::post('process_insert_o_cung','OCungController@process_insert_o_cung')->name('process_insert_o_cung');
+        Route::get('update_o_cung/{id}','OCungController@update_o_cung')->name('update_o_cung');
+        Route::post('process_update_o_cung/{id}','OCungController@process_update_o_cung')->name('process_update_o_cung');
+    });
+
+    Route::group(["prefix"=>"ram"], function () {
+        Route::get('','RamController@list_ram')->name('list_ram');
+        Route::get('insert_ram','RamController@insert_ram')->name('insert_ram');
+        Route::post('process_insert_ram','RamController@process_insert_ram')->name('process_insert_ram');
+        Route::get('update_ram/{id}','RamController@update_ram')->name('update_ram');
+        Route::post('process_update_ram/{id}','RamController@process_update_ram')->name('process_update_ram');
+    });
+
+    Route::group(["prefix"=>"vga"], function () {
+        Route::get('','VgaController@list_vga')->name('list_vga');
+        Route::get('insert_vga','VgaController@insert_vga')->name('insert_vga');
+        Route::post('process_insert_vga','VgaController@process_insert_vga')->name('process_insert_vga');
+        Route::get('update_vga/{id}','VgaController@update_vga')->name('update_vga');
+        Route::post('process_update_vga/{id}','VgaController@process_update_vga')->name('process_update_vga');
+    });
+
     Route::group(["prefix"=>"san_pham"], function () {
         Route::get('','SanPhamController@list_san_pham')->name('list_san_pham');
         Route::get('insert_san_pham','SanPhamController@insert_san_pham')->name('insert_san_pham');

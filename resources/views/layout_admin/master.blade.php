@@ -11,7 +11,7 @@
     <!-- Bootstrap core CSS     -->
     <link href="{{asset('css/admin/bootstrap.min.css')}}" rel="stylesheet" />
     <!--  Material Dashboard CSS    -->
-    <link href="{{asset('css/admin/material-dashboard.css?v=1.2.1')}}" rel="stylesheet" />
+    <link href="{{asset('css/admin/material-dashboard.css')}}" rel="stylesheet" />
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="{{asset('css/admin/demo.css')}}" rel="stylesheet" />
     <!--     Fonts and icons     -->

@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width"/>
 
     <!-- Bootstrap core CSS     -->
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/admin/bootstrap.min.css')}}" rel="stylesheet">
 
     <!--  Material Dashboard CSS    -->
-    <link href="{{asset('css/material-dashboard.css')}}" rel="stylesheet">
+    <link href="{{asset('css/admin/material-dashboard.css')}}" rel="stylesheet">
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@
 
 <body class="off-canvas-sidebar">
 <div class="wrapper wrapper-full-page">
-    <div class="full-page login-page" filter-color="black" data-image="{{asset('img/unnamed.jpg')}}">
+    <div class="full-page login-page" filter-color="black" data-image="{{asset('img/admin/login.jpeg')}}">
         <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
         <div class="content">
             <div class="container">
@@ -83,57 +83,57 @@
 </div>
 </body>
 <!--   Core JS Files   -->
-<script src="{{asset('js/jquery-3.2.1.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/material.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/perfect-scrollbar.jquery.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/admin/jquery-3.2.1.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/admin/bootstrap.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/admin/material.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/admin/perfect-scrollbar.jquery.min.js')}}" type="text/javascript"></script>
 
 
 <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
 
 <!-- Library for adding dinamically elements -->
-<script src="{{asset('js/arrive.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/admin/arrive.min.js')}}" type="text/javascript"></script>
 
 <!-- Forms Validations Plugin -->
-<script src="{{asset('js/jquery.validate.min.js')}}"></script>
+<script src="{{asset('js/admin/jquery.validate.min.js')}}"></script>
 
 <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
-<script src="{{asset('js/moment.min.js')}}"></script>
+<script src="{{asset('js/admin/moment.min.js')}}"></script>
 
 
 <!--  Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
-<script src="{{asset('js/jquery.bootstrap-wizard.js')}}"></script>
+<script src="{{asset('js/admin/jquery.bootstrap-wizard.js')}}"></script>
 
 
 <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-<script src="{{asset('js/bootstrap-datetimepicker.js')}}"></script>
+<script src="{{asset('js/admin/bootstrap-datetimepicker.js')}}"></script>
 
 
 <!-- Sliders Plugin, full documentation here: https://refreshless.com/nouislider/ -->
-<script src="../assets/js/nouislider.min.js"></script>
+<script src="{{asset('js/admin/nouislider.min.js')}}"></script>
 
 
 <!--  Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-<script src="{{asset('js/jquery.select-bootstrap.js')}}"></script>
+<script src="{{asset('js/admin/jquery.select-bootstrap.js')}}"></script>
 
 <!--  DataTables.net Plugin, full documentation here: https://datatables.net/    -->
-<script src="{{asset('js/jquery.datatables.js')}}"></script>
+<script src="{{asset('js/admin/jquery.datatables.js')}}"></script>
 
 
 <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-<script src="{{asset('js/jasny-bootstrap.min.js')}}"></script>
+<script src="{{asset('js/admin/jasny-bootstrap.min.js')}}"></script>
 
 <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
-<script src="{{asset('js/fullcalendar.min.js')}}"></script>
+<script src="{{asset('js/admin/fullcalendar.min.js')}}"></script>
 
 <!-- Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-<script src="{{asset('js/jquery.tagsinput.js')}}"></script>
+<script src="{{asset('js/admin/jquery.tagsinput.js')}}"></script>
 
 <!-- Material Dashboard javascript methods -->
-<script src="{{asset('js/material-dashboard.js')}}"></script>
+<script src="{{asset('js/admin/material-dashboard.js')}}"></script>
 
-<script src="{{asset('js/demo.js')}}"></script>
+<script src="{{asset('js/admin/demo.js')}}"></script>
 </html>
 <script type="text/javascript">
     $().ready(function () {

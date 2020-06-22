@@ -8,10 +8,10 @@
         </style>
     @endpush
     <h1>
-        Danh Sách Loại Máy
+        Danh Sách Ram
     </h1>
-    <a href="{{route('insert_loai_may')}}">
-        <button class="btn btn-behance">Thêm Loại Máy</button>
+    <a href="{{route('insert_ram')}}">
+        <button class="btn btn-behance">Thêm Ram</button>
     </a>
     <div class="content">
         <div class="container-fluid">
@@ -23,17 +23,19 @@
                                 <thead>
                                 <tr>
                                     <th class="text-center">#</th>
-                                    <th class="text-center">Tên Loại Máy</th>
+                                    <th class="text-center">Dung Lượng RAM</th>
+                                    <th class="text-center">Tần Số RAM</th>
                                     <th class="text-right">Actions</th>
                                 </tr>
                                 </thead>
-                                @foreach ($array_loai_may as $loai_may)
+                                @foreach ($array_ram as $ram)
                                     <tbody>
                                     <tr>
-                                        <td>{{$loai_may->ma_loai_may}}</td>
-                                        <td>{{$loai_may->ten_loai_may}}</td>
+                                        <td>{{$ram->ma_ram}}</td>
+                                        <td>{{$ram->dung_luong_ram}}</td>
+                                        <td>{{$ram->tan_so_ram}}</td>
                                         <td class="td-actions text-right">
-                                            <a href="{{route('update_loai_may',['id'=>$loai_may->ma_loai_may])}}">
+                                            <a href="{{route('update_ram',['id'=>$ram->ma_ram])}}">
                                                 <button type="button" rel="tooltip" class="btn btn-success btn-round">
                                                     <i class="material-icons">edit</i>
                                                 </button>

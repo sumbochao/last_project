@@ -8,10 +8,10 @@
         </style>
     @endpush
     <h1>
-        Danh Sách Loại Máy
+        Danh Sách VGA
     </h1>
-    <a href="{{route('insert_loai_may')}}">
-        <button class="btn btn-behance">Thêm Loại Máy</button>
+    <a href="{{route('insert_vga')}}">
+        <button class="btn btn-behance">Thêm VGA</button>
     </a>
     <div class="content">
         <div class="container-fluid">
@@ -23,17 +23,21 @@
                                 <thead>
                                 <tr>
                                     <th class="text-center">#</th>
-                                    <th class="text-center">Tên Loại Máy</th>
+                                    <th class="text-center">Loại VGA</th>
+                                    <th class="text-center">Tên VGA</th>
+                                    <th class="text-center">Dung Lượng VGA</th>
                                     <th class="text-right">Actions</th>
                                 </tr>
                                 </thead>
-                                @foreach ($array_loai_may as $loai_may)
+                                @foreach ($array_vga as $vga)
                                     <tbody>
                                     <tr>
-                                        <td>{{$loai_may->ma_loai_may}}</td>
-                                        <td>{{$loai_may->ten_loai_may}}</td>
+                                        <td>{{$vga->ma_vga}}</td>
+                                        <td>{{$vga->loai_vga}}</td>
+                                        <td>{{$vga->ten_vga}}</td>
+                                        <td>{{$vga->dung_luong_vga}}</td>
                                         <td class="td-actions text-right">
-                                            <a href="{{route('update_loai_may',['id'=>$loai_may->ma_loai_may])}}">
+                                            <a href="{{route('update_vga',['id'=>$vga->ma_vga])}}">
                                                 <button type="button" rel="tooltip" class="btn btn-success btn-round">
                                                     <i class="material-icons">edit</i>
                                                 </button>

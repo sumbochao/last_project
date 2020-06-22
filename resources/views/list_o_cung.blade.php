@@ -8,10 +8,10 @@
         </style>
     @endpush
     <h1>
-        Danh Sách Loại Máy
+        Danh Sách Ổ Cứng
     </h1>
-    <a href="{{route('insert_loai_may')}}">
-        <button class="btn btn-behance">Thêm Loại Máy</button>
+    <a href="{{route('insert_o_cung')}}">
+        <button class="btn btn-behance">Thêm Ổ Cứng</button>
     </a>
     <div class="content">
         <div class="container-fluid">
@@ -23,17 +23,19 @@
                                 <thead>
                                 <tr>
                                     <th class="text-center">#</th>
-                                    <th class="text-center">Tên Loại Máy</th>
+                                    <th class="text-center">Loại Ổ Cứng</th>
+                                    <th class="text-center">Dung Lượng Ổ Cứng</th>
                                     <th class="text-right">Actions</th>
                                 </tr>
                                 </thead>
-                                @foreach ($array_loai_may as $loai_may)
+                                @foreach ($array_o_cung as $o_cung)
                                     <tbody>
                                     <tr>
-                                        <td>{{$loai_may->ma_loai_may}}</td>
-                                        <td>{{$loai_may->ten_loai_may}}</td>
+                                        <td>{{$o_cung->ma_o_cung}}</td>
+                                        <td>{{$o_cung->loai_o_cung}}</td>
+                                        <td>{{$o_cung->dung_luong_o_cung}}</td>
                                         <td class="td-actions text-right">
-                                            <a href="{{route('update_loai_may',['id'=>$loai_may->ma_loai_may])}}">
+                                            <a href="{{route('update_o_cung',['id'=>$o_cung->ma_o_cung])}}">
                                                 <button type="button" rel="tooltip" class="btn btn-success btn-round">
                                                     <i class="material-icons">edit</i>
                                                 </button>

@@ -15,8 +15,9 @@ class Ram extends Migration
     {
         Schema::create('ram', function (Blueprint $table) {
             $table->id('ma_ram');
-            $table->string('dung_luong',50);
-            $table->string('tan_so_quet',50);
+            $table->string('loai_ram',50);
+            $table->string('dung_luong_ram',50);
+            $table->string('tan_so_ram',50);
         });
     }
 

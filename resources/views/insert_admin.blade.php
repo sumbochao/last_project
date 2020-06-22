@@ -2,12 +2,12 @@
 @section('content')
     <div class="col-md-12">
         <div class="card">
+            <div class="card-header card-header-text" data-background-color="rose">
+                <h4 class="card-title">Thêm Admin</h4>
+            </div>
             <form action="{{route('process_insert_admin')}}" enctype="multipart/form-data"
                   class="form-horizontal" method="post">
                 @csrf
-                <div class="card-header card-header-text" data-background-color="rose">
-                    <h4 class="card-title">Thêm Admin</h4>
-                </div>
                 <div class="card-content">
                     <div class="row">
                         <label class="col-sm-2 label-on-left">Tài Khoản:</label>

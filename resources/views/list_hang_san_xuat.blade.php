@@ -8,10 +8,10 @@
         </style>
     @endpush
     <h1>
-        Danh Sách Loại Máy
+        Danh Sách Hãng Sản Xuất
     </h1>
-    <a href="{{route('insert_loai_may')}}">
-        <button class="btn btn-behance">Thêm Loại Máy</button>
+    <a href="{{route('insert_hang_san_xuat')}}">
+        <button class="btn btn-behance">Thêm Hãng Sản Xuất</button>
     </a>
     <div class="content">
         <div class="container-fluid">
@@ -23,17 +23,17 @@
                                 <thead>
                                 <tr>
                                     <th class="text-center">#</th>
-                                    <th class="text-center">Tên Loại Máy</th>
+                                    <th class="text-center">Tên Hãng Sản Xuất</th>
                                     <th class="text-right">Actions</th>
                                 </tr>
                                 </thead>
-                                @foreach ($array_loai_may as $loai_may)
+                                @foreach ($array_hang_san_xuat as $hang_san_xuat)
                                     <tbody>
                                     <tr>
-                                        <td>{{$loai_may->ma_loai_may}}</td>
-                                        <td>{{$loai_may->ten_loai_may}}</td>
+                                        <td>{{$hang_san_xuat->ma_hang_san_xuat}}</td>
+                                        <td>{{$hang_san_xuat->ten_hang_san_xuat}}</td>
                                         <td class="td-actions text-right">
-                                            <a href="{{route('update_loai_may',['id'=>$loai_may->ma_loai_may])}}">
+                                            <a href="{{route('update_hang_san_xuat',['id'=>$hang_san_xuat->ma_hang_san_xuat])}}">
                                                 <button type="button" rel="tooltip" class="btn btn-success btn-round">
                                                     <i class="material-icons">edit</i>
                                                 </button>

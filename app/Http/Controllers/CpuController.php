@@ -26,7 +26,7 @@ class CpuController extends Controller
     {
         $cpu  = new Cpu();
         $cpu->ten_cpu   = $request->ten_cpu;
-        $cpu->tan_so   = $request->tan_so;
+        $cpu->tan_so_cpu   = $request->tan_so_cpu;
         $cpu->bo_nho_cache   = $request->bo_nho_cache;
         $cpu->dong_cpu   = $request->dong_cpu;
         $cpu->insert_cpu();
@@ -50,7 +50,7 @@ class CpuController extends Controller
         $cpu  = new Cpu();
         $cpu->ma_cpu    = $id;
         $cpu->ten_cpu   = $request->ten_cpu;
-        $cpu->tan_so   = $request->tan_so;
+        $cpu->tan_so_cpu   = $request->tan_so_cpu;
         $cpu->bo_nho_cache   = $request->bo_nho_cache;
         $cpu->dong_cpu   = $request->dong_cpu;
         $cpu->update_cpu();

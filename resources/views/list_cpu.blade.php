@@ -24,7 +24,7 @@
                                 <tr>
                                     <th class="text-center">#</th>
                                     <th class="text-center">Tên Cpu</th>
-                                    <th class="text-center">Tần Số</th>
+                                    <th class="text-center">Tần Số CPU</th>
                                     <th class="text-center">Bộ Nhớ Cache</th>
                                     <th class="text-center">Dòng Cpu</th>
                                     <th class="text-right">Actions</th>
@@ -33,13 +33,13 @@
                                 @foreach ($array_cpu as $cpu)
                                     <tbody>
                                     <tr>
-                                        <td>{{$cpu->ma_cau_hinh}}</td>
+                                        <td>{{$cpu->ma_cpu}}</td>
                                         <td>{{$cpu->ten_cpu}}</td>
-                                        <td>{{$cpu->tan_so}}</td>
+                                        <td>{{$cpu->tan_so_cpu}}</td>
                                         <td>{{$cpu->bo_nho_cache}}</td>
                                         <td>{{$cpu->dong_cpu}}</td>
                                         <td class="td-actions text-right">
-                                            <a href="{{route('update_cau_hinh',['id'=>$cpu->ma_cau_hinh])}}">
+                                            <a href="{{route('update_cpu',['id'=>$cpu->ma_cpu])}}">
                                                 <button type="button" rel="tooltip" class="btn btn-success btn-round">
                                                     <i class="material-icons">edit</i>
                                                 </button>

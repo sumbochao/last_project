@@ -16,7 +16,7 @@ class Cpu extends Migration
         Schema::create('cpu', function (Blueprint $table) {
             $table->id('ma_cpu');
             $table->string('ten_cpu');
-            $table->string('tan_so',50);
+            $table->string('tan_so_cpu',50);
             $table->string('bo_nho_cache',50);
             $table->string('dong_cpu',50)->unique();
         });
