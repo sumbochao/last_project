@@ -8,6 +8,7 @@ use App\Models\KhachHang;
 use App\Models\LoaiMay;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
 
 class AccountService
 {
@@ -62,16 +63,25 @@ class AccountService
 
     public function khachHangSignInOrSignUp()
     {
-        $arrayAdmin = $this->admin->getAllAdmin();
+        $arrayAdmin       = $this->admin->getAllAdmin();
 
         $arrayHangSanXuat = $this->hangSanXuat->getAllHangSanXuat();
 
-        $arrayLoaiMay = $this->loaiMay->getAllLoaiMay();
+        $arrayLoaiMay     = $this->loaiMay->getAllLoaiMay();
+
+        $title            = 'Khách Hàng Đăng Nhập Và Đăng Ký';
+        $metaDescriptions = 'Khách Hàng Đăng Nhập Và Đăng Ký';
+        $metaKeywords     = 'Máy tính Hà nội, DCComputer, Siêu thị Laptop, Workstations';
+        $urlCanonical     = URL::current();
 
         return view('KhachHangSignInOrSignUp', [
-            'arrayAdmin' => $arrayAdmin,
+            'arrayAdmin'       => $arrayAdmin,
             'arrayHangSanXuat' => $arrayHangSanXuat,
-            'arrayLoaiMay' => $arrayLoaiMay,
+            'arrayLoaiMay'     => $arrayLoaiMay,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 

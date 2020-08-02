@@ -4,8 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Đạt Cường Computer</title>
-    <meta name="description" content="">
+    <title>{{$title}}</title>
+    <meta name="description" content="{{$metaDescriptions}}">
+    <meta name="keywords" content="{{$metaKeywords}}">
+    <meta name="robots" content="INDEX,FOLLOW">
+    <link rel="canonical" href="{{$urlCanonical}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/nguoi_dung/menu//logo/logo.jpg')}}">
