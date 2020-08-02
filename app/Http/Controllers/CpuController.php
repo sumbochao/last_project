@@ -2,59 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cpu;
+use App\Services\CpuService;
 use Illuminate\Http\Request;
 
 class CpuController extends Controller
 {
-    public function list_cpu()
-    {
-        $cpu  = new Cpu();
-        $array_cpu = $cpu->get_all_cpu();
+    protected $cpuService;
 
-        return view('list_cpu',[
-            'array_cpu'=> $array_cpu
-        ]);
+    public function __construct(CpuService $cpuService)
+    {
+        $this->cpuService = $cpuService;
     }
 
-    public function insert_cpu()
+    public function listCpu()
     {
-        return view('insert_cpu');
+        return $this->cpuService->listCpu();
     }
 
-    public function process_insert_cpu(Request $request)
+    public function insertCpu()
     {
-        $cpu  = new Cpu();
-        $cpu->ten_cpu   = $request->ten_cpu;
-        $cpu->tan_so_cpu   = $request->tan_so_cpu;
-        $cpu->bo_nho_cache   = $request->bo_nho_cache;
-        $cpu->dong_cpu   = $request->dong_cpu;
-        $cpu->insert_cpu();
-
-        return redirect()->route('list_cpu');
+        return $this->cpuService->insertCpu();
     }
 
-    public function update_cpu($id)
+    public function processInsertCpu(Request $request)
     {
-        $cpu = new Cpu();
-        $cpu->ma_cpu = $id;
-        $cpu           = $cpu->get_one_cpu();
-
-        return view('update_cpu',[
-            'cpu' => $cpu
-        ]);
+        return $this->cpuService->processInsertCpu($request->all());
     }
 
-    public function process_update_cpu(Request $request,$id)
+    public function updateCpu($id)
     {
-        $cpu  = new Cpu();
-        $cpu->ma_cpu    = $id;
-        $cpu->ten_cpu   = $request->ten_cpu;
-        $cpu->tan_so_cpu   = $request->tan_so_cpu;
-        $cpu->bo_nho_cache   = $request->bo_nho_cache;
-        $cpu->dong_cpu   = $request->dong_cpu;
-        $cpu->update_cpu();
+        return $this->cpuService->updateCpu($id);
+    }
 
-        return redirect()->route('list_cpu');
+    public function processUpdateCpu(Request $request, $id)
+    {
+        return $this->cpuService->processUpdateCpu($request->all(), $id);
     }
 }

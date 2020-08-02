@@ -2,62 +2,45 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ThanhToan;
+use App\Services\ThanhToanService;
 use Illuminate\Http\Request;
 
 class ThanhToanController extends Controller
 {
-    public function list_thanh_toan()
-    {
-        $thanh_toan = new ThanhToan();
-        $array_thanh_toan   = $thanh_toan->get_all_thanh_toan();
+    protected $thanhToanService;
 
-        return view('list_thanh_toan',[
-            'array_thanh_toan'=>$array_thanh_toan
-        ]);
+    public function __construct(ThanhToanService $thanhToanService)
+    {
+        $this->thanhToanService = $thanhToanService;
     }
 
-    public function insert_thanh_toan()
+    public function listThanhToan()
     {
-        return view('insert_thanh_toan');
+        return $this->thanhToanService->listThanhToan();
     }
 
-    public function process_insert_thanh_toan(Request $request)
+    public function insertThanhToan()
     {
-        $thanh_toan = new ThanhToan();
-        $thanh_toan->phuong_thuc_thanh_toan = $request->phuong_thuc_thanh_toan;
-        $thanh_toan->insert_thanh_toan();
-
-        return redirect()->route('list_thanh_toan');
+        return $this->thanhToanService->insertThanhToan();
     }
 
-    public function update_thanh_toan($id)
+    public function processInsertThanhToan(Request $request)
     {
-        $thanh_toan = new ThanhToan();
-        $thanh_toan->ma_thanh_toan  = $id;
-        $thanh_toan = $thanh_toan->get_one_thanh_toan();
-
-        return view('update_thanh_toan',[
-            'thanh_toan'=>$thanh_toan
-        ]);
+        return $this->thanhToanService->processInsertThanhToan($request->all());
     }
 
-    public function process_update_thanh_toan(Request $request,$id)
+    public function updateThanhToan($id)
     {
-        $thanh_toan = new ThanhToan();
-        $thanh_toan->ma_thanh_toan  = $id;
-        $thanh_toan->phuong_thuc_thanh_toan = $request->phuong_thuc_thanh_toan;
-        $thanh_toan->update_thanh_toan();
-
-        return redirect()->route('list_thanh_toan');
+        return $this->thanhToanService->updateThanhToan($id);
     }
 
-    public function delete_thanh_toan($id)
+    public function processUpdateThanhToan(Request $request, $id)
     {
-        $thanh_toan = new ThanhToan();
-        $thanh_toan->ma_thanh_toan  = $id;
-        $thanh_toan->delete_thanh_toan();
+        return $this->thanhToanService->processUpdateThanhToan($request->all(), $id);
+    }
 
-        return redirect()->route('list_thanh_toan');
+    public function deleteThanhToan($id)
+    {
+        return $this->thanhToanService->deleteThanhToan($id);
     }
 }

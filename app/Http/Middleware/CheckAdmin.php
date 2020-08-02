@@ -16,13 +16,13 @@ class CheckAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (Session::has('ma_admin'))
+        if (Session::has('maAdmin'))
         {
             return $next($request);
         }
         else
         {
-            return redirect()->route('admin_sign_in')->with('error','Bạn chưa đăng nhập tài khoản admin');
+            return redirect()->route('adminSignIn')->with('error','Bạn chưa đăng nhập tài khoản admin');
         }
     }
 }

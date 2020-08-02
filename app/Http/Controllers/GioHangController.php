@@ -2,15 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SanPham;
+use App\Services\GioHangService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+
+Session::start();
 
 class GioHangController extends Controller
 {
-    public function insert_san_pham_on_gio_hang(Request $request)
+    protected $gioHangService;
+
+    public function __construct(GioHangService $gioHangService)
     {
-        $san_pham   = new SanPham();
-        $san_pham->ma_san_pham  = $request->ma_san_pham;
-        $so_luong   = $request->so_luong;
+        $this->gioHangService = $gioHangService;
+    }
+
+    public function viewGioHang()
+    {
+        return $this->gioHangService->viewGioHang();
+    }
+
+    public function processInsertSanPhamVaoGioHang(Request $request, $id)
+    {
+        return $this->gioHangService->processInsertSanPhamVaoGioHang($request->all(), $id);
+    }
+
+    public function updateQualtityCart(Request $request)
+    {
+        return $this->gioHangService->updateQualtityCart($request->all());
+    }
+
+    public function deleteSanPhamKhoiGioHang($rowId)
+    {
+        return $this->gioHangService->deleteSanPhamKhoiGioHang($rowId);
     }
 }

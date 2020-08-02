@@ -1,43 +1,47 @@
 <?php
 
 namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Ram
+class Ram extends Model
 {
-    private $table  = 'ram';
+    protected $table = 'ram';
     public $ma_ram;
     public $loai_ram;
     public $dung_luong_ram;
     public $tan_so_ram;
 
-    public function get_all_ram()
+    public function getAllRam()
     {
-        $array  = DB::table($this->table)->get();
+        $array = DB::table($this->table)->get();
         return $array;
     }
 
-    public function insert_ram()
+    public function insertRam()
     {
         DB::table($this->table)->insert([
-            'loai_ram'=>$this->loai_ram,
-            'dung_luong_ram'=>$this->dung_luong_ram,
-            'tan_so_ram'=>$this->tan_so_ram
+            'loai_ram' => $this->loai_ram,
+            'dung_luong_ram' => $this->dung_luong_ram,
+            'tan_so_ram' => $this->tan_so_ram
         ]);
     }
 
-    public function get_one_ram()
+    public function getOneRam()
     {
-        $array  = DB::table($this->table)->where('ma_ram',$this->ma_ram)->limit(1)->get();
+        $array = DB::table($this->table)->where('ma_ram', $this->ma_ram)->limit(1)->get();
         return $array[0];
     }
 
-    public function update_ram()
+    public function updateRam()
     {
-        DB::table($this->table)->where('ma_ram',$this->ma_ram)->update([
-            'loai_ram'=>$this->loai_ram,
-            'dung_luong_ram'=>$this->dung_luong_ram,
-            'tan_so_ram'=>$this->tan_so_ram
-        ]);
+        DB::table($this->table)
+            ->where('ma_ram', $this->ma_ram)
+            ->update([
+                'loai_ram' => $this->loai_ram,
+                'dung_luong_ram' => $this->dung_luong_ram,
+                'tan_so_ram' => $this->tan_so_ram
+            ]);
     }
 }

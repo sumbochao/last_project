@@ -2,57 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ram;
+use App\Services\RamService;
 use Illuminate\Http\Request;
 
 class RamController extends Controller
 {
-    public function list_ram()
-    {
-        $ram   =   new Ram();
-        $array_ram = $ram->get_all_ram();
+    protected $ramService;
 
-        return view('list_ram',[
-            'array_ram'=>$array_ram
-        ]);
+    public function __construct(RamService $ramService)
+    {
+        $this->ramService = $ramService;
     }
 
-    public function insert_ram()
+    public function listRam()
     {
-        return view('insert_ram');
+        return $this->ramService->listRam();
     }
 
-    public function process_insert_ram(Request $request)
+    public function insertRam()
     {
-        $ram   = new Ram();
-        $ram->loai_ram  = $request->get('loai_ram');
-        $ram->dung_luong_ram = $request->get('dung_luong_ram');
-        $ram->tan_so_ram = $request->get('tan_so_ram');
-        $ram->insert_ram();
-
-        return redirect()->route('list_ram');
+        return $this->ramService->insertRam();
     }
 
-    public function update_ram($id)
+    public function processInsertRam(Request $request)
     {
-        $ram   = new Ram();
-        $ram->ma_ram  = $id;
-        $ram   = $ram->get_one_ram();
-
-        return view('update_ram',[
-            'ram'=>$ram
-        ]);
+        return $this->ramService->processInsertRam($request->all());
     }
 
-    public function process_update_ram(Request $request,$id)
+    public function updateRam($id)
     {
-        $ram   = new Ram();
-        $ram->ma_ram  = $id;
-        $ram->loai_ram  = $request->get('loai_ram');
-        $ram->dung_luong_ram = $request->get('dung_luong_ram');
-        $ram->tan_so_ram = $request->get('tan_so_ram');
-        $ram->update_ram();
+        return $this->ramService->updateRam($id);
+    }
 
-        return redirect()->route('list_ram');
+    public function processUpdateRam(Request $request, $id)
+    {
+        return $this->ramService->processUpdateRam($request->all(), $id);
     }
 }

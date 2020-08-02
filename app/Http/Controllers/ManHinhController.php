@@ -2,61 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ManHinh;
+use App\Services\ManHinhService;
 use Illuminate\Http\Request;
 
 class ManHinhController extends Controller
 {
-    public function list_man_hinh()
-    {
-        $man_hinh   = new ManHinh();
-        $array_man_hinh = $man_hinh->get_all_man_hinh();
+    protected $manHinhService;
 
-        return view('list_man_hinh',[
-            'array_man_hinh'=>$array_man_hinh
-        ]);
+    public function __construct(ManHinhService $manHinhService)
+    {
+        $this->manHinhService = $manHinhService;
     }
 
-    public function insert_man_hinh()
+    public function listManHinh()
     {
-        return view('insert_man_hinh');
+        return $this->manHinhService->listManHinh();
     }
 
-    public function process_insert_man_hinh(Request $request)
+    public function insertManHinh()
     {
-        $man_hinh   = new ManHinh();
-        $man_hinh->kich_co  = $request->get('kich_co');
-        $man_hinh->do_phan_giai  = $request->get('do_phan_giai');
-        $man_hinh->tan_so_man_hinh  = $request->get('tan_so_man_hinh');
-        $man_hinh->tam_nen  = $request->get('tam_nen');
-        $man_hinh->insert_man_hinh();
-
-        return redirect()->route('list_man_hinh');
+        return $this->manHinhService->insertManHinh();
     }
 
-    public function update_man_hinh($id)
+    public function processInsertManHinh(Request $request)
     {
-        $man_hinh   = new ManHinh();
-        $man_hinh->ma_man_hinh  = $id;
-        $man_hinh   = $man_hinh->get_one_man_hinh();
-
-        return view('update_man_hinh',
-            [
-                'man_hinh'=>$man_hinh
-            ]
-        );
+        return $this->manHinhService->processInsertManHinh($request->all());
     }
 
-    public function process_update_man_hinh(Request $request,$id)
+    public function updateManHinh($id)
     {
-        $man_hinh   = new ManHinh();
-        $man_hinh->ma_man_hinh  = $id;
-        $man_hinh->kich_co  = $request->get('kich_co');
-        $man_hinh->do_phan_giai  = $request->get('do_phan_giai');
-        $man_hinh->tan_so_man_hinh  = $request->get('tan_so_man_hinh');
-        $man_hinh->tam_nen  = $request->get('tam_nen');
-        $man_hinh->update_man_hinh();
+        return $this->manHinhService->updateManHinh($id);
+    }
 
-        return redirect()->route('list_man_hinh');
+    public function processUpdateManHinh(Request $request, $id)
+    {
+        return $this->manHinhService->processUpdateManHinh($request->all(), $id);
     }
 }

@@ -2,57 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Vga;
+use App\Services\VgaService;
 use Illuminate\Http\Request;
 
 class VgaController extends Controller
 {
-    public function list_vga()
-    {
-        $vga   =   new Vga();
-        $array_vga = $vga->get_all_vga();
+    protected $vgaService;
 
-        return view('list_vga',[
-            'array_vga'=>$array_vga
-        ]);
+    public function __construct(VgaService $vgaService)
+    {
+        $this->vgaService = $vgaService;
     }
 
-    public function insert_vga()
+    public function listVga()
     {
-        return view('insert_vga');
+        return $this->vgaService->listVga();
     }
 
-    public function process_insert_vga(Request $request)
+    public function insertVga()
     {
-        $vga   = new Vga();
-        $vga->loai_vga = $request->get('loai_vga');
-        $vga->ten_vga = $request->get('ten_vga');
-        $vga->dung_luong_vga = $request->get('dung_luong_vga');
-        $vga->insert_vga();
-
-        return redirect()->route('list_vga');
+        return $this->vgaService->insertVga();
     }
 
-    public function update_vga($id)
+    public function processInsertVga(Request $request)
     {
-        $vga   = new Vga();
-        $vga->ma_vga  = $id;
-        $vga   = $vga->get_one_vga();
-
-        return view('update_vga',[
-            'vga'=>$vga
-        ]);
+        return $this->vgaService->processInsertVga($request->all());
     }
 
-    public function process_update_vga(Request $request,$id)
+    public function updateVga($id)
     {
-        $vga   = new Vga();
-        $vga->ma_vga  = $id;
-        $vga->loai_vga = $request->get('loai_vga');
-        $vga->ten_vga = $request->get('ten_vga');
-        $vga->dung_luong_vga = $request->get('dung_luong_vga');
-        $vga->update_vga();
+        return $this->vgaService->updateVga($id);
+    }
 
-        return redirect()->route('list_vga');
+    public function processUpdateVga(Request $request, $id)
+    {
+        return $this->vgaService->processUpdateVga($request->all(), $id);
     }
 }

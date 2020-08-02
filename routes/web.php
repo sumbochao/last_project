@@ -12,106 +12,165 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get("admin_sign_in", "Controller@admin_sign_in")
-    ->name("admin_sign_in");
+Route::get("admin-sign-in", "AccountController@adminSignIn")
+    ->name("adminSignIn");
 
-Route::post("process_admin_sign_in", "Controller@process_admin_sign_in")
-    ->name("process_admin_sign_in");
+Route::post("process-admin-sign-in", "AccountController@processAdminSignIn")
+    ->name("processAdminSignIn");
 
-Route::get('', 'Controller@home')->name('home');
-Route::get('shop', 'Controller@view_shop')->name('view_shop');
+Route::get('sign-in-or-sign-up', 'AccountController@khachHangSignInOrSignUp')->name('khachHangSignInOrSignUp');
 
-Route::group(["prefix" => "admin", "middleware"=>"CheckAdmin"], function () {
-    Route::get('', 'Controller@layout_admin');
-    Route::get("welcome_admin", "Controller@welcome_admin")->name("welcome_admin");
-    Route::get("admin_sign_out", "Controller@admin_sign_out")->name("admin_sign_out");
-    Route::get('list_admin', 'AdminController@list_admin')->name('list_admin');
-    Route::get('insert_admin','AdminController@insert_admin')->name('insert_admin');
-    Route::post('process_insert_admin','AdminController@process_insert_admin')->name('process_insert_admin');
-    Route::get('update_admin/{id}','AdminController@update_admin')->name('update_admin');
-    Route::post('process_update_admin/{id}','AdminController@process_update_admin')->name('process_update_admin');
-    Route::get('delete_admin/{id}','AdminController@delete_admin')->name('delete_admin');
+Route::post('process-khach-hang-sign-in', 'AccountController@processKhachHangSignIn')
+    ->name('processKhachHangSignIn');
 
-    Route::group(["prefix"=>"cpu"], function () {
-        Route::get('','CpuController@list_cpu')->name('list_cpu');
-        Route::get('insert_cpu','CpuController@insert_cpu')->name('insert_cpu');
-        Route::post('process_insert_cpu','CpuController@process_insert_cpu')->name('process_insert_cpu');
-        Route::get('update_cpu/{id}','CpuController@update_cpu')->name('update_cpu');
-        Route::post('process_update_cpu/{id}','CpuController@process_update_cpu')->name('process_update_cpu');
-    });
+Route::get('khach-hang-sign-out', 'AccountController@khachHangSignOut')
+    ->name('khachHangSignOut');
 
-    Route::group(["prefix"=>"hang_san_xuat"], function () {
-        Route::get('','HangSanXuatController@list_hang_san_xuat')->name('list_hang_san_xuat');
-        Route::get('insert_hang_san_xuat','HangSanXuatController@insert_hang_san_xuat')->name('insert_hang_san_xuat');
-        Route::post('process_insert_hang_san_xuat','HangSanXuatController@process_insert_hang_san_xuat')->name('process_insert_hang_san_xuat');
-        Route::get('update_hang_san_xuat/{id}','HangSanXuatController@update_hang_san_xuat')->name('update_hang_san_xuat');
-        Route::post('process_update_hang_san_xuat/{id}','HangSanXuatController@process_update_hang_san_xuat')->name('process_update_hang_san_xuat');
-    });
-
-    Route::group(["prefix"=>"loai_may"], function () {
-        Route::get('','LoaiMayController@list_loai_may')->name('list_loai_may');
-        Route::get('insert_loai_may','LoaiMayController@insert_loai_may')->name('insert_loai_may');
-        Route::post('process_insert_loai_may','LoaiMayController@process_insert_loai_may')->name('process_insert_loai_may');
-        Route::get('update_loai_may/{id}','LoaiMayController@update_loai_may')->name('update_loai_may');
-        Route::post('process_update_loai_may/{id}','LoaiMayController@process_update_loai_may')->name('process_update_loai_may');
-    });
-
-    Route::group(["prefix"=>"man_hinh"], function () {
-        Route::get('','ManHinhController@list_man_hinh')->name('list_man_hinh');
-        Route::get('insert_man_hinh','ManHinhController@insert_man_hinh')->name('insert_man_hinh');
-        Route::post('process_insert_man_hinh','ManHinhController@process_insert_man_hinh')->name('process_insert_man_hinh');
-        Route::get('update_man_hinh/{id}','ManHinhController@update_man_hinh')->name('update_man_hinh');
-        Route::post('process_update_man_hinh/{id}','ManHinhController@process_update_man_hinh')->name('process_update_man_hinh');
-    });
-
-    Route::group(["prefix"=>"o_cung"], function () {
-        Route::get('','OCungController@list_o_cung')->name('list_o_cung');
-        Route::get('insert_o_cung','OCungController@insert_o_cung')->name('insert_o_cung');
-        Route::post('process_insert_o_cung','OCungController@process_insert_o_cung')->name('process_insert_o_cung');
-        Route::get('update_o_cung/{id}','OCungController@update_o_cung')->name('update_o_cung');
-        Route::post('process_update_o_cung/{id}','OCungController@process_update_o_cung')->name('process_update_o_cung');
-    });
-
-    Route::group(["prefix"=>"ram"], function () {
-        Route::get('','RamController@list_ram')->name('list_ram');
-        Route::get('insert_ram','RamController@insert_ram')->name('insert_ram');
-        Route::post('process_insert_ram','RamController@process_insert_ram')->name('process_insert_ram');
-        Route::get('update_ram/{id}','RamController@update_ram')->name('update_ram');
-        Route::post('process_update_ram/{id}','RamController@process_update_ram')->name('process_update_ram');
-    });
-
-    Route::group(["prefix"=>"vga"], function () {
-        Route::get('','VgaController@list_vga')->name('list_vga');
-        Route::get('insert_vga','VgaController@insert_vga')->name('insert_vga');
-        Route::post('process_insert_vga','VgaController@process_insert_vga')->name('process_insert_vga');
-        Route::get('update_vga/{id}','VgaController@update_vga')->name('update_vga');
-        Route::post('process_update_vga/{id}','VgaController@process_update_vga')->name('process_update_vga');
-    });
-
-    Route::group(["prefix"=>"san_pham"], function () {
-        Route::get('','SanPhamController@list_san_pham')->name('list_san_pham');
-        Route::get('insert_san_pham','SanPhamController@insert_san_pham')->name('insert_san_pham');
-        Route::post('process_insert_san_pham','SanPhamController@process_insert_san_pham')->name('process_insert_san_pham');
-        Route::get('update_san_pham/{id}','SanPhamController@update_san_pham')->name('update_san_pham');
-        Route::post('process_update_san_pham/{id}','SanPhamController@process_update_san_pham')->name('process_update_san_pham');
-        Route::get('delete_san_pham/{id}','SanPhamController@delete_san_pham')->name('delete_san_pham');
-    });
-
-    Route::group(["prefix"=>"thanh_toan"], function () {
-        Route::get('','ThanhToanController@list_thanh_toan')->name('list_thanh_toan');
-        Route::get('insert_thanh_toan','ThanhToanController@insert_thanh_toan')->name('insert_thanh_toan');
-        Route::post('process_insert_thanh_toan','ThanhToanController@process_insert_thanh_toan')->name('process_insert_thanh_toan');
-        Route::get('update_thanh_toan/{id}','ThanhToanController@update_thanh_toan')->name('update_thanh_toan');
-        Route::post('process_update_thanh_toan/{id}','ThanhToanController@process_update_thanh_toan')->name('process_update_thanh_toan');
-        Route::get('delete_thanh_toan/{id}','ThanhToanController@delete_thanh_toan')->name('delete_thanh_toan');
-    });
+Route::group(["prefix" => "khach-hang"], function () {
+    Route::post('process-insert-khach-hang', 'KhachHangController@processInsertKhachHang')->name('processInsertKhachHang');
+    Route::post('process-update-khach-hang/{id}', 'KhachHangController@processUpdateKhachHang')->name('processUpdateKhachHang');
 });
 
-Route::group(["prefix"=>"khach_hang"], function () {
-    Route::get('','KhachHangController@list_khach_hang')->name('list_khach_hang');
-    Route::get('insert_khach_hang','KhachHangController@insert_khach_hang')->name('insert_khach_hang');
-    Route::post('process_insert_khach_hang','KhachHangController@process_insert_khach_hang')->name('process_insert_khach_hang');
-    Route::get('update_khach_hang/{id}','KhachHangController@update_khach_hang')->name('update_khach_hang');
-    Route::post('process_update_khach_hang/{id}','KhachHangController@process_update_khach_hang')->name('process_update_khach_hang');
-    Route::get('delete_khach_hang/{id}','KhachHangController@delete_khach_hang')->name('delete_khach_hang');
+Route::group(['prefix' => 'gio-hang'], function () {
+    Route::get('', 'GioHangController@viewGioHang')->name('viewGioHang');
+
+    Route::post('processInsertSanPhamVaoGioHang/{id}', 'GioHangController@processInsertSanPhamVaoGioHang')
+        ->name('processInsertSanPhamVaoGioHang');
+
+    Route::post('update-quantity-cart', 'GioHangController@updateQualtityCart')
+        ->name('updateQualtityCart');
+
+    Route::get('delete-san-pham-khoi-gio-hang/{rowId}', 'GioHangController@deleteSanPhamKhoiGioHang')
+        ->name('deleteSanPhamKhoiGioHang');
+});
+
+Route::group(['prefix' => ''], function () {
+    Route::get('', 'PageController@home')->name('home');
+
+    Route::get('shop', 'PageController@viewShop')->name('viewShop');
+
+    Route::get('view-san-pham-from-hang-san-xuat/{id}', 'PageController@viewSanPhamFromHangSanXuat')
+        ->name('viewSanPhamFromHangSanXuat');
+
+    Route::get('view-san-pham-from-loai-may/{id}', 'PageController@viewSanPhamFromLoaiMay')
+        ->name('viewSanPhamFromLoaiMay');
+
+    Route::get('view-chi-tiet-san-pham/{id}', 'PageController@viewChiTietSanPham')
+        ->name('viewChiTietSanPham');
+
+    Route::get('search-san-pham', 'PageController@searchSanPham')->name('searchSanPham');
+
+    Route::get('history-hoa-don', 'PageController@historyHoaDon')->name('historyHoaDon');
+
+    Route::get('history-hoa-don-chi-tiet/{id}', 'PageController@historyHoaDonChiTiet')
+        ->name('historyHoaDonChiTiet');
+
+    Route::get('check-out', 'PageController@checkOut')->name('checkOut');
+
+    Route::post('process-check-out', 'HoaDonController@processCheckOut')
+        ->name('processCheckOut');
+});
+
+Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"], function () {
+//    Route::get('', 'LayoutController@layoutAdmin');
+    Route::get("", "AccountController@welcomeAdmin")->name("welcomeAdmin");
+    Route::get("admin-sign-out", "AccountController@adminSignOut")->name("adminSignOut");
+    Route::get('list-admin', 'AdminController@listAdmin')->name('listAdmin');
+    Route::get('insert-admin', 'AdminController@insertAdmin')->name('insertAdmin');
+    Route::post('process-insert-admin', 'AdminController@processInsertAdmin')->name('processInsertAdmin');
+    Route::get('update-admin/{id}', 'AdminController@updateAdmin')->name('updateAdmin');
+    Route::post('process-update-admin/{id}', 'AdminController@processUpdateAdmin')->name('processUpdateAdmin');
+    Route::get('delete-admin/{id}', 'AdminController@deleteAdmin')->name('deleteAdmin');
+
+    Route::group(["prefix" => "cpu"], function () {
+        Route::get('', 'CpuController@listCpu')->name('listCpu');
+        Route::get('insertCpu', 'CpuController@insertCpu')->name('insertCpu');
+        Route::post('process-insert-cpu', 'CpuController@processInsertCpu')->name('processInsertCpu');
+        Route::get('update-cpu/{id}', 'CpuController@updateCpu')->name('updateCpu');
+        Route::post('process-update-cpu/{id}', 'CpuController@processUpdateCpu')->name('processUpdateCpu');
+    });
+
+    Route::group(["prefix" => "hang-san-xuat"], function () {
+        Route::get('', 'HangSanXuatController@listHangSanXuat')->name('listHangSanXuat');
+        Route::get('insert-hang-san-xuat', 'HangSanXuatController@insertHangSanXuat')->name('insertHangSanXuat');
+        Route::post('process-insert-hang-san-xuat', 'HangSanXuatController@processInsertHangSanXuat')->name('processInsertHangSanXuat');
+        Route::get('update-hang-san-xuat/{id}', 'HangSanXuatController@updateHangSanXuat')->name('updateHangSanXuat');
+        Route::post('process-update-hang-san-xuat/{id}', 'HangSanXuatController@processUpdateHangSanXuat')->name('processUpdateHangSanXuat');
+    });
+
+    Route::group(["prefix" => "loai-may"], function () {
+        Route::get('', 'LoaiMayController@listLoaiMay')->name('listLoaiMay');
+        Route::get('insert-loai-may', 'LoaiMayController@insertLoaiMay')->name('insertLoaiMay');
+        Route::post('process-insert-loai-may', 'LoaiMayController@processInsertLoaiMay')->name('processInsertLoaiMay');
+        Route::get('update-loai-may/{id}', 'LoaiMayController@updateLoaiMay')->name('updateLoaiMay');
+        Route::post('process-update-loai-may/{id}', 'LoaiMayController@processUpdateLoaiMay')->name('processUpdateLoaiMay');
+    });
+
+    Route::group(["prefix" => "man-hinh"], function () {
+        Route::get('', 'ManHinhController@listManHinh')->name('listManHinh');
+        Route::get('insert-man-hinh', 'ManHinhController@insertManHinh')->name('insertManHinh');
+        Route::post('process-insert-man-hinh', 'ManHinhController@processInsertManHinh')->name('processInsertManHinh');
+        Route::get('update-man-hinh/{id}', 'ManHinhController@updateManHinh')->name('updateManHinh');
+        Route::post('process-update-man-hinh/{id}', 'ManHinhController@processUpdateManHinh')->name('processUpdateManHinh');
+    });
+
+    Route::group(["prefix" => "o-cung"], function () {
+        Route::get('', 'OCungController@listOCung')->name('listOCung');
+        Route::get('insert-o-cung', 'OCungController@insertOCung')->name('insertOCung');
+        Route::post('process-insert-o-cung', 'OCungController@processInsertOCung')->name('processInsertOCung');
+        Route::get('update-o-cung/{id}', 'OCungController@updateOCung')->name('updateOCung');
+        Route::post('process-update-o-cung/{id}', 'OCungController@processUpdateOCung')->name('processUpdateOCung');
+    });
+
+    Route::group(["prefix" => "ram"], function () {
+        Route::get('', 'RamController@listRam')->name('listRam');
+        Route::get('insert-ram', 'RamController@insertRam')->name('insertRam');
+        Route::post('process-insert-ram', 'RamController@processInsertRam')->name('processInsertRam');
+        Route::get('update-ram/{id}', 'RamController@updateRam')->name('updateRam');
+        Route::post('process-update-ram/{id}', 'RamController@processUpdateRam')->name('processUpdateRam');
+    });
+
+    Route::group(["prefix" => "vga"], function () {
+        Route::get('', 'VgaController@listVga')->name('listVga');
+        Route::get('insert-vga', 'VgaController@insertVga')->name('insertVga');
+        Route::post('process-insert-vga', 'VgaController@processInsertVga')->name('processInsertVga');
+        Route::get('update-vga/{id}', 'VgaController@updateVga')->name('updateVga');
+        Route::post('process-update-vga/{id}', 'VgaController@processUpdateVga')->name('processUpdateVga');
+    });
+
+    Route::group(["prefix" => "san-pham"], function () {
+        Route::get('', 'SanPhamController@listSanPham')->name('listSanPham');
+        Route::get('insert-san-pham', 'SanPhamController@insertSanPham')->name('insertSanPham');
+        Route::post('process-insert-san-pham', 'SanPhamController@processInsertSanPham')->name('processInsertSanPham');
+        Route::get('update-san-pham/{id}', 'SanPhamController@updateSanPham')->name('updateSanPham');
+        Route::post('process-update-san-pham/{id}', 'SanPhamController@processUpdateSanPham')->name('processUpdateSanPham');
+        Route::get('delete-san-pham/{id}', 'SanPhamController@deleteSanPham')->name('deleteSanPham');
+    });
+
+    Route::group(["prefix" => "thanh-toan"], function () {
+        Route::get('', 'ThanhToanController@listThanhToan')->name('listThanhToan');
+        Route::get('insert-thanh-toan', 'ThanhToanController@insertThanhToan')->name('insertThanhToan');
+        Route::post('process-insert-thanh-toan', 'ThanhToanController@processInsertThanhToan')->name('processInsertThanhToan');
+        Route::get('update-thanh-toan/{id}', 'ThanhToanController@updateThanhToan')->name('updateThanhToan');
+        Route::post('process-update-thanh-toan/{id}', 'ThanhToanController@processUpdateThanhToan')->name('processUpdateThanhToan');
+        Route::get('delete-thanh-toan/{id}', 'ThanhToanController@deleteThanhToan')->name('deleteThanhToan');
+    });
+
+    Route::group(['prefix' => 'hoa-don'], function () {
+        Route::get('', 'HoaDonController@listHoaDon')->name('listHoaDon');
+        Route::get('update-hoa-don/{id}', 'HoaDonController@updateHoaDon')
+            ->name('updateHoaDon');
+
+        Route::post('process-update-hoa-don/{id}', 'HoaDonController@processUpdateHoaDon')
+            ->name('processUpdateHoaDon');
+
+        Route::get('list-hoa-don-chi-tiet/{id}', 'HoaDonController@listHoaDonChiTiet')
+            ->name('listHoaDonChiTiet');
+    });
+
+    Route::group(["prefix" => "khach-hang"], function () {
+        Route::get('', 'KhachHangController@listKhachHang')->name('listKhachHang');
+        Route::get('update-khach-hang/{id}', 'KhachHangController@updateKhachHang')->name('updateKhachHang');
+        Route::get('delete-khach-hang/{id}', 'KhachHangController@deleteKhachHang')->name('deleteKhachHang');
+    });
 });

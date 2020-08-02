@@ -2,55 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\OCung;
+use App\Services\OCungService;
 use Illuminate\Http\Request;
 
 class OCungController extends Controller
 {
-    public function list_o_cung()
-    {
-        $o_cung   =   new OCung();
-        $array_o_cung = $o_cung->get_all_o_cung();
+    protected $oCungService;
 
-        return view('list_o_cung',[
-            'array_o_cung'=>$array_o_cung
-        ]);
+    public function __construct(OCungService $oCungService)
+    {
+        $this->oCungService = $oCungService;
     }
 
-    public function insert_o_cung()
+    public function listOCung()
     {
-        return view('insert_o_cung');
+        return $this->oCungService->listOCung();
     }
 
-    public function process_insert_o_cung(Request $request)
+    public function insertOCung()
     {
-        $o_cung   = new OCung();
-        $o_cung->loai_o_cung = $request->get('loai_o_cung');
-        $o_cung->dung_luong_o_cung = $request->get('dung_luong_o_cung');
-        $o_cung->insert_o_cung();
-
-        return redirect()->route('list_o_cung');
+        return $this->oCungService->insertOCung();
     }
 
-    public function update_o_cung($id)
+    public function processInsertOCung(Request $request)
     {
-        $o_cung   = new OCung();
-        $o_cung->ma_o_cung  = $id;
-        $o_cung   = $o_cung->get_one_o_cung();
-
-        return view('update_o_cung',[
-            'o_cung'=>$o_cung
-        ]);
+        return $this->oCungService->processInsertOCung($request->all());
     }
 
-    public function process_update_o_cung(Request $request,$id)
+    public function updateOCung($id)
     {
-        $o_cung   = new OCung();
-        $o_cung->ma_o_cung  = $id;
-        $o_cung->loai_o_cung = $request->get('loai_o_cung');
-        $o_cung->dung_luong_o_cung = $request->get('dung_luong_o_cung');
-        $o_cung->update_o_cung();
+        return $this->oCungService->updateOCung($id);
+    }
 
-        return redirect()->route('list_o_cung');
+    public function processUpdateOCung(Request $request, $id)
+    {
+        return $this->oCungService->processUpdateOCung($request->all(), $id);
     }
 }

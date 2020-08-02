@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class KhachHang
+class KhachHang extends Model
 {
-    private $table  = 'khach_hang';
+    protected $table = 'khach_hang';
     public $ma_khach_hang;
     public $tai_khoan;
     public $mat_khau;
@@ -17,50 +19,66 @@ class KhachHang
     public $sdt;
     public $dia_chi;
 
-    public function get_all_khach_hang()
+    public function getAllKhachHang()
     {
-        $array  = DB::table($this->table)->get();
+        $array = DB::table($this->table)->get();
         return $array;
     }
 
-    public function insert_khach_hang()
+    public function insertKhachHang()
     {
         DB::table($this->table)->insert([
-            'tai_khoan'=>$this->tai_khoan,
-            'mat_khau'=>$this->mat_khau,
-            'anh_khach_hang'=>$this->anh_khach_hang,
-            'ho_ten_khach_hang'=>$this->ho_ten_khach_hang,
-            'email'=>$this->email,
-            'ngay_sinh'=>$this->ngay_sinh,
-            'gioi_tinh'=>$this->gioi_tinh,
-            'sdt'=>$this->sdt,
-            'dia_chi'=>$this->dia_chi
+            'tai_khoan' => $this->tai_khoan,
+            'mat_khau' => $this->mat_khau,
+            'anh_khach_hang' => $this->anh_khach_hang,
+            'ho_ten_khach_hang' => $this->ho_ten_khach_hang,
+            'email' => $this->email,
+            'ngay_sinh' => $this->ngay_sinh,
+            'gioi_tinh' => $this->gioi_tinh,
+            'sdt' => $this->sdt,
+            'dia_chi' => $this->dia_chi
         ]);
     }
 
-    public function get_one_khach_hang()
+    public function getOneKhachHang()
     {
-        $array  = DB::table($this->table)->where('ma_khach_hang',$this->ma_khach_hang)->limit(1)->get();
+        $array = DB::table($this->table)
+            ->where('ma_khach_hang', $this->ma_khach_hang)
+            ->limit(1)
+            ->get();
         return $array[0];
     }
 
-    public function update_khach_hang()
+    public function updateKhachHang()
     {
-        DB::table($this->table)->where('ma_khach_hang',$this->ma_khach_hang)->update([
-            'tai_khoan'=>$this->tai_khoan,
-            'mat_khau'=>$this->mat_khau,
-            'anh_khach_hang'=>$this->anh_khach_hang,
-            'ho_ten_khach_hang'=>$this->ho_ten_khach_hang,
-            'email'=>$this->email,
-            'ngay_sinh'=>$this->ngay_sinh,
-            'gioi_tinh'=>$this->gioi_tinh,
-            'sdt'=>$this->sdt,
-            'dia_chi'=>$this->dia_chi
-        ]);
+        DB::table($this->table)
+            ->where('ma_khach_hang', $this->ma_khach_hang)
+            ->update([
+                'tai_khoan' => $this->tai_khoan,
+                'mat_khau' => $this->mat_khau,
+                'anh_khach_hang' => $this->anh_khach_hang,
+                'ho_ten_khach_hang' => $this->ho_ten_khach_hang,
+                'email' => $this->email,
+                'ngay_sinh' => $this->ngay_sinh,
+                'gioi_tinh' => $this->gioi_tinh,
+                'sdt' => $this->sdt,
+                'dia_chi' => $this->dia_chi
+            ]);
     }
 
-    public function delete_khach_hang()
+    public function deleteKhachHang()
     {
-        DB::table($this->table)->where('ma_khach_hang',$this->ma_khach_hang)->delete();
+        DB::table($this->table)
+            ->where('ma_khach_hang', $this->ma_khach_hang)
+            ->delete();
+    }
+
+    public function getOneKhachHangSignIn()
+    {
+        $array = DB::table($this->table)
+            ->where('tai_khoan', $this->tai_khoan)
+            ->limit(1)
+            ->get();
+        return $array;
     }
 }
