@@ -4,6 +4,7 @@ namespace App\Services;
 
 
 use App\Models\HangSanXuat;
+use Illuminate\Support\Facades\URL;
 
 class HangSanXuatService
 {
@@ -18,14 +19,33 @@ class HangSanXuatService
     {
         $arrayHangSanXuat = $this->hangSanXuat->getAllHangSanXuat();
 
+        $title            = 'Danh Sách Hãng Sản Xuất';
+        $metaDescriptions = 'Danh sách toàn bộ hãng sản xuất';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('ListHangSanXuat', [
             'arrayHangSanXuat' => $arrayHangSanXuat,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 
     public function insertHangSanXuat()
     {
-        return view('InsertHangSanXuat');
+        $title            = 'Thêm Hãng Sản Xuất';
+        $metaDescriptions = 'Thêm Hãng Sản Xuất';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
+        return view('InsertHangSanXuat',[
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
+        ]);
     }
 
     public function processInsertHangSanXuat($params)
@@ -42,8 +62,17 @@ class HangSanXuatService
         $this->hangSanXuat->ma_hang_san_xuat = $id;
         $hangSanXuat = $this->hangSanXuat->getOneHangSanXuat();
 
+        $title            = 'Sửa Hãng Sản Xuất';
+        $metaDescriptions = 'Sửa hãng sản xuất ' . $hangSanXuat->ten_hang_san_xuat;
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('UpdateHangSanXuat', [
-            'hangSanXuat' => $hangSanXuat,
+            'hangSanXuat'      => $hangSanXuat,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 

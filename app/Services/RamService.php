@@ -5,6 +5,7 @@ namespace App\Services;
 
 
 use App\Models\Ram;
+use Illuminate\Support\Facades\URL;
 
 class RamService
 {
@@ -19,14 +20,33 @@ class RamService
     {
         $arrayRam = $this->ram->getAllRam();
 
+        $title            = 'Danh Sách RAM';
+        $metaDescriptions = 'Danh sách toàn bộ RAM';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('ListRam', [
-            'arrayRam' => $arrayRam,
+            'arrayRam'         => $arrayRam,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 
     public function insertRam()
     {
-        return view('InsertRam');
+        $title            = 'Thêm RAM';
+        $metaDescriptions = 'Thêm RAM';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
+        return view('InsertRam',[
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
+        ]);
     }
 
     public function processInsertRam($params)
@@ -44,8 +64,17 @@ class RamService
         $this->ram->ma_ram = $id;
         $ram = $this->ram->getOneRam();
 
+        $title            = 'Sửa RAM';
+        $metaDescriptions = 'Sửa RAM';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('UpdateRam', [
-            'ram' => $ram,
+            'ram'              => $ram,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 

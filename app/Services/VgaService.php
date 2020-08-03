@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Vga;
+use Illuminate\Support\Facades\URL;
 
 class VgaService
 {
@@ -17,14 +18,33 @@ class VgaService
     {
         $arrayVga = $this->vga->getAllVga();
 
+        $title            = 'Danh Sách VGA';
+        $metaDescriptions = 'Danh sách toàn bộ VGA';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('ListVga', [
-            'arrayVga' => $arrayVga,
+            'arrayVga'         => $arrayVga,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 
     public function insertVga()
     {
-        return view('InsertVga');
+        $title            = 'Thêm VGA';
+        $metaDescriptions = 'Thêm VGA';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
+        return view('InsertVga',[
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
+        ]);
     }
 
     public function processInsertVga($params)
@@ -42,8 +62,17 @@ class VgaService
         $this->vga->ma_vga = $id;
         $vga = $this->vga->getOneVga();
 
+        $title            = 'Sửa VGA';
+        $metaDescriptions = 'Sửa VGA ' . $vga->ten_vga;
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('UpdateVga', [
-            'vga' => $vga,
+            'vga'              => $vga,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 

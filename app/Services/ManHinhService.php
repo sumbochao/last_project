@@ -5,6 +5,7 @@ namespace App\Services;
 
 
 use App\Models\ManHinh;
+use Illuminate\Support\Facades\URL;
 
 class ManHinhService
 {
@@ -19,14 +20,33 @@ class ManHinhService
     {
         $arrayManHinh = $this->manHinh->getAllManHinh();
 
+        $title            = 'Danh Sách Màn Hình';
+        $metaDescriptions = 'Danh sách toàn bộ màn hình';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('ListManHinh', [
-            'arrayManHinh' => $arrayManHinh,
+            'arrayManHinh'     => $arrayManHinh,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 
     public function insertManHinh()
     {
-        return view('InsertManHinh');
+        $title            = 'Thêm Màn Hình';
+        $metaDescriptions = 'Thêm màn hình';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
+        return view('InsertManHinh', [
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
+        ]);
     }
 
     public function processInsertManHinh($params)
@@ -45,8 +65,17 @@ class ManHinhService
         $this->manHinh->ma_man_hinh = $id;
         $manHinh = $this->manHinh->getOneManHinh();
 
+        $title            = 'Sửa Màn Hình';
+        $metaDescriptions = 'Sửa màn hình';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('UpdateManHinh', [
-                'manHinh' => $manHinh,
+                'manHinh'          => $manHinh,
+                'title'            => $title,
+                'metaDescriptions' => $metaDescriptions,
+                'metaKeywords'     => $metaKeywords,
+                'urlCanonical'     => $urlCanonical,
             ]
         );
     }

@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\OCung;
+use Illuminate\Support\Facades\URL;
 
 class OCungService
 {
@@ -17,14 +18,33 @@ class OCungService
     {
         $arrayOCung = $this->oCung->getAllOCung();
 
+        $title            = 'Danh Sách Ổ Cứng';
+        $metaDescriptions = 'Danh sách toàn bộ ổ cứng';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('ListOCung', [
-            'arrayOCung' => $arrayOCung,
+            'arrayOCung'       => $arrayOCung,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 
     public function insertOCung()
     {
-        return view('InsertOCung');
+        $title            = 'Thêm Ổ Cứng';
+        $metaDescriptions = 'Thêm Ổ Cứng';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
+        return view('InsertOCung',[
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
+        ]);
     }
 
     public function processInsertOCung($params)
@@ -41,8 +61,17 @@ class OCungService
         $this->oCung->ma_o_cung = $id;
         $oCung = $this->oCung->getOneOCung();
 
+        $title            = 'Sửa Ổ Cứng ';
+        $metaDescriptions = 'Sửa Ổ Cứng';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('UpdateOCung', [
-            'oCung' => $oCung,
+            'oCung'            => $oCung,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 

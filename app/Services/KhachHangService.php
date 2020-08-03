@@ -6,6 +6,7 @@ namespace App\Services;
 
 use App\Models\KhachHang;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\URL;
 
 class KhachHangService
 {
@@ -20,8 +21,17 @@ class KhachHangService
     {
         $arrayKhachHang = $this->khachHang->getAllKhachHang();
 
+        $title            = 'Danh Sách Khách Hàng';
+        $metaDescriptions = 'Danh sách toàn bộ khách hàng';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('ListKhachHang', [
-            'arrayKhachHang' => $arrayKhachHang,
+            'arrayKhachHang'     => $arrayKhachHang,
+            'title'              => $title,
+            'metaDescriptions'   => $metaDescriptions,
+            'metaKeywords'       => $metaKeywords,
+            'urlCanonical'       => $urlCanonical,
         ]);
     }
 
@@ -45,8 +55,17 @@ class KhachHangService
         $this->khachHang->ma_khach_hang = $id;
         $khachHang = $this->khachHang->getOneKhachHang();
 
+        $title            = 'Sửa Khách Hàng';
+        $metaDescriptions = 'Sửa tài khoản của khách hàng ' . $khachHang->ho_ten_khach_hang;
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('UpdateKhachHang', [
-            'khachHang' => $khachHang,
+            'khachHang'          => $khachHang,
+            'title'              => $title,
+            'metaDescriptions'   => $metaDescriptions,
+            'metaKeywords'       => $metaKeywords,
+            'urlCanonical'       => $urlCanonical,
         ]);
     }
 

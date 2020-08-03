@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\LoaiMay;
+use Illuminate\Support\Facades\URL;
 
 class LoaiMayService
 {
@@ -17,14 +18,33 @@ class LoaiMayService
     {
         $arrayLoaiMay = $this->loaiMay->getAllLoaiMay();
 
+        $title            = 'Danh Sách Loại Máy';
+        $metaDescriptions = 'Danh sách toàn bộ loại máy';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('ListLoaiMay', [
-            'arrayLoaiMay' => $arrayLoaiMay,
+            'arrayLoaiMay'       => $arrayLoaiMay,
+            'title'              => $title,
+            'metaDescriptions'   => $metaDescriptions,
+            'metaKeywords'       => $metaKeywords,
+            'urlCanonical'       => $urlCanonical,
         ]);
     }
 
     public function insertLoaiMay()
     {
-        return view('InsertLoaiMay');
+        $title            = 'Thêm Loại Máy';
+        $metaDescriptions = 'Thêm loại máy';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
+        return view('InsertLoaiMay',[
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
+        ]);
     }
 
     public function processInsertLoaiMay($params)
@@ -40,8 +60,17 @@ class LoaiMayService
         $this->loaiMay->ma_loai_may = $id;
         $loaiMay = $this->loaiMay->getOneLoaiMay();
 
+        $title            = 'Sửa Loại Máy';
+        $metaDescriptions = 'Sửa loại máy ' . $loaiMay->ten_loai_may;
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('UpdateLoaiMay', [
-            'loaiMay' => $loaiMay,
+            'loaiMay'            => $loaiMay,
+            'title'              => $title,
+            'metaDescriptions'   => $metaDescriptions,
+            'metaKeywords'       => $metaKeywords,
+            'urlCanonical'       => $urlCanonical,
         ]);
     }
 

@@ -6,6 +6,7 @@ use App\Models\HoaDon;
 use App\Models\HoaDonChiTiet;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
 
 Session::start();
 
@@ -24,8 +25,17 @@ class HoaDonService
     {
         $arrayHoaDon = $this->hoaDon->getAllHoaDon();
 
+        $title            = 'Danh Sách Hóa Đơn';
+        $metaDescriptions = 'Danh sách toàn bộ hóa đơn của khách hàng';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('ListHoaDon', [
-            'arrayHoaDon' => $arrayHoaDon,
+            'arrayHoaDon'      => $arrayHoaDon,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 
@@ -53,8 +63,18 @@ class HoaDonService
     {
         $this->hoaDonChiTiet->ma_hoa_don = $id;
         $arrayHoaDonChiTiet = $this->hoaDonChiTiet->getAllHoaDonChiTiet();
+
+        $title            = 'Danh Sách Hóa Đơn Chi Tiết';
+        $metaDescriptions = 'Danh sách hóa đơn chi tiết của khách hàng';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('ListHoaDonChiTiet', [
             'arrayHoaDonChiTiet' => $arrayHoaDonChiTiet,
+            'title'              => $title,
+            'metaDescriptions'   => $metaDescriptions,
+            'metaKeywords'       => $metaKeywords,
+            'urlCanonical'       => $urlCanonical,
         ]);
     }
 
@@ -63,8 +83,17 @@ class HoaDonService
         $this->hoaDon->ma_hoa_don = $id;
         $hoaDon = $this->hoaDon->getOneHoaDon();
 
+        $title            = 'Sửa Hóa Đơn';
+        $metaDescriptions = 'Sửa hóa đơn ' . $hoaDon->ma_hoa_don;
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('updateHoaDon', [
-            'hoaDon' => $hoaDon,
+            'hoaDon'           => $hoaDon,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 

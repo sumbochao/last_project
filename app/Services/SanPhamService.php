@@ -13,6 +13,7 @@ use App\Models\Ram;
 use App\Models\SanPham;
 use App\Models\Vga;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\URL;
 
 class SanPhamService
 {
@@ -41,8 +42,17 @@ class SanPhamService
     {
         $arraySanPham = $this->sanPham->getAllSanPham();
 
+        $title            = 'Danh Sách Sản Phẩm';
+        $metaDescriptions = 'Danh sách toàn bộ sản phẩm';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('ListSanPham', [
-            'arraySanPham' => $arraySanPham,
+            'arraySanPham'     => $arraySanPham,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 
@@ -62,6 +72,11 @@ class SanPhamService
 
         $arrayOCung       = $this->oCung->getAllOCung();
 
+        $title            = 'Thêm Sản Phẩm';
+        $metaDescriptions = 'Thêm Sản Phẩm';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('InsertSanPham', [
             'arrayHangSanXuat' => $arrayHangSanXuat,
             'arrayLoaiMay'     => $arrayLoaiMay,
@@ -70,6 +85,10 @@ class SanPhamService
             'arrayCpu'         => $arrayCpu,
             'arrayVga'         => $arrayVga,
             'arrayOCung'       => $arrayOCung,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 
@@ -114,6 +133,11 @@ class SanPhamService
         $this->sanPham->ma_san_pham = $id;
         $sanPham = $this->sanPham->getOneSanPham();
 
+        $title            = 'Sửa Sản Phẩm';
+        $metaDescriptions = 'Sửa sản phẩm ' . $sanPham->ten_san_pham;
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('UpdateSanPham', [
             'arrayHangSanXuat' => $arrayHangSanXuat,
             'arrayLoaiMay'     => $arrayLoaiMay,
@@ -123,6 +147,10 @@ class SanPhamService
             'arrayVga'         => $arrayVga,
             'arrayOCung'       => $arrayOCung,
             'sanPham'          => $sanPham,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 

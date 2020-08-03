@@ -7,6 +7,7 @@ namespace App\Services;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\URL;
 
 class AdminService
 {
@@ -21,14 +22,33 @@ class AdminService
     {
         $arrayAdmin = $this->admin->getAllAdmin();
 
+        $title            = 'Danh Sách Admin';
+        $metaDescriptions = 'Danh sách toàn bộ admin';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('ListAdmin', [
-            'arrayAdmin' => $arrayAdmin,
+            'arrayAdmin'       => $arrayAdmin,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 
     public function insertAdmin()
     {
-        return view('InsertAdmin');
+        $title            = 'Thêm Admin';
+        $metaDescriptions = 'Thêm admin';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
+        return view('InsertAdmin',[
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
+        ]);
     }
 
     public function processInsertAdmin($params)
@@ -56,8 +76,17 @@ class AdminService
         $this->admin->ma_admin = $id;
         $admin = $this->admin->getOneAdmin();
 
+        $title            = 'Sửa Admin';
+        $metaDescriptions = 'Sửa admin ' . $admin->ho_ten_admin;
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('UpdateAdmin', [
-            'admin' => $admin,
+            'admin'            => $admin,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 

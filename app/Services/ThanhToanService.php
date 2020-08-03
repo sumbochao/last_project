@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\ThanhToan;
+use Illuminate\Support\Facades\URL;
 
 class ThanhToanService
 {
@@ -17,14 +18,33 @@ class ThanhToanService
     {
         $arrayThanhToan = $this->thanhToan->getAllThanhToan();
 
+        $title            = 'Danh Sách Phương Thức Thanh Toán';
+        $metaDescriptions = 'Danh sách toàn bộ phương thức thanh toán';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('ListThanhToan', [
-            'arrayThanhToan' => $arrayThanhToan,
+            'arrayThanhToan'   => $arrayThanhToan,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 
     public function insertThanhToan()
     {
-        return view('InsertThanhToan');
+        $title            = 'Thêm Phương Thức Thanh Toán';
+        $metaDescriptions = 'Thêm phương thức thanh toán';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
+        return view('InsertThanhToan',[
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
+        ]);
     }
 
     public function processInsertThanhToan($params)
@@ -40,8 +60,17 @@ class ThanhToanService
         $this->thanhToan->ma_thanh_toan = $id;
         $thanhToan = $this->thanhToan->getOneThanhToan();
 
+        $title            = 'Sửa Phương Thức Thanh Toán';
+        $metaDescriptions = 'Sửa phương thức thanh toán ' . $thanhToan->phuong_thuc_thanh_toan;
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('UpdateThanhToan', [
-            'thanhToan' => $thanhToan,
+            'thanhToan'        => $thanhToan,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 

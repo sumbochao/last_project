@@ -27,7 +27,17 @@ class AccountService
 
     public function adminSignIn()
     {
-        return view('AdminSignIn');
+        $title            = 'Admin Đăng Nhập';
+        $metaDescriptions = 'Admin đăng nhập tài khoản của mình để vào trang quản lý';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
+        return view('AdminSignIn',[
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
+        ]);
     }
 
     public function processAdminSignIn($params)
@@ -49,7 +59,17 @@ class AccountService
 
     public function welcomeAdmin()
     {
-        return view('WelcomeAdmin');
+        $title            = 'Chào Admin ' . Session::get('hoTenAdmin');
+        $metaDescriptions = 'Trang gửi lời chào đến admin đăng nhập';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
+        return view('WelcomeAdmin',[
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
+        ]);
     }
 
     public function adminSignOut()

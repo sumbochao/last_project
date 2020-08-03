@@ -5,6 +5,7 @@ namespace App\Services;
 
 
 use App\Models\Cpu;
+use Illuminate\Support\Facades\URL;
 
 class CpuService
 {
@@ -19,14 +20,33 @@ class CpuService
     {
         $arrayCpu = $this->cpu->getAllCpu();
 
+        $title            = 'Danh Sách Cpu';
+        $metaDescriptions = 'Danh sách toàn bộ cpu';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('ListCpu', [
-            'arrayCpu' => $arrayCpu,
+            'arrayCpu'         => $arrayCpu,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 
     public function insertCpu()
     {
-        return view('InsertCpu');
+        $title            = 'Thêm Cpu';
+        $metaDescriptions = 'Thêm Cpu';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
+        return view('InsertCpu', [
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
+        ]);
     }
 
     public function processInsertCpu($params)
@@ -45,8 +65,17 @@ class CpuService
         $this->cpu->ma_cpu = $id;
         $cpu = $this->cpu->getOneCpu();
 
+        $title            = 'Sửa Cpu';
+        $metaDescriptions = 'Sửa Cpu ' . $cpu->ten_cpu;
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
         return view('UpdateCpu', [
-            'cpu' => $cpu,
+            'cpu'              => $cpu,
+            'title'            => $title,
+            'metaDescriptions' => $metaDescriptions,
+            'metaKeywords'     => $metaKeywords,
+            'urlCanonical'     => $urlCanonical,
         ]);
     }
 
