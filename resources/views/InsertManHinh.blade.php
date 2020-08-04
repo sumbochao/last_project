@@ -18,8 +18,8 @@
                                        aria-invalid="true" placeholder="Nhập Kích Cỡ">
                                 <span class="material-input"></span>
                             </div>
-                            <label class="col-sm-3 label-on-right">
-                                <code><span id="kichCoError"></span></code>
+                            <label class="col-sm-12 label-on-right">
+                                <span id="kichCoError"></span>
                             </label>
                         </div>
                     </div>
@@ -35,8 +35,8 @@
                                        aria-invalid="true" placeholder="Nhập Độ Phân Giải">
                                 <span class="material-input"></span>
                             </div>
-                            <label class="col-sm-3 label-on-right">
-                                <code><span id="doPhanGiaiError"></span></code>
+                            <label class="col-sm-12 label-on-right">
+                                <span id="doPhanGiaiError"></span>
                             </label>
                         </div>
                     </div>
@@ -52,8 +52,8 @@
                                        aria-invalid="true" placeholder="Nhập Tần Số Màn Hình">
                                 <span class="material-input"></span>
                             </div>
-                            <label class="col-sm-3 label-on-right">
-                                <code><span id="tanSoManHinhError"></span></code>
+                            <label class="col-sm-12 label-on-right">
+                                <span id="tanSoManHinhError"></span>
                             </label>
                         </div>
                     </div>
@@ -69,13 +69,13 @@
                                        aria-invalid="true" placeholder="Nhập Tấm Nền">
                                 <span class="material-input"></span>
                             </div>
-                            <label class="col-sm-3 label-on-right">
-                                <code><span id="tamNenError"></span></code>
+                            <label class="col-sm-12 label-on-right">
+                                <span id="tamNenError"></span>
                             </label>
                         </div>
                     </div>
                 </div>
-                <button class="btn-success">Thêm Màn Hình</button>
+                <button class="btn-success" onclick="return validateForm()">Thêm Màn Hình</button>
                 <a href="{{url()->previous()}}">
                     <button type="button" class="btn-danger">Quay Lại</button>
                 </a>
@@ -83,3 +83,48 @@
         </div>
     </div>
 @stop
+@push('js')
+    <script type="text/javascript">
+        function validateForm() {
+            var kichCo = document.getElementById("kichCo");
+            var kichCoError = document.getElementById("kichCoError");
+            if (!kichCo.value.length) {
+                kichCoError.innerHTML = "<b><code>Kích cỡ màn hình không được để trống</code></b>";
+                kichCo.focus();
+                return false;
+            } else {
+                kichCoError.innerHTML = '';
+            }
+
+            var doPhanGiai = document.getElementById("doPhanGiai");
+            var doPhanGiaiError = document.getElementById("doPhanGiaiError");
+            if (!doPhanGiai.value.length) {
+                doPhanGiaiError.innerHTML = "<b><code>Độ phân giải màn hình không được để trống</code></b>";
+                doPhanGiai.focus();
+                return false;
+            } else {
+                doPhanGiaiError.innerHTML = '';
+            }
+
+            var tanSoManHinh = document.getElementById("tanSoManHinh");
+            var tanSoManHinhError = document.getElementById("tanSoManHinhError");
+            if (!tanSoManHinh.value.length) {
+                tanSoManHinhError.innerHTML = "<b><code>Tần số màn hình không được để trống</code></b>";
+                tanSoManHinh.focus();
+                return false;
+            } else {
+                tanSoManHinhError.innerHTML = '';
+            }
+
+            var tamNen = document.getElementById("tamNen");
+            var tamNenError = document.getElementById("tamNenError");
+            if (!tamNen.value.length) {
+                tamNenError.innerHTML = "<b><code>Tấm nền không được để trống</code></b>";
+                tamNen.focus();
+                return false;
+            } else {
+                tamNenError.innerHTML = '';
+            }
+        }
+    </script>
+@endpush

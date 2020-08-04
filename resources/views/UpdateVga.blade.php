@@ -11,7 +11,7 @@
                     <div class="row">
                         <label class="col-sm-2 label-on-left">Loại VGA</label>
                         <div class="col-sm-10">
-                            <div class="form-group label-floating is-empty has-error">
+                            <div class="form-group label-floating">
                                 <label class="control-label"></label>
                                 <input type="text" name="loaiVga" id="loaiVga" class="form-control error"
                                        required="true" aria-required="true"
@@ -19,7 +19,7 @@
                                 <span class="material-input"></span>
                             </div>
                             <label class="col-sm-3 label-on-right">
-                                <code><span id="loaiVgaError"></span></code>
+                                <span id="loaiVgaError"></span>
                             </label>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                     <div class="row">
                         <label class="col-sm-2 label-on-left">Tên VGA</label>
                         <div class="col-sm-10">
-                            <div class="form-group label-floating is-empty has-error">
+                            <div class="form-group label-floating">
                                 <label class="control-label"></label>
                                 <input type="text" name="tenVga" id="tenVga" class="form-control error"
                                        required="true" aria-required="true"
@@ -36,7 +36,7 @@
                                 <span class="material-input"></span>
                             </div>
                             <label class="col-sm-3 label-on-right">
-                                <code><span id="tenVgaError"></span></code>
+                                <span id="tenVgaError"></span>
                             </label>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                     <div class="row">
                         <label class="col-sm-2 label-on-left">Dung Lượng VGA</label>
                         <div class="col-sm-10">
-                            <div class="form-group label-floating is-empty has-error">
+                            <div class="form-group label-floating">
                                 <label class="control-label"></label>
                                 <input type="text" name="dungLuongVga" id="dungLuongVga" class="form-control error"
                                        required="true" aria-required="true"
@@ -53,7 +53,7 @@
                                 <span class="material-input"></span>
                             </div>
                             <label class="col-sm-3 label-on-right">
-                                <code><span id="dungLuongVgaError"></span></code>
+                                <span id="dungLuongVgaError"></span>
                             </label>
                         </div>
                     </div>
@@ -66,3 +66,37 @@
         </div>
     </div>
 @stop
+@push('js')
+    <script type="text/javascript">
+        function validateForm() {
+            var loaiVga = document.getElementById("loaiVga");
+            var loaiVgaError = document.getElementById("loaiVgaError");
+            if (!loaiVga.value.length) {
+                loaiVgaError.innerHTML = "<b><code>Loại vga không được để trống</code></b>";
+                loaiVga.focus();
+                return false;
+            } else {
+                loaiVgaError.innerHTML = '';
+            }
+            var tenVga = document.getElementById("tenVga");
+            var tenVgaError = document.getElementById("tenVgaError");
+            if (!tenVga.value.length) {
+                tenVgaError.innerHTML = "<b><code>Tên vga không được để trống</code></b>";
+                tenVga.focus();
+                return false;
+            } else {
+                tenVgaError.innerHTML = '';
+            }
+
+            var dungLuongVga = document.getElementById("dungLuongVga");
+            var dungLuongVgaError = document.getElementById("dungLuongVgaError");
+            if (!dungLuongVga.value.length) {
+                dungLuongVgaError.innerHTML = "<b><code>Dung lượng vga không được để trống</code></b>";
+                dungLuongVga.focus();
+                return false;
+            } else {
+                dungLuongVgaError.innerHTML = '';
+            }
+        }
+    </script>
+@endpush

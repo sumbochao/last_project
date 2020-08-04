@@ -5,81 +5,127 @@
             <div class="card-header card-header-text" data-background-color="rose">
                 <h4 class="card-title">Sửa Màn Hình</h4>
             </div>
-    <form action="{{route('processUpdateManHinh',['id'=>$manHinh->ma_man_hinh])}}" class="form-horizontal" method="post">
-        @csrf
-        <div class="card-content">
-            <div class="row">
-                <label class="col-sm-2 label-on-left">Kích Cỡ</label>
-                <div class="col-sm-10">
-                    <div class="form-group label-floating is-empty has-error">
-                        <label class="control-label"></label>
-                        <input type="text" name="kichCo" id="kichCo" class="form-control error"
-                               required="true" aria-required="true"
-                               aria-invalid="true" value="{{$manHinh->kich_co}}">
-                        <span class="material-input"></span>
+            <form action="{{route('processUpdateManHinh',['id'=>$manHinh->ma_man_hinh])}}" class="form-horizontal"
+                  method="post">
+                @csrf
+                <div class="card-content">
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Kích Cỡ</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating">
+                                <label class="control-label"></label>
+                                <input type="text" name="kichCo" id="kichCo" class="form-control error"
+                                       required="true" aria-required="true"
+                                       aria-invalid="true" value="{{$manHinh->kich_co}}">
+                                <span class="material-input"></span>
+                            </div>
+                            <label class="col-sm-3 label-on-right">
+                                <span id="kichCoError"></span>
+                            </label>
+                        </div>
                     </div>
-                    <label class="col-sm-3 label-on-right">
-                        <code><span id="kichCoError"></span></code>
-                    </label>
                 </div>
-            </div>
-        </div>
-        <div class="card-content">
-            <div class="row">
-                <label class="col-sm-2 label-on-left">Độ Phân Giải</label>
-                <div class="col-sm-10">
-                    <div class="form-group label-floating is-empty has-error">
-                        <label class="control-label"></label>
-                        <input type="text" name="doPhanGiai" id="doPhanGiai" class="form-control error"
-                               required="true" aria-required="true"
-                               aria-invalid="true" value="{{$manHinh->do_phan_giai}}">
-                        <span class="material-input"></span>
+                <div class="card-content">
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Độ Phân Giải</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating">
+                                <label class="control-label"></label>
+                                <input type="text" name="doPhanGiai" id="doPhanGiai" class="form-control error"
+                                       required="true" aria-required="true"
+                                       aria-invalid="true" value="{{$manHinh->do_phan_giai}}">
+                                <span class="material-input"></span>
+                            </div>
+                            <label class="col-sm-3 label-on-right">
+                                <span id="doPhanGiaiError"></span>
+                            </label>
+                        </div>
                     </div>
-                    <label class="col-sm-3 label-on-right">
-                        <code><span id="doPhanGiaiError"></span></code>
-                    </label>
                 </div>
-            </div>
-        </div>
-        <div class="card-content">
-            <div class="row">
-                <label class="col-sm-2 label-on-left">Tần Số Màn Hình</label>
-                <div class="col-sm-10">
-                    <div class="form-group label-floating is-empty has-error">
-                        <label class="control-label"></label>
-                        <input type="text" name="tanSoManHinh" id="tanSoManHinh" class="form-control error"
-                               required="true" aria-required="true"
-                               aria-invalid="true" value="{{$manHinh->tan_so_man_hinh}}">
-                        <span class="material-input"></span>
+                <div class="card-content">
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Tần Số Màn Hình</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating">
+                                <label class="control-label"></label>
+                                <input type="text" name="tanSoManHinh" id="tanSoManHinh" class="form-control error"
+                                       required="true" aria-required="true"
+                                       aria-invalid="true" value="{{$manHinh->tan_so_man_hinh}}">
+                                <span class="material-input"></span>
+                            </div>
+                            <label class="col-sm-3 label-on-right">
+                                <span id="tanSoManHinhError"></span>
+                            </label>
+                        </div>
                     </div>
-                    <label class="col-sm-3 label-on-right">
-                        <code><span id="tanSoManHinhError"></span></code>
-                    </label>
                 </div>
-            </div>
-        </div>
-        <div class="card-content">
-            <div class="row">
-                <label class="col-sm-2 label-on-left">Tấm Nền</label>
-                <div class="col-sm-10">
-                    <div class="form-group label-floating is-empty has-error">
-                        <label class="control-label"></label>
-                        <input type="text" name="tamNen" id="tamNen" class="form-control error"
-                               required="true" aria-required="true"
-                               aria-invalid="true" value="{{$manHinh->tam_nen}}">
-                        <span class="material-input"></span>
+                <div class="card-content">
+                    <div class="row">
+                        <label class="col-sm-2 label-on-left">Tấm Nền</label>
+                        <div class="col-sm-10">
+                            <div class="form-group label-floating">
+                                <label class="control-label"></label>
+                                <input type="text" name="tamNen" id="tamNen" class="form-control error"
+                                       required="true" aria-required="true"
+                                       aria-invalid="true" value="{{$manHinh->tam_nen}}">
+                                <span class="material-input"></span>
+                            </div>
+                            <label class="col-sm-3 label-on-right">
+                                <span id="tamNenError"></span>
+                            </label>
+                        </div>
                     </div>
-                    <label class="col-sm-3 label-on-right">
-                        <code><span id="tamNenError"></span></code>
-                    </label>
                 </div>
-            </div>
-        </div>
-        <button class="btn-success">Sửa Màn Hình</button>
-        <a href="{{url()->previous()}}">
-            <button type="button" class="btn-danger">Quay Lại</button>
-        </a>
-    </form>
+                <button class="btn-success">Sửa Màn Hình</button>
+                <a href="{{url()->previous()}}">
+                    <button type="button" class="btn-danger">Quay Lại</button>
+                </a>
+            </form>
         </div>
     </div>
 @stop
+@push('js')
+    <script type="text/javascript">
+        function validateForm() {
+            var kichCo = document.getElementById("kichCo");
+            var kichCoError = document.getElementById("kichCoError");
+            if (!kichCo.value.length) {
+                kichCoError.innerHTML = "<b><code>Kích cỡ màn hình không được để trống</code></b>";
+                kichCo.focus();
+                return false;
+            } else {
+                kichCoError.innerHTML = '';
+            }
+
+            var doPhanGiai = document.getElementById("doPhanGiai");
+            var doPhanGiaiError = document.getElementById("doPhanGiaiError");
+            if (!doPhanGiai.value.length) {
+                doPhanGiaiError.innerHTML = "<b><code>Độ phân giải màn hình không được để trống</code></b>";
+                doPhanGiai.focus();
+                return false;
+            } else {
+                doPhanGiaiError.innerHTML = '';
+            }
+
+            var tanSoManHinh = document.getElementById("tanSoManHinh");
+            var tanSoManHinhError = document.getElementById("tanSoManHinhError");
+            if (!tanSoManHinh.value.length) {
+                tanSoManHinhError.innerHTML = "<b><code>Tần số màn hình không được để trống</code></b>";
+                tanSoManHinh.focus();
+                return false;
+            } else {
+                tanSoManHinhError.innerHTML = '';
+            }
+
+            var tamNen = document.getElementById("tamNen");
+            var tamNenError = document.getElementById("tamNenError");
+            if (!tamNen.value.length) {
+                tamNenError.innerHTML = "<b><code>Tấm nền không được để trống</code></b>";
+                tamNen.focus();
+                return false;
+            } else {
+                tamNenError.innerHTML = '';
+            }
+        }
+    </script>
+@endpush

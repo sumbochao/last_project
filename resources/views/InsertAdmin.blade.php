@@ -19,8 +19,8 @@
                                        aria-invalid="true" placeholder="Nhập tài khoản">
                                 <span class="material-input"></span>
                             </div>
-                            <label class="col-sm-3 label-on-right">
-                                <code><span id="taiKhoanError"></span></code>
+                            <label class="col-sm-12 label-on-right">
+                                <span id="taiKhoanError"></span>
                             </label>
                         </div>
                     </div>
@@ -36,8 +36,8 @@
                                        aria-invalid="true" placeholder="Nhập Mật Khẩu">
                                 <span class="material-input"></span>
                             </div>
-                            <label class="col-sm-3 label-on-right">
-                                <code><span id="matKhauError"></span></code>
+                            <label class="col-sm-12 label-on-right">
+                                <span id="matKhauError"></span>
                             </label>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                                                     <span class="btn btn-rose btn-round btn-file">
                                                         <span class="fileinput-new">Select image</span>
                                                         <span class="fileinput-exists">Change</span>
-                                                        <input type="file" name="anhAdmin">
+                                                        <input type="file" name="anhAdmin" id="anhAdmin">
                                                     </span>
                                     <a href="#pablo" class="btn btn-danger btn-round fileinput-exists"
                                        data-dismiss="fileinput">
@@ -76,8 +76,8 @@
                                        aria-invalid="true" placeholder="Nhập họ tên">
                                 <span class="material-input"></span>
                             </div>
-                            <label class="col-sm-3 label-on-right">
-                                <code><span id="hoTenAdminError"></span></code>
+                            <label class="col-sm-12 label-on-right">
+                                <span id="hoTenAdminError"></span>
                             </label>
                         </div>
                     </div>
@@ -139,8 +139,8 @@
                                        placeholder="Chọn Ngày Sinh">
                                 <span class="material-input"></span>
                             </div>
-                            <label class="col-sm-3 label-on-right">
-                                <code><span id="ngaySinhError"></span></code>
+                            <label class="col-sm-12 label-on-right">
+                                <span id="ngaySinhError"></span>
                             </label>
                         </div>
                     </div>
@@ -156,8 +156,8 @@
                                        aria-invalid="true" placeholder="Nhập email">
                                 <span class="material-input"></span>
                             </div>
-                            <label class="col-sm-3 label-on-right">
-                                <code><span id="emailError"></span></code>
+                            <label class="col-sm-12 label-on-right">
+                                <span id="emailError"></span>
                             </label>
                         </div>
                     </div>
@@ -173,8 +173,8 @@
                                        aria-invalid="true" placeholder="Nhập số điện thoại">
                                 <span class="material-input"></span>
                             </div>
-                            <label class="col-sm-3 label-on-right">
-                                <code><span id="sdtError"></span></code>
+                            <label class="col-sm-12 label-on-right">
+                                <span id="sdtError"></span>
                             </label>
                         </div>
                     </div>
@@ -190,8 +190,8 @@
                                        aria-invalid="true" placeholder="Nhập địa chỉ">
                                 <span class="material-input"></span>
                             </div>
-                            <label class="col-sm-3 label-on-right">
-                                <code><span id="diaChiError"></span></code>
+                            <label class="col-sm-12 label-on-right">
+                                <span id="diaChiError"></span>
                             </label>
                         </div>
                     </div>
@@ -205,7 +205,7 @@
     </div>
 @stop
 @push('js')
-    <script>
+    <script type="text/javascript">
         $(function () {
             $('#ngaySinh').datetimepicker({
                 format: 'YYYY-MM-DD',
@@ -215,76 +215,80 @@
                 }
             });
         });
-    </script>
-    <script language="javascript">
+
         function validateForm() {
-            var tai_khoan = document.getElementById("tai_khoan");
-            var tai_khoan_error = document.getElementById("tai_khoan_error");
-            if (tai_khoan.value.length < 5) {
-                tai_khoan_error.innerHTML = "<b>Tài khoản ít nhất 5 kí tự</b>";
-                tai_khoan.focus();
+            var taiKhoan = document.getElementById("taiKhoan");
+            var taiKhoanError = document.getElementById("taiKhoanError");
+            if (!taiKhoan.value.length) {
+                taiKhoanError.innerHTML = "<b><code>Tài khoản không được để trống</code></b>";
+                taiKhoan.focus();
                 return false;
             } else {
-                tai_khoan_error.innerHTML = "";
+                taiKhoanError.innerHTML = '';
             }
-            var mat_khau = document.getElementById("mat_khau");
-            var mat_khau_error = document.getElementById("mat_khau_error");
-            if (mat_khau.value.length < 3) {
-                mat_khau_error.innerHTML = "<b>Mật khẩu ít nhất 3 kí tự</b>";
-                mat_khau.focus();
+            var matKhau = document.getElementById("matKhau");
+            var matKhauError = document.getElementById("matKhauError");
+            if (!matKhau.value.length) {
+                matKhauError.innerHTML = "<b><code>Mật khẩu không được để trống</code></b>";
+                matKhau.focus();
                 return false;
             } else {
-                mat_khau_error.innerHTML = "";
+                matKhauError.innerHTML = '';
             }
-            var ho_ten_giang_vien = document.getElementById("ho_ten_giang_vien");
-            var ho_ten_giang_vien_error = document.getElementById("ho_ten_giang_vien_error");
-            if (ho_ten_giang_vien.value.length < 5) {
-                ho_ten_giang_vien_error.innerHTML = "<b>Họ tên ít nhất 5 ký tự</b>";
-                ho_ten_giang_vien.focus();
+
+            var anhAdmin = document.getElementById("anhAdmin");
+            if (!anhAdmin.value.length) {
+                alert('Thêm Ảnh Admin');
+                return false;
+            }
+
+            var hoTenAdmin = document.getElementById("hoTenAdmin");
+            var hoTenAdminError = document.getElementById("hoTenAdminError");
+            if (!hoTenAdmin.value.length) {
+                hoTenAdminError.innerHTML = "<b><code>Họ tên không được để trống</code></b>";
+                hoTenAdmin.focus();
                 return false;
             } else {
-                ho_ten_giang_vien_error.innerHTML = "";
+                hoTenAdminError.innerHTML = '';
             }
-            var chon_nganh = document.getElementById("chon_nganh");
-            if (chon_nganh.value == '0') {
-                alert('Chọn Ngành');
-                return false;
-            }
-            var ngay_sinh = document.getElementById("ngay_sinh");
-            if (ngay_sinh.value.length == '') {
+
+            var ngaySinh = document.getElementById("ngaySinh");
+            if (!ngaySinh.value.length) {
                 alert('Chọn Ngày Sinh');
                 return false;
             }
+
             var email = document.getElementById("email");
-            var email_error = document.getElementById("email_error");
+            var emailError = document.getElementById("emailError");
             if (email.value.length < 10) {
-                email_error.innerHTML = "<b>Email ít nhất 10 ký tự</b>";
+                emailError.innerHTML = "<b><code>Email ít nhất 10 ký tự</code></b>";
                 email.focus();
                 return false;
             } else {
-                email_error.innerHTML = "";
+                emailError.innerHTML = '';
             }
+
             var sdt = document.getElementById("sdt");
-            var sdt_error = document.getElementById("sdt_error");
-            if (isNaN(sdt.value) || sdt.value == "" || sdt.value.length < 10 || sdt.value.length > 12) {
-                sdt_error.innerHTML = "<b>Số Ðiện Thoại phải là số,ít nhất 10 số và nhỏ hơn 12 số</b>";
+            var sdtError = document.getElementById("sdtError");
+            if (isNaN(sdt.value) || !sdt.value || sdt.value.length < 10 || sdt.value.length > 12) {
+                sdtError.innerHTML = "<b><code>Số Ðiện Thoại phải là số,ít nhất 10 số và nhỏ hơn 12 số</code></b>";
                 sdt.focus();
                 return false;
             } else {
-                sdt_error.innerHTML = "";
+                sdtError.innerHTML = '';
             }
-            var dia_chi = document.getElementById("dia_chi");
-            var dia_chi_error = document.getElementById("dia_chi_error");
-            if (dia_chi.value.length < 20) {
-                dia_chi_error.innerHTML = "<b>Ðịa chỉ ít nhất 20 kí tự</b>";
-                dia_chi.focus();
+
+            var diaChi = document.getElementById("diaChi");
+            var diaChiError = document.getElementById("diaChiError");
+            if (diaChi.value.length < 20) {
+                diaChiError.innerHTML = "<b><code>Ðịa chỉ ít nhất 20 kí tự</code></b>";
+                diaChi.focus();
                 return false;
             } else {
-                dia_chi_error.innerHTML = "";
+                diaChiError.innerHTML = '';
             }
         }
-    </script>
-    <script type="text/javascript">
+
         function setFormValidation(id) {
             $(id).validate({
                 errorPlacement: function (error, element) {
@@ -292,6 +296,7 @@
                 }
             });
         }
+
         $(document).ready(function () {
             setFormValidation('#RegisterValidation');
             setFormValidation('#TypeValidation');

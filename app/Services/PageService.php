@@ -124,6 +124,8 @@ class PageService
 
         $arrayLoaiMay     = $this->loaiMay->getAllLoaiMay();
 
+        $arraySanPham     = $this->sanPham->getAllSanPham();
+
         $title            = 'Đạt Cường Computer';
         $metaDescriptions = 'Công ty Cổ Phần Máy Tính Hà Nội - Siêu thị Laptop';
         $metaKeywords     = 'Máy tính Hà nội, DCComputer, Siêu thị Laptop, Workstations';
@@ -133,6 +135,7 @@ class PageService
             'arrayAdmin'       => $arrayAdmin,
             'arrayHangSanXuat' => $arrayHangSanXuat,
             'arrayLoaiMay'     => $arrayLoaiMay,
+            'arraySanPham'     => $arraySanPham,
             'title'            => $title,
             'metaDescriptions' => $metaDescriptions,
             'metaKeywords'     => $metaKeywords,

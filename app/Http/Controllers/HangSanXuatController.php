@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\HangSanXuat;
 use App\Services\HangSanXuatService;
 use Illuminate\Http\Request;
 
