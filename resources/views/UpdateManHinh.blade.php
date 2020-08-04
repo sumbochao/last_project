@@ -31,9 +31,8 @@
                         <div class="col-sm-10">
                             <div class="form-group label-floating">
                                 <label class="control-label"></label>
-                                <input type="text" name="doPhanGiai" id="doPhanGiai" class="form-control error"
-                                       required="true" aria-required="true"
-                                       aria-invalid="true" value="{{$manHinh->do_phan_giai}}">
+                                <input type="text" name="doPhanGiai" id="doPhanGiai" class="form-control"
+                                       value="{{$manHinh->do_phan_giai}}">
                                 <span class="material-input"></span>
                             </div>
                             <label class="col-sm-3 label-on-right">
@@ -48,9 +47,8 @@
                         <div class="col-sm-10">
                             <div class="form-group label-floating">
                                 <label class="control-label"></label>
-                                <input type="text" name="tanSoManHinh" id="tanSoManHinh" class="form-control error"
-                                       required="true" aria-required="true"
-                                       aria-invalid="true" value="{{$manHinh->tan_so_man_hinh}}">
+                                <input type="text" name="tanSoManHinh" id="tanSoManHinh" class="form-control"
+                                       value="{{$manHinh->tan_so_man_hinh}}">
                                 <span class="material-input"></span>
                             </div>
                             <label class="col-sm-3 label-on-right">
@@ -65,9 +63,8 @@
                         <div class="col-sm-10">
                             <div class="form-group label-floating">
                                 <label class="control-label"></label>
-                                <input type="text" name="tamNen" id="tamNen" class="form-control error"
-                                       required="true" aria-required="true"
-                                       aria-invalid="true" value="{{$manHinh->tam_nen}}">
+                                <input type="text" name="tamNen" id="tamNen" class="form-control"
+                                       value="{{$manHinh->tam_nen}}">
                                 <span class="material-input"></span>
                             </div>
                             <label class="col-sm-3 label-on-right">
@@ -95,36 +92,6 @@
                 return false;
             } else {
                 kichCoError.innerHTML = '';
-            }
-
-            var doPhanGiai = document.getElementById("doPhanGiai");
-            var doPhanGiaiError = document.getElementById("doPhanGiaiError");
-            if (!doPhanGiai.value.length) {
-                doPhanGiaiError.innerHTML = "<b><code>Độ phân giải màn hình không được để trống</code></b>";
-                doPhanGiai.focus();
-                return false;
-            } else {
-                doPhanGiaiError.innerHTML = '';
-            }
-
-            var tanSoManHinh = document.getElementById("tanSoManHinh");
-            var tanSoManHinhError = document.getElementById("tanSoManHinhError");
-            if (!tanSoManHinh.value.length) {
-                tanSoManHinhError.innerHTML = "<b><code>Tần số màn hình không được để trống</code></b>";
-                tanSoManHinh.focus();
-                return false;
-            } else {
-                tanSoManHinhError.innerHTML = '';
-            }
-
-            var tamNen = document.getElementById("tamNen");
-            var tamNenError = document.getElementById("tamNenError");
-            if (!tamNen.value.length) {
-                tamNenError.innerHTML = "<b><code>Tấm nền không được để trống</code></b>";
-                tamNen.focus();
-                return false;
-            } else {
-                tamNenError.innerHTML = '';
             }
         }
     </script>

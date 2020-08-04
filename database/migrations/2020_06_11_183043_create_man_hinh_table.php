@@ -16,9 +16,9 @@ class CreateManHinhTable extends Migration
         Schema::create('man_hinh', function (Blueprint $table) {
             $table->id('ma_man_hinh');
             $table->string('kich_co',50);
-            $table->string('do_phan_giai',50);
-            $table->string('tan_so_man_hinh',50);
-            $table->string('tam_nen',50);
+            $table->string('do_phan_giai',50)->nullable();
+            $table->string('tan_so_man_hinh',50)->nullable();
+            $table->string('tam_nen',50)->nullable();
             $table->timestamps();
         });
     }

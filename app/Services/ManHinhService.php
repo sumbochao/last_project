@@ -52,9 +52,9 @@ class ManHinhService
     public function processInsertManHinh($params)
     {
         $this->manHinh->kich_co         = $params['kichCo'];
-        $this->manHinh->do_phan_giai    = $params['doPhanGiai'];
-        $this->manHinh->tan_so_man_hinh = $params['tanSoManHinh'];
-        $this->manHinh->tam_nen         = $params['tamNen'];
+        $this->manHinh->do_phan_giai    = $params['doPhanGiai'] ?? null;
+        $this->manHinh->tan_so_man_hinh = $params['tanSoManHinh'] ?? null;
+        $this->manHinh->tam_nen         = $params['tamNen'] ?? null;
         $this->manHinh->insertManHinh();
 
         return redirect()->route('listManHinh');
@@ -84,9 +84,9 @@ class ManHinhService
     {
         $this->manHinh->ma_man_hinh     = $id;
         $this->manHinh->kich_co         = $params['kichCo'];
-        $this->manHinh->do_phan_giai    = $params['doPhanGiai'];
-        $this->manHinh->tan_so_man_hinh = $params['tanSoManHinh'];
-        $this->manHinh->tam_nen         = $params['tamNen'];
+        $this->manHinh->do_phan_giai    = $params['doPhanGiai'] ?? null;
+        $this->manHinh->tan_so_man_hinh = $params['tanSoManHinh'] ?? null;
+        $this->manHinh->tam_nen         = $params['tamNen'] ?? null;
         $this->manHinh->updateManHinh();
 
         return redirect()->route('listManHinh');

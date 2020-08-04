@@ -17,7 +17,7 @@ class CreateRamTable extends Migration
             $table->id('ma_ram');
             $table->string('loai_ram',50);
             $table->string('dung_luong_ram',50);
-            $table->string('tan_so_ram',50);
+            $table->string('tan_so_ram',50)->nullable();
             $table->timestamps();
         });
     }

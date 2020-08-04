@@ -53,7 +53,7 @@ class RamService
     {
         $this->ram->loai_ram       = $params['loaiRam'];
         $this->ram->dung_luong_ram = $params['dungLuongRam'];
-        $this->ram->tan_so_ram     = $params['tanSoRam'];
+        $this->ram->tan_so_ram     = $params['tanSoRam'] ?? null;
         $this->ram->insertRam();
 
         return redirect()->route('listRam');
@@ -83,7 +83,7 @@ class RamService
         $this->ram->ma_ram         = $id;
         $this->ram->loai_ram       = $params['loaiRam'];
         $this->ram->dung_luong_ram = $params['dungLuongRam'];
-        $this->ram->tan_so_ram     = $params['tanSoRam'];
+        $this->ram->tan_so_ram     = $params['tanSoRam'] ?? null;
         $this->ram->updateRam();
 
         return redirect()->route('listRam');

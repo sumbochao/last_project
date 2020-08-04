@@ -30,9 +30,8 @@
                         <div class="col-sm-10">
                             <div class="form-group label-floating">
                                 <label class="control-label"></label>
-                                <input type="text" name="tanSoCpu" id="tanSoCpu" class="form-control error"
-                                       required="true" aria-required="true"
-                                       aria-invalid="true" value="{{$cpu->tan_so_cpu}}">
+                                <input type="text" name="tanSoCpu" id="tanSoCpu" class="form-control"
+                                       value="{{$cpu->tan_so_cpu}}">
                                 <span class="material-input"></span>
                             </div>
                             <label class="col-sm-3 label-on-right">
@@ -47,9 +46,8 @@
                         <div class="col-sm-10">
                             <div class="form-group label-floating">
                                 <label class="control-label"></label>
-                                <input type="text" name="boNhoCache" id="boNhoCache" class="form-control error"
-                                       required="true" aria-required="true"
-                                       aria-invalid="true" value="{{$cpu->bo_nho_cache}}">
+                                <input type="text" name="boNhoCache" id="boNhoCache" class="form-control"
+                                       value="{{$cpu->bo_nho_cache}}">
                                 <span class="material-input"></span>
                             </div>
                             <label class="col-sm-3 label-on-right">
@@ -64,9 +62,8 @@
                         <div class="col-sm-10">
                             <div class="form-group label-floating">
                                 <label class="control-label"></label>
-                                <input type="text" name="dongCpu" id="dongCpu" class="form-control error"
-                                       required="true" aria-required="true"
-                                       aria-invalid="true" value="{{$cpu->dong_cpu}}">
+                                <input type="text" name="dongCpu" id="dongCpu" class="form-control"
+                                       value="{{$cpu->dong_cpu}}">
                                 <span class="material-input"></span>
                             </div>
                             <label class="col-sm-3 label-on-right">
@@ -94,36 +91,6 @@
                 return false;
             } else {
                 tenCpuError.innerHTML = '';
-            }
-
-            var tanSoCpu = document.getElementById("tanSoCpu");
-            var tanSoCpuError = document.getElementById("tanSoCpuError");
-            if (!tanSoCpu.value.length) {
-                tanSoCpuError.innerHTML = "<b><code>Tần số cpu không được để trống</code></b>";
-                tanSoCpu.focus();
-                return false;
-            } else {
-                tanSoCpuError.innerHTML = '';
-            }
-
-            var boNhoCache = document.getElementById("boNhoCache");
-            var boNhoCacheError = document.getElementById("boNhoCacheError");
-            if (!boNhoCache.value.length) {
-                boNhoCacheError.innerHTML = "<b><code>Bộ nhớ cache không được để trống</code></b>";
-                boNhoCache.focus();
-                return false;
-            } else {
-                boNhoCacheError.innerHTML = '';
-            }
-
-            var dongCpu = document.getElementById("dongCpu");
-            var dongCpuError = document.getElementById("dongCpuError");
-            if (!dongCpu.value.length) {
-                dongCpuError.innerHTML = "<b><code>Dòng cpu không được để trống</code></b>";
-                dongCpu.focus();
-                return false;
-            } else {
-                dongCpuError.innerHTML = '';
             }
         }
     </script>

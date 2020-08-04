@@ -52,9 +52,9 @@ class CpuService
     public function processInsertCpu($params)
     {
         $this->cpu->ten_cpu      = $params['tenCpu'];
-        $this->cpu->tan_so_cpu   = $params['tanSoCpu'];
-        $this->cpu->bo_nho_cache = $params['boNhoCache'];
-        $this->cpu->dong_cpu     = $params['dongCpu'];
+        $this->cpu->tan_so_cpu   = $params['tanSoCpu'] ?? null;
+        $this->cpu->bo_nho_cache = $params['boNhoCache'] ?? null;
+        $this->cpu->dong_cpu     = $params['dongCpu'] ?? null;
         $this->cpu->insertCpu();
 
         return redirect()->route('listCpu');
@@ -83,9 +83,9 @@ class CpuService
     {
         $this->cpu->ma_cpu       = $id;
         $this->cpu->ten_cpu      = $params['tenCpu'];
-        $this->cpu->tan_so_cpu   = $params['tanSoCpu'];
-        $this->cpu->bo_nho_cache = $params['boNhoCache'];
-        $this->cpu->dong_cpu     = $params['dongCpu'];
+        $this->cpu->tan_so_cpu   = $params['tanSoCpu'] ?? null;
+        $this->cpu->bo_nho_cache = $params['boNhoCache'] ?? null;
+        $this->cpu->dong_cpu     = $params['dongCpu'] ?? null;
         $this->cpu->updateCpu();
 
         return redirect()->route('listCpu');

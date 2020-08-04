@@ -47,9 +47,8 @@
                         <div class="col-sm-10">
                             <div class="form-group label-floating">
                                 <label class="control-label"></label>
-                                <input type="text" name="dungLuongVga" id="dungLuongVga" class="form-control error"
-                                       required="true" aria-required="true"
-                                       aria-invalid="true" value="{{$vga->dung_luong_vga}}">
+                                <input type="text" name="dungLuongVga" id="dungLuongVga" class="form-control"
+                                       value="{{$vga->dung_luong_vga}}">
                                 <span class="material-input"></span>
                             </div>
                             <label class="col-sm-3 label-on-right">
@@ -86,16 +85,6 @@
                 return false;
             } else {
                 tenVgaError.innerHTML = '';
-            }
-
-            var dungLuongVga = document.getElementById("dungLuongVga");
-            var dungLuongVgaError = document.getElementById("dungLuongVgaError");
-            if (!dungLuongVga.value.length) {
-                dungLuongVgaError.innerHTML = "<b><code>Dung lượng vga không được để trống</code></b>";
-                dungLuongVga.focus();
-                return false;
-            } else {
-                dungLuongVgaError.innerHTML = '';
             }
         }
     </script>

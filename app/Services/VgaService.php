@@ -51,7 +51,7 @@ class VgaService
     {
         $this->vga->loai_vga = $params['loaiVga'];
         $this->vga->ten_vga = $params['tenVga'];
-        $this->vga->dung_luong_vga = $params['dungLuongVga'];
+        $this->vga->dung_luong_vga = $params['dungLuongVga'] ?? null;
         $this->vga->insertVga();
 
         return redirect()->route('listVga');
@@ -81,7 +81,7 @@ class VgaService
         $this->vga->ma_vga         = $id;
         $this->vga->loai_vga       = $params['loaiVga'];
         $this->vga->ten_vga        = $params['tenVga'];
-        $this->vga->dung_luong_vga = $params['dungLuongVga'];
+        $this->vga->dung_luong_vga = $params['dungLuongVga'] ?? null;
         $this->vga->updateVga();
 
         return redirect()->route('listVga');

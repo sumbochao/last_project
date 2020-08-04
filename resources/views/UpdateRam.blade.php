@@ -47,9 +47,8 @@
                         <div class="col-sm-10">
                             <div class="form-group label-floating">
                                 <label class="control-label"></label>
-                                <input type="text" name="tanSoRam" id="tanSoRam" class="form-control error"
-                                       required="true" aria-required="true"
-                                       aria-invalid="true" value="{{$ram->tan_so_ram}}">
+                                <input type="text" name="tanSoRam" id="tanSoRam" class="form-control"
+                                       value="{{$ram->tan_so_ram}}">
                                 <span class="material-input"></span>
                             </div>
                             <label class="col-sm-3 label-on-right">
@@ -87,16 +86,6 @@
                 return false;
             } else {
                 dungLuongRamError.innerHTML = '';
-            }
-
-            var tanSoRam = document.getElementById("tanSoRam");
-            var tanSoRamError = document.getElementById("tanSoRamError");
-            if (!tanSoRam.value.length) {
-                tanSoRamError.innerHTML = "<b><code>Tần số ram không được để trống</code></b>";
-                tanSoRam.focus();
-                return false;
-            } else {
-                tanSoRamError.innerHTML = '';
             }
         }
     </script>
