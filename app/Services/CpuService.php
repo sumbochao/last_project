@@ -20,7 +20,7 @@ class CpuService
     {
         $arrayCpu = $this->cpu->getAllCpu();
 
-        $title            = 'Danh Sách CpuRequest';
+        $title            = 'Danh Sách Cpu';
         $metaDescriptions = 'Danh sách toàn bộ cpu';
         $metaKeywords     = 'Quản lý DCComputer';
         $urlCanonical     = URL::current();
@@ -36,8 +36,8 @@ class CpuService
 
     public function insertCpu()
     {
-        $title            = 'Thêm CpuRequest';
-        $metaDescriptions = 'Thêm CpuRequest';
+        $title            = 'Thêm Cpu';
+        $metaDescriptions = 'Thêm Cpu';
         $metaKeywords     = 'Quản lý DCComputer';
         $urlCanonical     = URL::current();
 
@@ -65,8 +65,8 @@ class CpuService
         $this->cpu->ma_cpu = $id;
         $cpu = $this->cpu->getOneCpu();
 
-        $title            = 'Sửa CpuRequest';
-        $metaDescriptions = 'Sửa CpuRequest ' . $cpu->ten_cpu;
+        $title            = 'Sửa Cpu';
+        $metaDescriptions = 'Sửa Cpu ' . $cpu->ten_cpu;
         $metaKeywords     = 'Quản lý DCComputer';
         $urlCanonical     = URL::current();
 

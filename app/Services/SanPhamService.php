@@ -157,7 +157,7 @@ class SanPhamService
     public function processUpdateSanPham($params, $id)
     {
         $file = $params['anhSanPham'];
-        $path = Storage::disk('public')->put('SanPhamRequest', $file);
+        $path = Storage::disk('public')->put('SanPham', $file);
 
         $this->sanPham->ma_san_pham      = $id;
         $this->sanPham->anh_san_pham     = $path;
