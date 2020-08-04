@@ -99,7 +99,7 @@ class SanPhamService
 
         $this->sanPham->anh_san_pham     = $path;
         $this->sanPham->ten_san_pham     = $params['tenSanPham'];
-        $this->sanPham->mo_ta            = $params['moTa'];
+        $this->sanPham->mo_ta            = $params['moTa'] ?? null;
         $this->sanPham->ma_hang_san_xuat = $params['maHangSanXuat'];
         $this->sanPham->ma_loai_may      = $params['maLoaiMay'];
         $this->sanPham->ma_man_hinh      = $params['maManHinh'];
@@ -162,7 +162,7 @@ class SanPhamService
         $this->sanPham->ma_san_pham      = $id;
         $this->sanPham->anh_san_pham     = $path;
         $this->sanPham->ten_san_pham     = $params['tenSanPham'];
-        $this->sanPham->mo_ta            = $params['moTa'];
+        $this->sanPham->mo_ta            = $params['moTa'] ?? null;
         $this->sanPham->ma_hang_san_xuat = $params['maHangSanXuat'];
         $this->sanPham->ma_loai_may      = $params['maLoaiMay'];
         $this->sanPham->ma_man_hinh      = $params['maManHinh'];

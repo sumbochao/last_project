@@ -17,7 +17,7 @@ class CreateSanPhamTable extends Migration
             $table->id('ma_san_pham');
             $table->text('anh_san_pham');
             $table->string('ten_san_pham');
-            $table->text('mo_ta');
+            $table->text('mo_ta')->nullable();
             $table->bigInteger('ma_hang_san_xuat')->unsigned();
             $table->bigInteger('ma_loai_may')->unsigned();
             $table->bigInteger('ma_man_hinh')->unsigned();
