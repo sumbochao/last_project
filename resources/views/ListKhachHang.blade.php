@@ -2,7 +2,7 @@
 @section('content')
     @push('css')
         <style type="text/css">
-            h1{
+            h1 {
                 color: #ff30de;
             }
         </style>
@@ -11,15 +11,25 @@
         Danh Sách Khách Hàng
     </h1>
     <div class="content">
+        @if (\Illuminate\Support\Facades\Session::has('success'))
+            <span style="color: #00b931" class="input-group-addon">
+                {{\Illuminate\Support\Facades\Session::get('success')}}
+            </span>
+        @endif
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
+                    <form action="{{route('searchKhachHang')}}" method="get">
+                        <input type="text" name="keyWords"
+                               placeholder="Tìm kiếm khách hàng">
+                        <span class="material-input"></span>
+                        <button class="btn-primary">Tìm Kiếm</button>
+                    </form>
                     <div class="card">
                         <div class="card-content">
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">#</th>
                                     <th class="text-center">Ảnh Khách Hàng</th>
                                     <th class="text-center">Tài Khoản</th>
                                     <th class="text-center">Họ Tên Khách Hàng</th>
@@ -34,7 +44,6 @@
                                 @foreach ($arrayKhachHang as $khachHang)
                                     <tbody>
                                     <tr>
-                                        <td>{{$khachHang->ma_khach_hang}}</td>
                                         <td>{{$khachHang->anh_khach_hang}}</td>
                                         <td>{{$khachHang->tai_khoan}}</td>
                                         <td>{{$khachHang->ho_ten_khach_hang}}</td>

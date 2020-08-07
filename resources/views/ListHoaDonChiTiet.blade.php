@@ -19,7 +19,6 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">#</th>
                                     <th class="text-center">Tên Sản Phẩm</th>
                                     <th class="text-center">Số Lượng</th>
                                     <th class="text-center">Giá</th>
@@ -28,7 +27,6 @@
                                 @foreach ($arrayHoaDonChiTiet as $hoaDonChiTiet)
                                     <tbody>
                                     <tr>
-                                        <td>{{$hoaDonChiTiet->ma_hoa_don}}</td>
                                         <td>{{$hoaDonChiTiet->ten_san_pham}}</td>
                                         <td>{{$hoaDonChiTiet->so_luong}}</td>
                                         <td>{{$hoaDonChiTiet->gia}}</td>

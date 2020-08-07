@@ -52,7 +52,7 @@ class LoaiMayService
         $this->loaiMay->ten_loai_may = $params['tenLoaiMay'];
         $this->loaiMay->insertLoaiMay();
 
-        return redirect()->route('listLoaiMay');
+        return redirect()->route('listLoaiMay')->with('success', 'Thêm loại máy thành công');
     }
 
     public function updateLoaiMay($id)
@@ -80,6 +80,6 @@ class LoaiMayService
         $this->loaiMay->ten_loai_may = $params['tenLoaiMay'];
         $this->loaiMay->updateLoaiMay();
 
-        return redirect()->route('listLoaiMay');
+        return redirect()->route('listLoaiMay')->with('success', 'Sửa loại máy thành công');
     }
 }

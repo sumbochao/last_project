@@ -38,9 +38,4 @@ class ThanhToanController extends Controller
     {
         return $this->thanhToanService->processUpdateThanhToan($request->all(), $id);
     }
-
-    public function deleteThanhToan($id)
-    {
-        return $this->thanhToanService->deleteThanhToan($id);
-    }
 }

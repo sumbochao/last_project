@@ -205,7 +205,7 @@
                             <label class="col-sm-2 label-on-left">Tên Sản Phẩm</label>
                             <div class="col-sm-10">
                                 <div class="form-group label-floating is-empty has-error">
-                                    <label class="control-label"></label>
+                                    <label class="control-label" for="tenSanPham"></label>
                                     <input type="text" name="tenSanPham" id="tenSanPham" class="form-control error"
                                            required="true" aria-required="true"
                                            aria-invalid="true" value="{{$sanPham->ten_san_pham}}">
@@ -221,16 +221,12 @@
                         <div class="row">
                             <label class="col-sm-2 label-on-left">Mô Tả</label>
                             <div class="col-sm-10">
-                                <div class="form-group label-floating is-empty has-error">
-                                    <label class="control-label"></label>
-                                    <textarea name="moTa" id="moTa" class="form-control error"
-                                           required="true" aria-required="true"
-                                           aria-invalid="true" value="{{$sanPham->mo_ta}}">
-                                    </textarea>
+                                <div class="form-group label-floating">
+                                    <label class="control-label" for="moTa"></label>
+                                    <input type="text" name="moTa" class="form-control"
+                                           value="{{$sanPham->mo_ta}}">
+                                    <span class="material-input"></span>
                                 </div>
-                                <label class="col-sm-3 label-on-right">
-                                    <span id="moTaError"></span>
-                                </label>
                             </div>
                         </div>
                     </div>
@@ -296,16 +292,6 @@
                 tenSanPhamError.innerHTML = "";
             }
 
-            var moTa = document.getElementById('moTa');
-            var moTaError = document.getElementById('moTaError');
-            if (!moTa.value.length) {
-                moTaError.innerHTML = "<b><code>Mô tả không để trống</code></b>";
-                moTa.focus();
-                return false
-            } else {
-                moTaError.innerHTML = "";
-            }
-
             var soLuong = document.getElementById("soLuong");
             var soLuongError = document.getElementById("soLuongError");
             if (isNaN(soLuong.value) || !soLuong.value) {
@@ -340,7 +326,5 @@
             setFormValidation('#TypeValidation');
             setFormValidation('#RangeValidation');
         });
-
-        CKEDITOR.replace('moTa');
     </script>
 @endpush

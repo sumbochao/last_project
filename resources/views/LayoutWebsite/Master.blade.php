@@ -44,12 +44,12 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{asset('css/nguoi_dung/responsive.css')}}">
 {{--    <style type="text/css">--}}
-{{--        .bg-1{--}}
-{{--            background-image: url("{{asset('img/admin/card-1.jpeg')}}") !important;--}}
+{{--        .bg-10{--}}
+{{--            background-image: url("{{asset('img/nguoi_dung/slider/01_Aug5aec00a85d9bc742de00edd625bb3bc0.png')}}") !important;--}}
 {{--        }--}}
-{{--        .bg-2,.bg-3,.bg-4,.bg-5,.bg-6,.bg-7,.bg-8,.bg-9,.bg-10,.bg-12{--}}
-{{--            background-image: url("{{asset('img/admin/card-2.jpeg')}}") !important;--}}
-{{--        }--}}
+        {{--.bg-2,.bg-3,.bg-4,.bg-5,.bg-6,.bg-7,.bg-8,.bg-9,.bg-10,.bg-12{--}}
+        {{--    background-image: url("{{asset('img/admin/card-2.jpeg')}}") !important;--}}
+        {{--}--}}
 {{--    </style>--}}
     <!-- Modernizr js -->
     <script src="{{asset('js/nguoi_dung/vendor/modernizr-2.8.3.min.js')}}"></script>

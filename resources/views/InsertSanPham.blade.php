@@ -101,7 +101,7 @@
                                     @foreach ($arrayCpu as $cpu)
                                         <option value="{{$cpu->ma_cpu}}">
                                             {{$cpu->ten_cpu}}
-                                            ({{$cpu->tan_so_cpu}}/{{$cpu->bo_nho_cache}})
+                                            {{($cpu->tan_so_cpu.'/'.$cpu->bo_nho_cache)}}
                                         </option>
                                     @endforeach
                                 </select>
@@ -190,14 +190,12 @@
                     <div class="row">
                         <label class="col-sm-2 label-on-left">Mô Tả</label>
                         <div class="col-sm-10">
-                            <div class="form-group label-floating is-empty has-error">
-                                <label class="control-label" for="moTa"></label>
-                                <textarea name="moTa" id="moTa">
-                                </textarea>
+                            <div class="form-group label-floating">
+                                <label class="control-label"></label>
+                                <input type="text" name="moTa" class="form-control"
+                                       placeholder="Mô Tả Sản Phẩm">
+                                <span class="material-input"></span>
                             </div>
-                            <label class="col-sm-3 label-on-right">
-                                <span id="moTaError"></span>
-                            </label>
                         </div>
                     </div>
                 </div>
@@ -262,16 +260,6 @@
                 tenSanPhamError.innerHTML = "";
             }
 
-            var moTa = document.getElementById('moTa');
-            var moTaError = document.getElementById('moTaError');
-            if (!moTa.value.length) {
-                moTaError.innerHTML = "<b><code>Mô tả không để trống</code></b>";
-                moTa.focus();
-                return false
-            } else {
-                moTaError.innerHTML = "";
-            }
-
             var soLuong = document.getElementById("soLuong");
             var soLuongError = document.getElementById("soLuongError");
             if (isNaN(soLuong.value) || !soLuong.value) {
@@ -306,7 +294,5 @@
             setFormValidation('#TypeValidation');
             setFormValidation('#RangeValidation');
         });
-
-        CKEDITOR.replace('moTa');
     </script>
 @endpush

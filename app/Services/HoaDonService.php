@@ -56,7 +56,7 @@ class HoaDonService
             $this->hoaDonChiTiet->insertHoaDonChiTiet();
         }
         Cart::destroy();
-        return redirect()->route('viewGioHang');
+        return redirect()->route('viewGioHang')->with('success', 'Thanh toán thành công');
     }
 
     public function listHoaDonChiTiet($id)
@@ -103,6 +103,6 @@ class HoaDonService
         $this->hoaDon->tinh_trang = $params['tinhTrang'];
         $this->hoaDon->updateHoaDon();
 
-        return redirect()->route('listHoaDon');
+        return redirect()->route('listHoaDon')->with('success', 'Cập nhật tình trạng đơn hàng thành công');
     }
 }

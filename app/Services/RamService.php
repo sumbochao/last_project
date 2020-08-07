@@ -56,7 +56,7 @@ class RamService
         $this->ram->tan_so_ram     = $params['tanSoRam'] ?? null;
         $this->ram->insertRam();
 
-        return redirect()->route('listRam');
+        return redirect()->route('listRam')->with('success', 'Thêm ram thành công');
     }
 
     public function updateRam($id)
@@ -86,6 +86,6 @@ class RamService
         $this->ram->tan_so_ram     = $params['tanSoRam'] ?? null;
         $this->ram->updateRam();
 
-        return redirect()->route('listRam');
+        return redirect()->route('listRam')->with('success', 'Sửa ram thành công');
     }
 }

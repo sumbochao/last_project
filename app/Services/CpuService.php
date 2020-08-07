@@ -57,7 +57,7 @@ class CpuService
         $this->cpu->dong_cpu     = $params['dongCpu'] ?? null;
         $this->cpu->insertCpu();
 
-        return redirect()->route('listCpu');
+        return redirect()->route('listCpu')->with('success', 'Thêm CPU thành công');
     }
 
     public function updateCpu($id)
@@ -88,6 +88,6 @@ class CpuService
         $this->cpu->dong_cpu     = $params['dongCpu'] ?? null;
         $this->cpu->updateCpu();
 
-        return redirect()->route('listCpu');
+        return redirect()->route('listCpu')->with('success', 'Sửa CPU thành công');
     }
 }

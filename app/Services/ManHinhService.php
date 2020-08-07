@@ -57,7 +57,7 @@ class ManHinhService
         $this->manHinh->tam_nen         = $params['tamNen'] ?? null;
         $this->manHinh->insertManHinh();
 
-        return redirect()->route('listManHinh');
+        return redirect()->route('listManHinh')->with('success', 'Thêm màn hình thành công');
     }
 
     public function updateManHinh($id)
@@ -89,6 +89,6 @@ class ManHinhService
         $this->manHinh->tam_nen         = $params['tamNen'] ?? null;
         $this->manHinh->updateManHinh();
 
-        return redirect()->route('listManHinh');
+        return redirect()->route('listManHinh')->with('success', 'Sửa màn hình thành công');
     }
 }

@@ -15,10 +15,10 @@ class CreateManHinhTable extends Migration
     {
         Schema::create('man_hinh', function (Blueprint $table) {
             $table->id('ma_man_hinh');
-            $table->string('kich_co',50);
-            $table->string('do_phan_giai',50)->nullable();
-            $table->string('tan_so_man_hinh',50)->nullable();
-            $table->string('tam_nen',50)->nullable();
+            $table->string('kich_co');
+            $table->string('do_phan_giai')->nullable();
+            $table->string('tan_so_man_hinh')->nullable();
+            $table->string('tam_nen')->nullable();
             $table->timestamps();
         });
     }

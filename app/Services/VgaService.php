@@ -54,7 +54,7 @@ class VgaService
         $this->vga->dung_luong_vga = $params['dungLuongVga'] ?? null;
         $this->vga->insertVga();
 
-        return redirect()->route('listVga');
+        return redirect()->route('listVga')->with('success', 'Thêm vga thành công');
     }
 
     public function updateVga($id)
@@ -84,6 +84,6 @@ class VgaService
         $this->vga->dung_luong_vga = $params['dungLuongVga'] ?? null;
         $this->vga->updateVga();
 
-        return redirect()->route('listVga');
+        return redirect()->route('listVga')->with('success', 'Sửa vga thành công');
     }
 }

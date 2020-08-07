@@ -16,7 +16,7 @@ class CreateVgaTable extends Migration
         Schema::create('vga', function (Blueprint $table) {
             $table->id('ma_vga');
             $table->string('loai_vga',50);
-            $table->string('ten_vga',50);
+            $table->string('ten_vga');
             $table->string('dung_luong_vga',50)->nullable();
             $table->timestamps();
         });

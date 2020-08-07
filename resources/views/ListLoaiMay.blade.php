@@ -2,7 +2,7 @@
 @section('content')
     @push('css')
         <style type="text/css">
-            h1{
+            h1 {
                 color: #ff30de;
             }
         </style>
@@ -14,6 +14,11 @@
         <button class="btn btn-behance">Thêm Loại Máy</button>
     </a>
     <div class="content">
+        @if (\Illuminate\Support\Facades\Session::has('success'))
+            <span style="color: #00b931" class="input-group-addon">
+                {{\Illuminate\Support\Facades\Session::get('success')}}
+            </span>
+        @endif
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -22,7 +27,6 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">#</th>
                                     <th class="text-center">Tên Loại Máy</th>
                                     <th class="text-right">Actions</th>
                                 </tr>
@@ -30,10 +34,9 @@
                                 @foreach ($arrayLoaiMay as $loaiMay)
                                     <tbody>
                                     <tr>
-                                        <td>{{$loaiMay->ma_loai_may}}</td>
                                         <td>{{$loaiMay->ten_loai_may}}</td>
                                         <td class="td-actions text-right">
-                                            <a href="{{route('updateLoaiMay',['id'=>$loaiMay->ma_loai_may])}}">
+                                            <a href="{{route('updateLoaiMay', ['id' => $loaiMay->ma_loai_may])}}">
                                                 <button type="button" rel="tooltip" class="btn btn-success btn-round">
                                                     <i class="material-icons">edit</i>
                                                 </button>

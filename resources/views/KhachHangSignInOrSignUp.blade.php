@@ -60,6 +60,11 @@
                         @csrf
                         <div class="login-form">
                             <h4 class="login-title">Đăng Ký</h4>
+                            @if (Session::has('success'))
+                                <span style="color: #0058ff" class="input-group-addon">
+                                    {{Session::get('success')}}
+                                </span>
+                            @endif
                             <div class="row">
                                 <div class="col-md-6 col-12 mb-20">
                                     <label>Họ Tên*</label>

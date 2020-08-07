@@ -109,49 +109,49 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-12">
-                            <div class="your-order">
-                                <h3>Đơn Hàng Của Bạn</h3>
-                                <div class="your-order-table table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                        <tr>
-                                            <th class="cart-product-name">Product</th>
-                                            <th class="cart-product-total">Total</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        @foreach(Cart::content() as $contentValue)
-                                            <tr class="cart_item">
-                                                <td class="cart-product-name"> {{$contentValue->name}}
-                                                    <strong class="product-quantity"> x{{$contentValue->qty}}
-                                                    </strong>
-                                                </td>
-                                                <td class="cart-product-total">
+                        <div class="your-order">
+                            <h3>Đơn Hàng Của Bạn</h3>
+                            <div class="your-order-table table-responsive">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th class="cart-product-name">Product</th>
+                                        <th class="cart-product-total">Total</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach(Cart::content() as $contentValue)
+                                        <tr class="cart_item">
+                                            <td class="cart-product-name"> {{$contentValue->name}}
+                                                <strong class="product-quantity"> x{{$contentValue->qty}}
+                                                </strong>
+                                            </td>
+                                            <td class="cart-product-total">
                                     <span class="amount">
                                         {{number_format($subtotal=$contentValue->price*$contentValue->qty).' '.'$'}}
                                     </span>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                        </tbody>
-                                        <tfoot>
-                                        <tr class="cart-subtotal">
-                                            <th>Cart Subtotal</th>
-                                            <td><span class="amount">{{Cart::subtotal().' '.'$'}}</span></td>
-                                        </tr>
-                                        <tr class="order-total">
-                                            <th>Order Total</th>
-                                            <td><strong><span class="amount">{{Cart::subtotal().' '.'$'}}</span></strong>
                                             </td>
                                         </tr>
-                                        </tfoot>
-                                    </table>
+                                    @endforeach
+                                    </tbody>
+                                    <tfoot>
+                                    <tr class="cart-subtotal">
+                                        <th>Cart Subtotal</th>
+                                        <td><span class="amount">{{Cart::subtotal().' '.'$'}}</span></td>
+                                    </tr>
+                                    <tr class="order-total">
+                                        <th>Order Total</th>
+                                        <td><strong><span class="amount">{{Cart::subtotal().' '.'$'}}</span></strong>
+                                        </td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
 
-                                </div>
-                                <div class="order-button-payment">
-                                    <input value="Đặt Hàng" type="submit">
-                                </div>
                             </div>
+                            <div class="order-button-payment">
+                                <input value="Đặt Hàng" type="submit">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>

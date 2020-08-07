@@ -38,4 +38,9 @@ class KhachHangController extends Controller
     {
         return $this->khachHangService->deleteKhachHang($id);
     }
+
+    public function searchKhachHang(Request $request)
+    {
+        return $this->khachHangService->searchKhachHang($request->all());
+    }
 }

@@ -53,7 +53,7 @@ class HangSanXuatService
         $this->hangSanXuat->ten_hang_san_xuat = $params['tenHangSanXuat'];
         $this->hangSanXuat->insertHangSanXuat();
 
-        return redirect()->route('listHangSanXuat');
+        return redirect()->route('listHangSanXuat')->with('success', 'Thêm hãng sản xuất thành công');
     }
 
     public function updateHangSanXuat($id)
@@ -82,6 +82,6 @@ class HangSanXuatService
         $this->hangSanXuat->ten_hang_san_xuat = $params['tenHangSanXuat'];
         $this->hangSanXuat->updateHangSanXuat();
 
-        return redirect()->route('listHangSanXuat');
+        return redirect()->route('listHangSanXuat')->with('success', 'Sửa hãng sản xuất thành công');
     }
 }

@@ -40,11 +40,4 @@ class ThanhToan extends Model
                 'phuong_thuc_thanh_toan' => $this->phuong_thuc_thanh_toan
             ]);
     }
-
-    public function deleteThanhToan()
-    {
-        DB::table($this->table)
-            ->where('ma_thanh_toan', $this->ma_thanh_toan)
-            ->delete();
-    }
 }

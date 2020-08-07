@@ -81,4 +81,12 @@ class KhachHang extends Model
             ->get();
         return $array;
     }
+
+    public function searchKhachHang()
+    {
+        $array = DB::table($this->table)
+            ->where('ho_ten_khach_hang', 'like', "%$this->ho_ten_khach_hang%")
+            ->get();
+        return $array;
+    }
 }

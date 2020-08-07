@@ -18,7 +18,6 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th class="li-product-thumbnail">#</th>
                                 <th class="li-product-thumbnail">Họ Tên Khách Hàng</th>
                                 <th class="cart-product-name">Phương Thức Thanh Toán</th>
                                 <th class="li-product-price">Tổng Tiền</th>
@@ -30,7 +29,6 @@
                             @foreach ($arrayHoaDon as $hoaDon)
                                 <tbody>
                                 <tr>
-                                    <td>{{$hoaDon->ma_hoa_don}}</td>
                                     <td>{{$hoaDon->ho_ten_khach_hang}}</td>
                                     <td>{{$hoaDon->phuong_thuc_thanh_toan}}</td>
                                     <td>{{$hoaDon->tong_tien}} $</td>
@@ -45,7 +43,8 @@
                                         @endif
                                     </td>
                                     <td class="td-actions text-right">
-                                        <a href="{{route('historyHoaDonChiTiet',['id'=>$hoaDon->ma_hoa_don])}}" class="btn btn-success btn-round">
+                                        <a href="{{route('historyHoaDonChiTiet',['id'=>$hoaDon->ma_hoa_don])}}"
+                                           class="btn btn-success btn-round">
                                             Chi Tiết
                                             <div class="ripple-container"></div>
                                         </a>

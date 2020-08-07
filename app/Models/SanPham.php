@@ -32,7 +32,21 @@ class SanPham extends Model
             ->leftJoin('cpu', "$this->table.ma_cpu", '=', 'cpu.ma_cpu')
             ->leftJoin('vga', "$this->table.ma_vga", '=', 'vga.ma_vga')
             ->leftJoin('o_cung', "$this->table.ma_o_cung", '=', 'o_cung.ma_o_cung')
-            ->paginate(15);
+            ->get();
+        return $array;
+    }
+
+    public function shopGetAllSanPham()
+    {
+        $array = DB::table($this->table)
+            ->leftJoin('hang_san_xuat', "$this->table.ma_hang_san_xuat", '=', 'hang_san_xuat.ma_hang_san_xuat')
+            ->leftJoin('loai_may', "$this->table.ma_loai_may", '=', 'loai_may.ma_loai_may')
+            ->leftJoin('man_hinh', "$this->table.ma_man_hinh", '=', 'man_hinh.ma_man_hinh')
+            ->leftJoin('ram', "$this->table.ma_ram", '=', 'ram.ma_ram')
+            ->leftJoin('cpu', "$this->table.ma_cpu", '=', 'cpu.ma_cpu')
+            ->leftJoin('vga', "$this->table.ma_vga", '=', 'vga.ma_vga')
+            ->leftJoin('o_cung', "$this->table.ma_o_cung", '=', 'o_cung.ma_o_cung')
+            ->paginate(6);
         return $array;
     }
 
@@ -40,7 +54,7 @@ class SanPham extends Model
     {
         $array = DB::table($this->table)
             ->where('ma_hang_san_xuat', $this->ma_hang_san_xuat)
-            ->paginate(15);
+            ->paginate(6);
         return $array;
     }
 
@@ -48,7 +62,7 @@ class SanPham extends Model
     {
         $array = DB::table($this->table)
             ->where('ma_loai_may', $this->ma_loai_may)
-            ->paginate(15);
+            ->paginate(6);
         return $array;
     }
 
@@ -56,7 +70,7 @@ class SanPham extends Model
     {
         $timKiemSanPham = DB::table($this->table)
             ->where('ten_san_pham', 'like', "%$this->ten_san_pham%")
-            ->paginate(15);
+            ->paginate(6);
         return $timKiemSanPham;
     }
 

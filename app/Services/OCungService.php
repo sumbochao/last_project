@@ -53,7 +53,7 @@ class OCungService
         $this->oCung->dung_luong_o_cung = $params['dungLuongOCung'];
         $this->oCung->insertOCung();
 
-        return redirect()->route('listOCung');
+        return redirect()->route('listOCung')->with('success', 'Thêm ổ cứng thành công');
     }
 
     public function updateOCung($id)
@@ -82,6 +82,6 @@ class OCungService
         $this->oCung->dung_luong_o_cung = $params['dungLuongOCung'];
         $this->oCung->updateOCung();
 
-        return redirect()->route('listOCung');
+        return redirect()->route('listOCung')->with('success', 'Sửa ổ cứng thành công');
     }
 }

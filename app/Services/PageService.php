@@ -41,7 +41,7 @@ class PageService
 
         $arrayLoaiMay     = $this->loaiMay->getAllLoaiMay();
 
-        $arraySanPham     = $this->sanPham->getAllSanPham();
+        $arraySanPham     = $this->sanPham->shopGetAllSanPham();
 
         $title            = 'Toàn Bộ Sản Phẩm';
         $metaDescriptions = 'Danh sách toàn bộ sản phẩm';

@@ -112,7 +112,7 @@
 <script src="{{asset('js/admin/demo.js')}}"></script>
 
 {{--CkeEditor--}}
-<script src="{{asset('js/admin/ckeditor/ckeditor.js')}}"></script>
+{{--<script src="{{asset('js/admin/ckeditor/ckeditor.js')}}"></script>--}}
 
 @stack('js')
 

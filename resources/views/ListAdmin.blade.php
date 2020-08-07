@@ -2,7 +2,7 @@
 @section('content')
     @push('css')
         <style type="text/css">
-            h1{
+            h1 {
                 color: #ff30de;
             }
         </style>
@@ -14,6 +14,11 @@
         <button class="btn btn-behance">Thêm Admin</button>
     </a>
     <div class="content">
+        @if (\Illuminate\Support\Facades\Session::has('success'))
+            <span style="color: #00b931" class="input-group-addon">
+                {{\Illuminate\Support\Facades\Session::get('success')}}
+            </span>
+        @endif
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -22,9 +27,8 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">#</th>
+                                    <th class="text-center">Ảnh Admin</th>
                                     <th class="text-center">Tài Khoản</th>
-                                    <th class="text-center">Mật Khẩu</th>
                                     <th class="text-center">Họ Tên Admin</th>
                                     <th class="text-center">Ngày Sinh</th>
                                     <th class="text-center">Giới Tính</th>
@@ -36,9 +40,11 @@
                                 @foreach ($arrayAdmin as $admin)
                                     <tbody>
                                     <tr>
-                                        <td>{{$admin->ma_admin}}</td>
+                                        <td>
+                                            <img src="{{asset('storage/'.$admin->anh_admin)}}" width="150px"
+                                                 height="150px">
+                                        </td>
                                         <td>{{$admin->tai_khoan}}</td>
-                                        <td>{{$admin->mat_khau}}</td>
                                         <td>{{$admin->ho_ten_admin}}</td>
                                         <td>{{\Carbon\Carbon::parse($admin->ngay_sinh)->format('d/m/Y')}}</td>
                                         <td>

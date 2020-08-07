@@ -2,7 +2,7 @@
 @section('content')
     @push('css')
         <style type="text/css">
-            h1{
+            h1 {
                 color: #ff30de;
             }
         </style>
@@ -11,6 +11,11 @@
         Danh Sách Hoá Đơn
     </h1>
     <div class="content">
+        @if (\Illuminate\Support\Facades\Session::has('success'))
+            <span style="color: #00b931" class="input-group-addon">
+                {{\Illuminate\Support\Facades\Session::get('success')}}
+            </span>
+        @endif
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -19,7 +24,6 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">#</th>
                                     <th class="text-center">Họ Tên Khách Hàng</th>
                                     <th class="text-center">Phương Thức Thanh Toán</th>
                                     <th class="text-center">Tổng Tiền</th>
@@ -31,7 +35,6 @@
                                 @foreach ($arrayHoaDon as $hoaDon)
                                     <tbody>
                                     <tr>
-                                        <td>{{$hoaDon->ma_hoa_don}}</td>
                                         <td>{{$hoaDon->ho_ten_khach_hang}}</td>
                                         <td>{{$hoaDon->phuong_thuc_thanh_toan}}</td>
                                         <td>{{$hoaDon->tong_tien}}</td>
@@ -46,7 +49,8 @@
                                             @endif
                                         </td>
                                         <td class="td-actions text-right">
-                                            <a href="{{route('listHoaDonChiTiet',['id'=>$hoaDon->ma_hoa_don])}}" class="btn btn-simple btn-warning btn-icon edit">
+                                            <a href="{{route('listHoaDonChiTiet',['id'=>$hoaDon->ma_hoa_don])}}"
+                                               class="btn btn-simple btn-warning btn-icon edit">
                                                 <i class="material-icons">dvr</i>
                                                 <div class="ripple-container"></div>
                                             </a>

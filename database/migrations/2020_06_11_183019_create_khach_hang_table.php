@@ -18,8 +18,8 @@ class CreateKhachHangTable extends Migration
             $table->string('tai_khoan',100)->unique();
             $table->string('mat_khau',100);
             $table->text('anh_khach_hang')->nullable();
-            $table->string('ho_ten_khach_hang',100);
-            $table->string('email',100)->unique();
+            $table->string('ho_ten_khach_hang');
+            $table->string('email')->unique();
             $table->date('ngay_sinh');
             $table->boolean('gioi_tinh');
             $table->string('sdt');

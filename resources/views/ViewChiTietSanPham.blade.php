@@ -144,7 +144,7 @@
                                 </p>
                             </div>
                             <div class="single-add-to-cart">
-                                <form action="{{route('processInsertSanPhamVaoGioHang',['id'=>$sanPham->ma_san_pham])}}"
+                                <form action="{{route('processInsertSanPhamVaoGioHang', ['id' => $sanPham->ma_san_pham])}}"
                                       method="post" class="cart-quantity">
                                     @csrf
                                     <div class="quantity">

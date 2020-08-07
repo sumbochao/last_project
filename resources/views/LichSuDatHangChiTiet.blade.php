@@ -18,7 +18,6 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th class="li-product-thumbnail">#</th>
                                 <th class="li-product-thumbnail">Tên Sản Phẩm</th>
                                 <th class="cart-product-name">Số Lượng</th>
                                 <th class="li-product-price">Giá</th>
@@ -27,10 +26,9 @@
                             @foreach ($arrayHoaDonChiTiet as $hoaDonChiTiet)
                                 <tbody>
                                 <tr>
-                                    <td>{{$hoaDonChiTiet->ma_hoa_don}}</td>
                                     <td>{{$hoaDonChiTiet->ten_san_pham}}</td>
                                     <td>{{$hoaDonChiTiet->so_luong}}</td>
-                                    <td>{{number_format($hoaDonChiTiet->gia)}} $</td>
+                                    <td>{{$hoaDonChiTiet->gia}} $</td>
                                 </tr>
                                 </tbody>
                             @endforeach

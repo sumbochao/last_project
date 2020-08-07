@@ -111,7 +111,7 @@ class SanPhamService
         $this->sanPham->gia              = $params['gia'];
         $this->sanPham->insertSanPham();
 
-        return redirect()->route('listSanPham');
+        return redirect()->route('listSanPham')->with('success', 'Thêm sản phẩm thành công');
     }
 
     public function updateSanPham($id)
@@ -174,7 +174,7 @@ class SanPhamService
         $this->sanPham->gia              = $params['gia'];
         $this->sanPham->updateSanPham();
 
-        return redirect()->route('listSanPham');
+        return redirect()->route('listSanPham')->with('success', 'Sửa sản phẩm thành công');
     }
 
     public function deleteSanPham($id)
@@ -182,6 +182,6 @@ class SanPhamService
         $this->sanPham->ma_san_pham = $id;
         $this->sanPham->deleteSanPham();
 
-        return redirect()->route('listSanPham');
+        return redirect()->route('listSanPham')->with('success', 'Xóa sản phẩm thành công');
     }
 }

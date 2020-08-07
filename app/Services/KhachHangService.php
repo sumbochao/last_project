@@ -47,7 +47,7 @@ class KhachHangService
         $this->khachHang->dia_chi           = $params['diaChi'];
         $this->khachHang->insertKhachHang();
 
-        return redirect()->route('viewGioHang');
+        return redirect()->route('khachHangSignInOrSignUp')->with('success', 'Đăng ký thành công vui lòng tiến hành đăng nhập');
     }
 
     public function updateKhachHang($id)
@@ -82,7 +82,7 @@ class KhachHangService
         $this->khachHang->dia_chi           = $params['diaChi'];
         $this->khachHang->updateKhachHang();
 
-        return redirect()->route('listKhachHang');
+        return redirect()->route('listKhachHang')->with('success', 'Sửa khách hàng thành công');
     }
 
     public function deleteKhachHang($id)
@@ -90,6 +90,25 @@ class KhachHangService
         $this->khachHang->ma_khach_hang = $id;
         $this->khachHang->deleteKhachHang();
 
-        return redirect()->route('listKhachHang');
+        return redirect()->route('listKhachHang')->with('success', 'Xóa khách hàng thành công');
+    }
+
+    public function searchKhachHang($params)
+    {
+        $this->khachHang->ho_ten_khach_hang = $params['keyWords'];
+        $arrayKhachHang = $this->khachHang->searchKhachHang();
+
+        $title            = 'Danh Sách Khách Hàng';
+        $metaDescriptions = 'Danh sách toàn bộ khách hàng';
+        $metaKeywords     = 'Quản lý DCComputer';
+        $urlCanonical     = URL::current();
+
+        return view('ListKhachHang',[
+            'arrayKhachHang'     => $arrayKhachHang,
+            'title'              => $title,
+            'metaDescriptions'   => $metaDescriptions,
+            'metaKeywords'       => $metaKeywords,
+            'urlCanonical'       => $urlCanonical,
+        ]);
     }
 }

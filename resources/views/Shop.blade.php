@@ -73,7 +73,7 @@
                                                         </a>
                                                     </h4>
                                                     <div class="price-box">
-                                                        <span class="new-price">{{number_format($sanPham->gia)}} $</span>
+                                                        <span class="new-price">{{$sanPham->gia}} $</span>
                                                     </div>
                                                 </div>
                                                 <div class="add-actions">

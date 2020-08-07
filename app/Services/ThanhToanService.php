@@ -52,7 +52,7 @@ class ThanhToanService
         $this->thanhToan->phuong_thuc_thanh_toan = $params['phuongThucThanhToan'];
         $this->thanhToan->insertThanhToan();
 
-        return redirect()->route('listThanhToan');
+        return redirect()->route('listThanhToan')->with('success', 'Thêm phương thức thanh toán thành công');
     }
 
     public function updateThanhToan($id)
@@ -80,14 +80,6 @@ class ThanhToanService
         $this->thanhToan->phuong_thuc_thanh_toan = $params['phuongThucThanhToan'];
         $this->thanhToan->updateThanhToan();
 
-        return redirect()->route('listThanhToan');
-    }
-
-    public function deleteThanhToan($id)
-    {
-        $this->thanhToan->ma_thanh_toan = $id;
-        $this->thanhToan->deleteThanhToan();
-
-        return redirect()->route('listThanhToan');
+        return redirect()->route('listThanhToan')->with('success', 'Sửa phương thức thanh toán thành công');
     }
 }

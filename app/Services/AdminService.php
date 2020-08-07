@@ -68,7 +68,7 @@ class AdminService
         $this->admin->cap_do       = $params['capDo'];
         $this->admin->insertAdmin();
 
-        return redirect()->route('listAdmin');
+        return redirect()->route('listAdmin')->with('success', 'Thêm admin thành công');
     }
 
     public function updateAdmin($id)
@@ -97,7 +97,7 @@ class AdminService
         $this->admin->email = $params['email'];
         $this->admin->updateAdmin();
 
-        return redirect()->route('listAdmin');
+        return redirect()->route('listAdmin')->with('success', 'Sửa admin thành công');
     }
 
     public function deleteAdmin($id)
@@ -105,6 +105,6 @@ class AdminService
         $this->admin->ma_admin = $id;
         $this->admin->deleteAdmin();
 
-        return redirect()->route('listAdmin');
+        return redirect()->route('listAdmin')->with('success', 'Xóa admin thành công');
     }
 }

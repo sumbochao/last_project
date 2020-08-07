@@ -9,42 +9,42 @@
                     <div class="slider-area pt-sm-30 pt-xs-30">
                         <div class="slider-active owl-carousel">
                             <!-- Begin Single Slide Area -->
-                            <div class="single-slide align-center-left animation-style-01 bg-1">
+                            <div class="single-slide align-center-left animation-style-01 bg-10">
                                 <div class="slider-progress"></div>
-                                <div class="slider-content">
-                                    <h5>Sale Offer <span>-20% Off</span> This Week</h5>
-                                    <h2>Chamcham Galaxy S9 | S9+</h2>
-                                    <h3>Starting at <span>$1209.00</span></h3>
-                                    <div class="default-btn slide-btn">
-                                        <a class="links" href="shop-left-sidebar.html">Shopping Now</a>
-                                    </div>
-                                </div>
+                                {{--                                <div class="slider-content">--}}
+                                {{--                                    <h5>Sale Offer <span>-20% Off</span> This Week</h5>--}}
+                                {{--                                    <h2>Chamcham Galaxy S9 | S9+</h2>--}}
+                                {{--                                    <h3>Starting at <span>$1209.00</span></h3>--}}
+                                {{--                                    <div class="default-btn slide-btn">--}}
+                                {{--                                        <a class="links" href="shop-left-sidebar.html">Shopping Now</a>--}}
+                                {{--                                    </div>--}}
+                                {{--                                </div>--}}
                             </div>
                             <!-- Single Slide Area End Here -->
                             <!-- Begin Single Slide Area -->
-                            <div class="single-slide align-center-left animation-style-02 bg-2">
+                            <div class="single-slide align-center-left animation-style-02 bg-11">
                                 <div class="slider-progress"></div>
-                                <div class="slider-content">
-                                    <h5>Sale Offer <span>Black Friday</span> This Week</h5>
-                                    <h2>Work Desk Surface Studio 2018</h2>
-                                    <h3>Starting at <span>$824.00</span></h3>
-                                    <div class="default-btn slide-btn">
-                                        <a class="links" href="shop-left-sidebar.html">Shopping Now</a>
-                                    </div>
-                                </div>
+                                {{--                                <div class="slider-content">--}}
+                                {{--                                    <h5>Sale Offer <span>Black Friday</span> This Week</h5>--}}
+                                {{--                                    <h2>Work Desk Surface Studio 2018</h2>--}}
+                                {{--                                    <h3>Starting at <span>$824.00</span></h3>--}}
+                                {{--                                    <div class="default-btn slide-btn">--}}
+                                {{--                                        <a class="links" href="shop-left-sidebar.html">Shopping Now</a>--}}
+                                {{--                                    </div>--}}
+                                {{--                                </div>--}}
                             </div>
                             <!-- Single Slide Area End Here -->
                             <!-- Begin Single Slide Area -->
-                            <div class="single-slide align-center-left animation-style-01 bg-3">
+                            <div class="single-slide align-center-left animation-style-01 bg-12">
                                 <div class="slider-progress"></div>
-                                <div class="slider-content">
-                                    <h5>Sale Offer <span>-10% Off</span> This Week</h5>
-                                    <h2>Phantom 4 Pro+ Obsidian</h2>
-                                    <h3>Starting at <span>$1849.00</span></h3>
-                                    <div class="default-btn slide-btn">
-                                        <a class="links" href="shop-left-sidebar.html">Shopping Now</a>
-                                    </div>
-                                </div>
+                                {{--                                <div class="slider-content">--}}
+                                {{--                                    <h5>Sale Offer <span>-10% Off</span> This Week</h5>--}}
+                                {{--                                    <h2>Phantom 4 Pro+ Obsidian</h2>--}}
+                                {{--                                    <h3>Starting at <span>$1849.00</span></h3>--}}
+                                {{--                                    <div class="default-btn slide-btn">--}}
+                                {{--                                        <a class="links" href="shop-left-sidebar.html">Shopping Now</a>--}}
+                                {{--                                    </div>--}}
+                                {{--                                </div>--}}
                             </div>
                             <!-- Single Slide Area End Here -->
                         </div>
@@ -73,23 +73,23 @@
         <div class="container">
             <div class="row">
                 <!-- Begin Single Banner Area -->
-                <div class="col-lg-6">
-                    <div class="single-banner pb-sm-30 pb-xs-30">
-                        <a href="#">
-                            <img src="{{asset('img/nguoi_dung/banner/2_3.jpg')}}" alt="Li's Static Banner">
-                        </a>
-                    </div>
-                </div>
-                <!-- Single Banner Area End Here -->
-                <!-- Begin Single Banner Area -->
-                <div class="col-lg-6">
-                    <div class="single-banner">
-                        <a href="#">
-                            <img src="{{asset('img/nguoi_dung/banner/2_4.jpg')}}" alt="Li's Static Banner">
-                        </a>
-                    </div>
-                </div>
-                <!-- Single Banner Area End Here -->
+            {{--                <div class="col-lg-6">--}}
+            {{--                    <div class="single-banner pb-sm-30 pb-xs-30">--}}
+            {{--                        <a href="#">--}}
+            {{--                            <img src="{{asset('img/nguoi_dung/banner/2_3.jpg')}}" alt="Li's Static Banner">--}}
+            {{--                        </a>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--                <!-- Single Banner Area End Here -->--}}
+            {{--                <!-- Begin Single Banner Area -->--}}
+            {{--                <div class="col-lg-6">--}}
+            {{--                    <div class="single-banner">--}}
+            {{--                        <a href="#">--}}
+            {{--                            <img src="{{asset('img/nguoi_dung/banner/2_4.jpg')}}" alt="Li's Static Banner">--}}
+            {{--                        </a>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            <!-- Single Banner Area End Here -->
             </div>
         </div>
     </div>
@@ -116,7 +116,6 @@
                                                 <img src="{{asset('storage/'.$sanPham->anh_san_pham)}}"
                                                      alt="Li's Product Image">
                                             </a>
-                                            <span class="sticker">New</span>
                                         </div>
                                         <div class="product_desc">
                                             <div class="product_desc_info">

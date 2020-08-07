@@ -2,7 +2,7 @@
 @section('content')
     @push('css')
         <style type="text/css">
-            h1{
+            h1 {
                 color: #ff30de;
             }
         </style>
@@ -14,6 +14,11 @@
         <button class="btn btn-behance">Thêm Sản Phẩm</button>
     </a>
     <div class="content">
+        @if (\Illuminate\Support\Facades\Session::has('success'))
+            <span style="color: #00b931" class="input-group-addon">
+                {{\Illuminate\Support\Facades\Session::get('success')}}
+            </span>
+        @endif
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -22,7 +27,6 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">#</th>
                                     <th class="text-center">Ảnh Sản Phẩm</th>
                                     <th class="text-center">Tên Sản Phẩm</th>
                                     <th class="text-center">Hãng Sản Xuất</th>
@@ -40,9 +44,9 @@
                                 @foreach ($arraySanPham as $sanPham)
                                     <tbody>
                                     <tr>
-                                        <td>{{$sanPham->ma_san_pham}}</td>
                                         <td>
-                                            <img src="{{asset('storage/'.$sanPham->anh_san_pham)}}" width="150px" height="150px">
+                                            <img src="{{asset('storage/'.$sanPham->anh_san_pham)}}" width="150px"
+                                                 height="150px">
                                         </td>
                                         <td>{{$sanPham->ten_san_pham}}</td>
                                         <td>{{$sanPham->ten_hang_san_xuat}}</td>
@@ -67,12 +71,12 @@
                                         <td>{{$sanPham->so_luong}}</td>
                                         <td>{{$sanPham->gia}}</td>
                                         <td class="td-actions text-right">
-                                            <a href="{{route('updateSanPham',['id'=>$sanPham->ma_san_pham])}}">
+                                            <a href="{{route('updateSanPham', ['id' => $sanPham->ma_san_pham])}}">
                                                 <button type="button" rel="tooltip" class="btn btn-success btn-round">
                                                     <i class="material-icons">edit</i>
                                                 </button>
                                             </a>
-                                            <a href="{{route('deleteSanPham',['id'=>$sanPham->ma_san_pham])}}">
+                                            <a href="{{route('deleteSanPham', ['id' => $sanPham->ma_san_pham])}}">
                                                 <button type="button" rel="tooltip" class="btn btn-danger btn-round">
                                                     <i class="material-icons">close</i>
                                                 </button>

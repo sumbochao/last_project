@@ -58,7 +58,8 @@ Route::group(['prefix' => ''], function () {
     Route::get('view-chi-tiet-san-pham/{id}', 'PageController@viewChiTietSanPham')
         ->name('viewChiTietSanPham');
 
-    Route::get('search-san-pham', 'PageController@searchSanPham')->name('searchSanPham');
+    Route::get('search-san-pham', 'PageController@searchSanPham')
+        ->name('searchSanPham');
 
     Route::get('history-hoa-don', 'PageController@historyHoaDon')->name('historyHoaDon');
 
@@ -153,7 +154,6 @@ Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"], function () {
         Route::post('process-insert-thanh-toan', 'ThanhToanController@processInsertThanhToan')->name('processInsertThanhToan');
         Route::get('update-thanh-toan/{id}', 'ThanhToanController@updateThanhToan')->name('updateThanhToan');
         Route::post('process-update-thanh-toan/{id}', 'ThanhToanController@processUpdateThanhToan')->name('processUpdateThanhToan');
-        Route::get('delete-thanh-toan/{id}', 'ThanhToanController@deleteThanhToan')->name('deleteThanhToan');
     });
 
     Route::group(['prefix' => 'hoa-don'], function () {
@@ -172,5 +172,6 @@ Route::group(["prefix" => "admin", "middleware" => "CheckAdmin"], function () {
         Route::get('', 'KhachHangController@listKhachHang')->name('listKhachHang');
         Route::get('update-khach-hang/{id}', 'KhachHangController@updateKhachHang')->name('updateKhachHang');
         Route::get('delete-khach-hang/{id}', 'KhachHangController@deleteKhachHang')->name('deleteKhachHang');
+        Route::get('search-khach-hang', 'KhachHangController@searchKhachHang')->name('searchKhachHang');
     });
 });

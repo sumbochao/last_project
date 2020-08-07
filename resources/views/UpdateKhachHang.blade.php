@@ -2,7 +2,8 @@
 @section('content')
     <div class="col-md-12">
         <div class="card">
-            <form action="{{route('processUpdateKhachHang',['id'=>$khachHang->ma_khach_hang])}}" enctype="multipart/form-data"
+            <form action="{{route('processUpdateKhachHang',['id'=>$khachHang->ma_khach_hang])}}"
+                  enctype="multipart/form-data"
                   class="form-horizontal" method="post">
                 @csrf
                 <div class="card-header card-header-text" data-background-color="rose">
@@ -12,7 +13,7 @@
                     <div class="row">
                         <label class="col-sm-2 label-on-left">Tài Khoản</label>
                         <div class="col-sm-10">
-                            <div class="form-group label-floating is-empty has-error">
+                            <div class="form-group label-floating">
                                 <label class="control-label"></label>
                                 <input type="text" name="taiKhoan" id="taiKhoan" class="form-control error"
                                        required="true" aria-required="true"
@@ -29,7 +30,7 @@
                     <div class="row">
                         <label class="col-sm-2 label-on-left">Mật Khẩu</label>
                         <div class="col-sm-10">
-                            <div class="form-group label-floating is-empty has-error">
+                            <div class="form-group label-floating">
                                 <label class="control-label"></label>
                                 <input type="password" name="matKhau" id="matKhau" class="form-control error"
                                        required="true" aria-required="true"
@@ -69,7 +70,7 @@
                     <div class="row">
                         <label class="col-sm-2 label-on-left">Họ Tên Khách Hàng</label>
                         <div class="col-sm-10">
-                            <div class="form-group label-floating is-empty has-error">
+                            <div class="form-group label-floating">
                                 <label class="control-label"></label>
                                 <input type="text" name="hoTenKhachHang" id="hoTenKhachHang"
                                        class="form-control error" required="true" aria-required="true"
@@ -90,8 +91,8 @@
                                 <label>
                                     <input type="radio" name="gioiTinh" value="0"
                                            @if($khachHang->gioi_tinh==0)
-                                               checked
-                                           @endif
+                                           checked
+                                        @endif
                                     >
                                     <span class="circle"></span>
                                     <span class="check"></span>
@@ -102,8 +103,8 @@
                                 <label>
                                     <input type="radio" name="gioiTinh" value="1"
                                            @if($khachHang->gioi_tinh==1)
-                                                checked
-                                            @endif
+                                           checked
+                                        @endif
                                     >
                                     <span class="circle"></span>
                                     <span class="check"></span>
@@ -117,7 +118,7 @@
                     <div class="row">
                         <label class="col-sm-2 label-on-left">Ngày Sinh</label>
                         <div class="col-sm-10">
-                            <div class="form-group label-floating is-empty has-error">
+                            <div class="form-group label-floating">
                                 <label class="control-label"></label>
                                 <input type="text" name="ngaySinh" id="ngaySinh" class="form-control error"
                                        required="true" aria-required="true" aria-invalid="true"
@@ -134,7 +135,7 @@
                     <div class="row">
                         <label class="col-sm-2 label-on-left">Email</label>
                         <div class="col-sm-10">
-                            <div class="form-group label-floating is-empty has-error">
+                            <div class="form-group label-floating">
                                 <label class="control-label"></label>
                                 <input type="email" name="email" id="email" class="form-control error" required="true"
                                        aria-required="true"
@@ -151,7 +152,7 @@
                     <div class="row">
                         <label class="col-sm-2 label-on-left">Số Điện Thoại</label>
                         <div class="col-sm-10">
-                            <div class="form-group label-floating is-empty has-error">
+                            <div class="form-group label-floating">
                                 <label class="control-label"></label>
                                 <input type="number" name="sdt" id="sdt" class="form-control error" required="true"
                                        aria-required="true"
@@ -168,11 +169,11 @@
                     <div class="row">
                         <label class="col-sm-2 label-on-left">Địa Chỉ</label>
                         <div class="col-sm-10">
-                            <div class="form-group label-floating is-empty has-error">
+                            <div class="form-group label-floating">
                                 <label class="control-label"></label>
                                 <input name="diaChi" id="diaChi" class="form-control error" required="true"
-                                          aria-required="true"
-                                          aria-invalid="true" value="{{$khachHang->dia_chi}}">
+                                       aria-required="true"
+                                       aria-invalid="true" value="{{$khachHang->dia_chi}}">
                                 <span class="material-input"></span>
                             </div>
                             <label class="col-sm-3 label-on-right">
@@ -200,76 +201,70 @@
                 }
             });
         });
-    </script>
-    <script language="javascript">
+
         function validateForm() {
-            var tai_khoan = document.getElementById("tai_khoan");
-            var tai_khoan_error = document.getElementById("tai_khoan_error");
-            if (tai_khoan.value.length < 5) {
-                tai_khoan_error.innerHTML = "<b>Tài khoản ít nhất 5 kí tự</b>";
-                tai_khoan.focus();
+            var taiKhoan = document.getElementById("taiKhoan");
+            var taiKhoanError = document.getElementById("taiKhoanError");
+            if (taiKhoan.value.length < 5) {
+                taiKhoanError.innerHTML = "<b>Tài khoản ít nhất 5 kí tự</b>";
+                taiKhoan.focus();
                 return false;
             } else {
-                tai_khoan_error.innerHTML = "";
+                taiKhoanError.innerHTML = "";
             }
-            var mat_khau = document.getElementById("mat_khau");
-            var mat_khau_error = document.getElementById("mat_khau_error");
-            if (mat_khau.value.length < 3) {
-                mat_khau_error.innerHTML = "<b>Mật khẩu ít nhất 3 kí tự</b>";
-                mat_khau.focus();
+            var matKhau = document.getElementById("matKhau");
+            var matKhauError = document.getElementById("matKhauError");
+            if (matKhau.value.length < 3) {
+                matKhauError.innerHTML = "<b>Mật khẩu ít nhất 3 kí tự</b>";
+                matKhau.focus();
                 return false;
             } else {
-                mat_khau_error.innerHTML = "";
+                matKhauError.innerHTML = "";
             }
-            var ho_ten_giang_vien = document.getElementById("ho_ten_giang_vien");
-            var ho_ten_giang_vien_error = document.getElementById("ho_ten_giang_vien_error");
-            if (ho_ten_giang_vien.value.length < 5) {
-                ho_ten_giang_vien_error.innerHTML = "<b>Họ tên ít nhất 5 ký tự</b>";
-                ho_ten_giang_vien.focus();
+            var hoTenKhachHang = document.getElementById("hoTenKhachHang");
+            var hoTenKhachHangError = document.getElementById("hoTenKhachHangError");
+            if (hoTenKhachHang.value.length < 5) {
+                hoTenKhachHangError.innerHTML = "<b>Họ tên ít nhất 5 ký tự</b>";
+                hoTenKhachHang.focus();
                 return false;
             } else {
-                ho_ten_giang_vien_error.innerHTML = "";
+                hoTenKhachHangError.innerHTML = "";
             }
-            var chon_nganh = document.getElementById("chon_nganh");
-            if (chon_nganh.value == '0') {
-                alert('Chọn Ngành');
-                return false;
-            }
-            var ngay_sinh = document.getElementById("ngay_sinh");
-            if (ngay_sinh.value.length == '') {
+
+            var ngaySinh = document.getElementById("ngaySinh");
+            if (!ngaySinh.value.length) {
                 alert('Chọn Ngày Sinh');
                 return false;
             }
             var email = document.getElementById("email");
-            var email_error = document.getElementById("email_error");
+            var emailError = document.getElementById("emailError");
             if (email.value.length < 10) {
-                email_error.innerHTML = "<b>Email ít nhất 10 ký tự</b>";
+                emailError.innerHTML = "<b>Email ít nhất 10 ký tự</b>";
                 email.focus();
                 return false;
             } else {
-                email_error.innerHTML = "";
+                emailError.innerHTML = "";
             }
             var sdt = document.getElementById("sdt");
-            var sdt_error = document.getElementById("sdt_error");
-            if (isNaN(sdt.value) || sdt.value == "" || sdt.value.length < 10 || sdt.value.length > 12) {
-                sdt_error.innerHTML = "<b>Số Ðiện Thoại phải là số,ít nhất 10 số và nhỏ hơn 12 số</b>";
+            var sdtError = document.getElementById("sdtError");
+            if (isNaN(sdt.value) || !sdt.value || sdt.value.length < 10 || sdt.value.length > 12) {
+                sdtError.innerHTML = "<b>Số Ðiện Thoại phải là số,ít nhất 10 số và nhỏ hơn 12 số</b>";
                 sdt.focus();
                 return false;
             } else {
-                sdt_error.innerHTML = "";
+                sdtError.innerHTML = "";
             }
-            var dia_chi = document.getElementById("dia_chi");
-            var dia_chi_error = document.getElementById("dia_chi_error");
-            if (dia_chi.value.length < 20) {
-                dia_chi_error.innerHTML = "<b>Ðịa chỉ ít nhất 20 kí tự</b>";
-                dia_chi.focus();
+            var diaChi = document.getElementById("diaChi");
+            var diaChiError = document.getElementById("diaChiError");
+            if (diaChi.value.length < 20) {
+                diaChiError.innerHTML = "<b>Ðịa chỉ ít nhất 20 kí tự</b>";
+                diaChi.focus();
                 return false;
             } else {
-                dia_chi_error.innerHTML = "";
+                diaChiError.innerHTML = "";
             }
         }
-    </script>
-    <script type="text/javascript">
+
         function setFormValidation(id) {
             $(id).validate({
                 errorPlacement: function (error, element) {
@@ -277,6 +272,7 @@
                 }
             });
         }
+
         $(document).ready(function () {
             setFormValidation('#RegisterValidation');
             setFormValidation('#TypeValidation');
