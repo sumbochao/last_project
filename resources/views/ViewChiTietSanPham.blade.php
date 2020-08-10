@@ -172,22 +172,26 @@
                 <div class="col-lg-12">
                     <div class="li-product-tab">
                         <ul class="nav li-product-menu">
-                            <li><a class="active" data-toggle="tab" href="#description"><span>Description</span></a>
-                            </li>
-                            <li><a data-toggle="tab" href="#product-details"><span>Product Details</span></a></li>
+                            @if ($sanPham->mo_ta)
+                                <li><a class="active" data-toggle="tab" href="#description"><span>Mô Tả</span></a>
+                                </li>
+                            @endif
+                            <li><a data-toggle="tab" href="#product-details"><span>Thông Số Kỹ Thuật</span></a></li>
                         </ul>
                     </div>
                     <!-- Begin Li's Tab Menu Content Area -->
                 </div>
             </div>
             <div class="tab-content">
-                <div id="description" class="tab-pane active show" role="tabpanel">
-                    <div class="product-description">
-                    <span>
-                        {{$sanPham->mo_ta}}
-                    </span>
+                @if ($sanPham->mo_ta)
+                    <div id="description" class="tab-pane active show" role="tabpanel">
+                        <div class="product-description">
+                            <span>
+                                {{$sanPham->mo_ta}}
+                            </span>
+                        </div>
                     </div>
-                </div>
+                @endif
                 <div id="product-details" class="tab-pane" role="tabpanel">
                     <div class="product-details-manufacturer">
                         <div class="Shopping-cart-area pt-60 pb-60">

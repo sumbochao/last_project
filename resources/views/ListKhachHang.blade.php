@@ -30,7 +30,6 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">Ảnh Khách Hàng</th>
                                     <th class="text-center">Tài Khoản</th>
                                     <th class="text-center">Họ Tên Khách Hàng</th>
                                     <th class="text-center">Ngày Sinh</th>
@@ -44,7 +43,6 @@
                                 @foreach ($arrayKhachHang as $khachHang)
                                     <tbody>
                                     <tr>
-                                        <td>{{$khachHang->anh_khach_hang}}</td>
                                         <td>{{$khachHang->tai_khoan}}</td>
                                         <td>{{$khachHang->ho_ten_khach_hang}}</td>
                                         <td>{{\Carbon\Carbon::parse($khachHang->ngay_sinh)->format('d/m/Y')}}</td>

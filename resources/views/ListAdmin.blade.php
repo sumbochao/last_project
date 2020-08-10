@@ -40,7 +40,7 @@
                                 @foreach ($arrayAdmin as $admin)
                                     <tbody>
                                     <tr>
-                                        <td>
+                                        <td width="100px">
                                             <img src="{{asset('storage/'.$admin->anh_admin)}}" width="150px"
                                                  height="150px">
                                         </td>

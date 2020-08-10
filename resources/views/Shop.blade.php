@@ -29,24 +29,24 @@
                             <!-- shop-item-filter-list end -->
                         </div>
                         <div class="toolbar-amount">
-                            <span>Showing 1 to 9 of {{count($arraySanPham)}}</span>
+                            <span>Showing {{count($arraySanPham)}} item(s)</span>
                         </div>
                     </div>
                     <!-- product-select-box start -->
-                    <div class="product-select-box">
-                        <div class="product-short">
-                            <p>Sort By:</p>
-                            <select class="nice-select">
-                                <option value="trending">Relevance</option>
-                                <option value="sales">Name (A - Z)</option>
-                                <option value="sales">Name (Z - A)</option>
-                                <option value="rating">Price (Low &gt; High)</option>
-                                <option value="date">Rating (Lowest)</option>
-                                <option value="price-asc">Model (A - Z)</option>
-                                <option value="price-asc">Model (Z - A)</option>
-                            </select>
-                        </div>
-                    </div>
+{{--                    <div class="product-select-box">--}}
+{{--                        <div class="product-short">--}}
+{{--                            <p>Sort By:</p>--}}
+{{--                            <select class="nice-select">--}}
+{{--                                <option value="trending">Relevance</option>--}}
+{{--                                <option value="sales">Name (A - Z)</option>--}}
+{{--                                <option value="sales">Name (Z - A)</option>--}}
+{{--                                <option value="rating">Price (Low &gt; High)</option>--}}
+{{--                                <option value="date">Rating (Lowest)</option>--}}
+{{--                                <option value="price-asc">Model (A - Z)</option>--}}
+{{--                                <option value="price-asc">Model (Z - A)</option>--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <!-- product-select-box end -->
                 </div>
                 <!-- shop-top-bar end -->
@@ -141,7 +141,7 @@
                         <div class="paginatoin-area">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 pt-xs-15">
-                                    <p>Showing 1-12 of {{count($arraySanPham)}} item(s)</p>
+                                    <p>Showing {{count($arraySanPham)}} item(s)</p>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <ul class="pagination-box pt-xs-20 pb-xs-15">
