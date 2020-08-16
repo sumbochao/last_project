@@ -31,7 +31,6 @@ php artisan key:generate
 
 Còn database thì:
 ```
-Database: last_project
 Username: root
 Password:
 Ports: 3306
