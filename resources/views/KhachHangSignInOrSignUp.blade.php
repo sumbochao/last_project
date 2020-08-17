@@ -60,9 +60,9 @@
                         @csrf
                         <div class="login-form">
                             <h4 class="login-title">Đăng Ký</h4>
-                            @if (Session::has('success'))
+                            @if (Session::has('successSignUp'))
                                 <span style="color: #0058ff" class="input-group-addon">
-                                    {{Session::get('success')}}
+                                    {{Session::get('successSignUp')}}
                                 </span>
                             @endif
                             <div class="row">

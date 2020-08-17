@@ -14,7 +14,7 @@
                             <legend>Ảnh Sản Phẩm</legend>
                             <div class="fileinput fileinput-new text-center" data-provides="fileinput">
                                 <div class="fileinput-new thumbnail">
-                                    <img src="{{asset('img/image_placeholder.jpg')}}" alt="...">
+                                    <img src="{{asset('img/admin/image_placeholder.jpg')}}" alt="...">
                                 </div>
                                 <div class="fileinput-preview fileinput-exists thumbnail"></div>
                                 <div>
@@ -27,9 +27,6 @@
                                        data-dismiss="fileinput">
                                         <i class="fa fa-times"></i> Remove</a>
                                 </div>
-                                <label class="col-sm-3 label-on-right">
-                                    <span id="anh_error">Chọn Ảnh</span>
-                                </label>
                             </div>
                         </div>
                     </div>
@@ -204,7 +201,7 @@
                         <div class="row">
                             <label class="col-sm-2 label-on-left">Tên Sản Phẩm</label>
                             <div class="col-sm-10">
-                                <div class="form-group label-floating is-empty has-error">
+                                <div class="form-group label-floating">
                                     <label class="control-label" for="tenSanPham"></label>
                                     <input type="text" name="tenSanPham" id="tenSanPham" class="form-control error"
                                            required="true" aria-required="true"
@@ -234,7 +231,7 @@
                         <div class="row">
                             <label class="col-sm-2 label-on-left">Số Lượng</label>
                             <div class="col-sm-10">
-                                <div class="form-group label-floating is-empty has-error">
+                                <div class="form-group label-floating">
                                     <label class="control-label"></label>
                                     <input type="number" name="soLuong" id="soLuong" class="form-control error"
                                            required="true" aria-required="true"

@@ -47,7 +47,7 @@ class KhachHangService
         $this->khachHang->dia_chi           = $params['diaChi'];
         $this->khachHang->insertKhachHang();
 
-        return redirect()->route('khachHangSignInOrSignUp')->with('success', 'Đăng ký thành công vui lòng tiến hành đăng nhập');
+        return redirect()->route('khachHangSignInOrSignUp')->with('successSignUp', 'Đăng ký thành công vui lòng tiến hành đăng nhập');
     }
 
     public function updateKhachHang($id)

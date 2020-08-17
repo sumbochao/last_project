@@ -14,7 +14,7 @@
                             <legend>Ảnh Sản Phẩm</legend>
                             <div class="fileinput fileinput-new text-center" data-provides="fileinput">
                                 <div class="fileinput-new thumbnail">
-                                    <img src="{{asset('img/image_placeholder.jpg')}}" alt="...">
+                                    <img src="{{asset('img/admin/image_placeholder.jpg')}}" alt="...">
                                 </div>
                                 <div class="fileinput-preview fileinput-exists thumbnail"></div>
                                 <div>

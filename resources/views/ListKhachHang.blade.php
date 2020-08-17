@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <form action="{{route('searchKhachHang')}}" method="get">
-                        <input type="text" name="keyWords"
+                        <input type="search" name="keyWords"
                                placeholder="Tìm kiếm khách hàng">
                         <span class="material-input"></span>
                         <button class="btn-primary">Tìm Kiếm</button>
