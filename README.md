@@ -1,79 +1,40 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img src="http://last_project.com/public/img/nguoi_dung/menu/logo/logo1.jpg" width="400"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Về DCComputer
 
-## About Laravel
+Ngày nay, với sự phát triển mạnh mẽ của công nghệ thông tin và những ứng dụng của nó trong đời sống. Ứng dụng công nghệ thông tin được sử dụng phổ biến và rộng rãi trong các lĩnh vực nhằm đáp ứng nhu cầu phát triển của con người. Trong các lĩnh vực sử dụng công nghệ thông tin thì lĩnh vực quản lý đã giúp ích cho con người rất nhiều, việc áp dụng mua bán và quản lý bằng máy tính thay cho việc mua bán và quản lý thủ công ở các công ty, xí nghiệp, cá nhân,... là rất cần thiết và thật sự cần thiết. Cho nên việc “mua bán hàng qua mạng” là không thể thiếu được trong mọi doanh nghiệp, cửa hàng lớn, vừa và nhỏ.
+ 
+Việt Nam với vị thế là nước đang phát triển thì chúng ta không thể phủ nhận sự đóng góp to lớn của thương mại điện tử, một trong những lĩnh vực rất quan trọng. Cùng với tốc độ phát triển nhanh thì nhu cầu mua bán của con người cũng cần nhanh hơn cho nên cần thay đổi phương thức mua bán từ trực tiếp sang trực tuyến.
+Hầu hết họ đều có website để giới thiệu về doanh nghiệp của mình. Đứng trước nhu cầu thiết kế website của các cá nhân và doanh nghiệp cũng như việc đam mê lập trình ứng dụng web. Nhóm em đã chọn đề tài: “Kinh doanh laptop online ” làm đề tài môn học Đồ Án.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Công nghệ sử dụng
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Laravel 7.x
+- BootStrap 4.0.0
+- Jquery 3.2.1
+- Mysql 5.0.2
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Hướng dẫn
 
-## Learning Laravel
+Clone về và rồi làm theo các bước bên dưới để chạy.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Cài đặt xampp & compose
+2. Chạy câu lệnh
+```sh
+compose update
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Để tạo file **.env** từ file **.env.example** & tạo **APP_KEY** vào file **.env**
 
-## Laravel Sponsors
+4. Chạy câu lệnh
+```sh
+php artisan key:generate
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Còn database thì:
+```
+Database: last_project
+Username: root
+Password:
+Ports: 3306
+```
