@@ -1,5 +1,3 @@
-<p align="center"><img src="http://last_project.com/public/img/nguoi_dung/menu/logo/logo1.jpg" width="400"></p>
-
 ## Về DCComputer
 
 Ngày nay, với sự phát triển mạnh mẽ của công nghệ thông tin và những ứng dụng của nó trong đời sống. Ứng dụng công nghệ thông tin được sử dụng phổ biến và rộng rãi trong các lĩnh vực nhằm đáp ứng nhu cầu phát triển của con người. Trong các lĩnh vực sử dụng công nghệ thông tin thì lĩnh vực quản lý đã giúp ích cho con người rất nhiều, việc áp dụng mua bán và quản lý bằng máy tính thay cho việc mua bán và quản lý thủ công ở các công ty, xí nghiệp, cá nhân,... là rất cần thiết và thật sự cần thiết. Cho nên việc “mua bán hàng qua mạng” là không thể thiếu được trong mọi doanh nghiệp, cửa hàng lớn, vừa và nhỏ.
